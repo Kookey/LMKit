@@ -20,7 +20,15 @@
     
     [UIApplication lm_firstOpenedApp:^(BOOL isFirstOpened) {
         
-        LMLog(@"%@", isFirstOpened ? @"首次打开" : @"不是首次打开应用");
+        LMLog(@"%@", isFirstOpened ? @"首次打开应用" : @"不是首次打开应用");
+    }];
+    
+    [UIApplication lm_firstOpenedBuild:^(BOOL isFirstOpened) {
+        LMLog(@"%@", isFirstOpened ? @"首次打开这个build" : @"不是首次这个打开build");
+    }];
+    
+    [UIApplication lm_firstOpenedVersion:^(BOOL isFirstOpened) {
+        LMLog(@"%@", isFirstOpened ? @"首次打开这个Version" : @"不是首次这个打开Version");
     }];
     
     return YES;
