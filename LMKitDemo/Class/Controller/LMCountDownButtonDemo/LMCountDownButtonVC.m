@@ -41,13 +41,13 @@
 
 - (void)dealloc {
     
-    [self.button1 stop];
-    [self.button2 stop];
+    [self.button1 lm_stopTimer];
+    [self.button2 lm_stopTimer];
 }
 
 - (IBAction)button1Action:(id)sender {
     
-    [sender startWithTotalSecond:10 didChange:^NSString *(LMCountDownButton *button, NSInteger second) {
+    [sender lm_startWithTotalSecond:10 didChange:^NSString *(LMCountDownButton *button, NSInteger second) {
         
         return [NSString stringWithFormat:@"还剩%zd秒可重新获取", second];
         
@@ -59,7 +59,7 @@
 
 - (void)button2Action:(LMCountDownButton *)sender {
     
-    [sender startWithTotalSecond:20 didChange:^NSString *(LMCountDownButton *button, NSInteger second) {
+    [sender lm_startWithTotalSecond:20 didChange:^NSString *(LMCountDownButton *button, NSInteger second) {
         
         return [NSString stringWithFormat:@"还剩%zd秒可重新获取", second];
         

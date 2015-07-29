@@ -22,7 +22,7 @@
 
 @implementation LMCountDownButton
 
-- (void)startWithTotalSecond:(NSInteger)totalSecond didChange:(DidChange)didChange didFinished:(DidFinished)didFinished
+- (void)lm_startWithTotalSecond:(NSInteger)totalSecond didChange:(DidChange)didChange didFinished:(DidFinished)didFinished
 {
     [self startWithTotalSecond:totalSecond];
     
@@ -48,7 +48,7 @@
     
     if (_remainSecond <= 0) {
         
-        [self stop];
+        [self lm_stopTimer];
         
     } else {
         
@@ -73,7 +73,7 @@
     }
 }
 
-- (void)stop
+- (void)lm_stopTimer
 {
     self.enabled = YES;
     

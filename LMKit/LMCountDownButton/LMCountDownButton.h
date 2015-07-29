@@ -16,8 +16,8 @@ typedef NSString *(^DidFinished)(LMCountDownButton *button, NSInteger second);
 
 @interface LMCountDownButton : UIButton
 
-- (void)startWithTotalSecond:(NSInteger)totalSecond didChange:(DidChange)didChange didFinished:(DidFinished)didFinished;
+- (void)lm_startWithTotalSecond:(NSInteger)totalSecond didChange:(DidChange)didChange didFinished:(DidFinished)didFinished;
 
-- (void)stop;
+- (void)lm_stopTimer;
 
 @end
