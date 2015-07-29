@@ -35,6 +35,8 @@
 		E43FA5961B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5941B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m */; };
 		E43FA59A1B68AB3B007048F7 /* LMPlaceholderViewVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5991B68AB3B007048F7 /* LMPlaceholderViewVC1.m */; };
 		E43FA5A01B68AC1F007048F7 /* LMPlaceholderViewVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA59F1B68AC1F007048F7 /* LMPlaceholderViewVC2.m */; };
+		E43FA5A91B68C6E8007048F7 /* UIApplication+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5A81B68C6E8007048F7 /* UIApplication+LM.m */; };
+		E43FA5B01B68D015007048F7 /* LMApplicationTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5AF1B68D015007048F7 /* LMApplicationTC.m */; };
 		E4B81E011B685B1D0042CAB5 /* LMCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */; };
 		E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */; };
 /* End PBXBuildFile section */
@@ -107,6 +109,10 @@
 		E43FA5991B68AB3B007048F7 /* LMPlaceholderViewVC1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlaceholderViewVC1.m; sourceTree = "<group>"; };
 		E43FA59E1B68AC1F007048F7 /* LMPlaceholderViewVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlaceholderViewVC2.h; sourceTree = "<group>"; };
 		E43FA59F1B68AC1F007048F7 /* LMPlaceholderViewVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlaceholderViewVC2.m; sourceTree = "<group>"; };
+		E43FA5A71B68C6E8007048F7 /* UIApplication+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+LM.h"; sourceTree = "<group>"; };
+		E43FA5A81B68C6E8007048F7 /* UIApplication+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+LM.m"; sourceTree = "<group>"; };
+		E43FA5AE1B68D015007048F7 /* LMApplicationTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMApplicationTC.h; sourceTree = "<group>"; };
+		E43FA5AF1B68D015007048F7 /* LMApplicationTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMApplicationTC.m; sourceTree = "<group>"; };
 		E4B81DFF1B685B1D0042CAB5 /* LMCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCountDownButton.h; sourceTree = "<group>"; };
 		E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButton.m; sourceTree = "<group>"; };
 		E4B81E4A1B686F6B0042CAB5 /* LMCountDownButtonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCountDownButtonVC.h; sourceTree = "<group>"; };
@@ -221,6 +227,8 @@
 				E409DAFD1B675F1900CE3C38 /* NSURL+LM.m */,
 				E409DAFE1B675F1900CE3C38 /* UIAlertView+LM.h */,
 				E409DAFF1B675F1900CE3C38 /* UIAlertView+LM.m */,
+				E43FA5A71B68C6E8007048F7 /* UIApplication+LM.h */,
+				E43FA5A81B68C6E8007048F7 /* UIApplication+LM.m */,
 				E409DB001B675F1900CE3C38 /* UIColor+LM.h */,
 				E409DB011B675F1900CE3C38 /* UIColor+LM.m */,
 				E409DB021B675F1900CE3C38 /* UIDevice+LM.h */,
@@ -267,6 +275,15 @@
 			path = LMPlaceholderViewDemo;
 			sourceTree = "<group>";
 		};
+		E43FA5AA1B68CA33007048F7 /* LMCategoryDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E43FA5AE1B68D015007048F7 /* LMApplicationTC.h */,
+				E43FA5AF1B68D015007048F7 /* LMApplicationTC.m */,
+			);
+			path = LMCategoryDemo;
+			sourceTree = "<group>";
+		};
 		E4B81DFE1B685B1D0042CAB5 /* LMCountDownButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +304,7 @@
 		E4B81E481B686F400042CAB5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E43FA5AA1B68CA33007048F7 /* LMCategoryDemo */,
 				E43FA5971B68AAF3007048F7 /* LMPlaceholderViewDemo */,
 				E4B81E491B686F400042CAB5 /* LMCountDownButtonDemo */,
 			);
@@ -411,6 +429,7 @@
 				E409DB1D1B675F1900CE3C38 /* UIDevice+LM.m in Sources */,
 				E409DB221B675F1900CE3C38 /* UITextField+LM.m in Sources */,
 				E43FA5961B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m in Sources */,
+				E43FA5A91B68C6E8007048F7 /* UIApplication+LM.m in Sources */,
 				E409DB161B675F1900CE3C38 /* NSDate+LM.m in Sources */,
 				E409DB1F1B675F1900CE3C38 /* UIImageView+LM.m in Sources */,
 				E409DB201B675F1900CE3C38 /* UIStoryboard+LM.m in Sources */,
@@ -425,6 +444,7 @@
 				E43FA5951B68A5D2007048F7 /* LMPlaceholderView.m in Sources */,
 				E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */,
 				E409DB191B675F1900CE3C38 /* NSString+LM.m in Sources */,
+				E43FA5B01B68D015007048F7 /* LMApplicationTC.m in Sources */,
 				E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */,
 				E409DB231B675F1900CE3C38 /* UITextView+LM.m in Sources */,
 				E409DB141B675F1900CE3C38 /* NSArray+LM.m in Sources */,

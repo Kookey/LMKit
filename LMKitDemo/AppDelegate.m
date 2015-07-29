@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LMKit.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [UIApplication lm_firstOpenedApp:^(BOOL isFirstOpened) {
+        
+        LMLog(@"%@", isFirstOpened ? @"首次打开" : @"不是首次打开应用");
+    }];
+    
     return YES;
 }
 

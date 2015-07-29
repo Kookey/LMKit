@@ -51,6 +51,7 @@
 #import "UIColor+LM.h"
 #import "UIStoryboard+LM.h"
 #import "UIAlertView+LM.h"
+#import "UIApplication+LM.h"
 #import "UIView+LM.h"
 #import "UIViewController+LM.h"
 
