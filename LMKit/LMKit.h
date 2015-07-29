@@ -12,5 +12,6 @@
 #import "LMCategory.h"
 
 #import "LMCountDownButton.h"
+#import "UIViewController+LMPlaceholderView.h"
 
 #endif
