@@ -42,8 +42,13 @@ typedef void(^lm_PanGestureBlock)(UIPanGestureRecognizer *gestureRecognizer);
 - (UIPanGestureRecognizer *)lm_addPanGesture:(lm_PanGestureBlock)panAction;
 
 /**
- *  shake
+ *  shakeView
  */
-- (void)shakeView;
+- (void)lm_shakeAnimation;
+
+/**
+ *  popAnimation
+ */
+- (void)lm_popAnimation;
 
 @end
