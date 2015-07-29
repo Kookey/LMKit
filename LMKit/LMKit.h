@@ -12,6 +12,5 @@
 #import "LMCategory.h"
 
 #import "LMCountDownButton.h"
-#import "LMPlaceholderTextView.h"
 
 #endif

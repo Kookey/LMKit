@@ -17,4 +17,11 @@
  */
 - (void)lm_limitLength:(NSUInteger)length;
 
+/**
+ *  Placeholder
+ *
+ *  @param placeholer 占位提示
+ */
+- (void)lm_placeholder:(NSString *)placeholder;;
+
 @end
