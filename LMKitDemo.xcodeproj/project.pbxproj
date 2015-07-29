@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E409DAC71B675C3000CE3C38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DAC61B675C3000CE3C38 /* main.m */; };
 		E409DACA1B675C3000CE3C38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DAC91B675C3000CE3C38 /* AppDelegate.m */; };
-		E409DACD1B675C3000CE3C38 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DACC1B675C3000CE3C38 /* ViewController.m */; };
 		E409DAD01B675C3000CE3C38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E409DACE1B675C3000CE3C38 /* Main.storyboard */; };
 		E409DAD21B675C3000CE3C38 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E409DAD11B675C3000CE3C38 /* Images.xcassets */; };
 		E409DAD51B675C3000CE3C38 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E409DAD31B675C3000CE3C38 /* LaunchScreen.xib */; };
@@ -34,6 +33,7 @@
 		E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB131B675F1900CE3C38 /* UIViewController+LM.m */; };
 		E4B81DFD1B685A7D0042CAB5 /* LMPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81DFC1B685A7D0042CAB5 /* LMPlaceholderTextView.m */; };
 		E4B81E011B685B1D0042CAB5 /* LMCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */; };
+		E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,6 @@
 		E409DAC61B675C3000CE3C38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E409DAC81B675C3000CE3C38 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E409DAC91B675C3000CE3C38 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E409DACB1B675C3000CE3C38 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E409DACC1B675C3000CE3C38 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E409DACF1B675C3000CE3C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E409DAD11B675C3000CE3C38 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E409DAD41B675C3000CE3C38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -102,6 +100,8 @@
 		E4B81DFC1B685A7D0042CAB5 /* LMPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlaceholderTextView.m; sourceTree = "<group>"; };
 		E4B81DFF1B685B1D0042CAB5 /* LMCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCountDownButton.h; sourceTree = "<group>"; };
 		E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButton.m; sourceTree = "<group>"; };
+		E4B81E4A1B686F6B0042CAB5 /* LMCountDownButtonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCountDownButtonVC.h; sourceTree = "<group>"; };
+		E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButtonVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,11 +146,10 @@
 			children = (
 				E409DAC81B675C3000CE3C38 /* AppDelegate.h */,
 				E409DAC91B675C3000CE3C38 /* AppDelegate.m */,
-				E409DACB1B675C3000CE3C38 /* ViewController.h */,
-				E409DACC1B675C3000CE3C38 /* ViewController.m */,
-				E409DACE1B675C3000CE3C38 /* Main.storyboard */,
+				E4B81E471B686F400042CAB5 /* Class */,
 				E409DAD11B675C3000CE3C38 /* Images.xcassets */,
 				E409DAD31B675C3000CE3C38 /* LaunchScreen.xib */,
+				E409DACE1B675C3000CE3C38 /* Main.storyboard */,
 				E409DAC41B675C3000CE3C38 /* Supporting Files */,
 			);
 			path = LMKitDemo;
@@ -253,6 +252,31 @@
 				E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */,
 			);
 			path = LMCountDownButton;
+			sourceTree = "<group>";
+		};
+		E4B81E471B686F400042CAB5 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E4B81E481B686F400042CAB5 /* Controller */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		E4B81E481B686F400042CAB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E4B81E491B686F400042CAB5 /* LMCountDownButtonDemo */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E4B81E491B686F400042CAB5 /* LMCountDownButtonDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E4B81E4A1B686F6B0042CAB5 /* LMCountDownButtonVC.h */,
+				E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */,
+			);
+			path = LMCountDownButtonDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,7 +386,6 @@
 				E409DB1D1B675F1900CE3C38 /* UIDevice+LM.m in Sources */,
 				E409DB221B675F1900CE3C38 /* UITextField+LM.m in Sources */,
 				E409DB161B675F1900CE3C38 /* NSDate+LM.m in Sources */,
-				E409DACD1B675C3000CE3C38 /* ViewController.m in Sources */,
 				E409DB1F1B675F1900CE3C38 /* UIImageView+LM.m in Sources */,
 				E409DB201B675F1900CE3C38 /* UIStoryboard+LM.m in Sources */,
 				E409DB181B675F1900CE3C38 /* NSObject+LM.m in Sources */,
@@ -375,6 +398,7 @@
 				E409DAC71B675C3000CE3C38 /* main.m in Sources */,
 				E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */,
 				E409DB191B675F1900CE3C38 /* NSString+LM.m in Sources */,
+				E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */,
 				E409DB231B675F1900CE3C38 /* UITextView+LM.m in Sources */,
 				E4B81DFD1B685A7D0042CAB5 /* LMPlaceholderTextView.m in Sources */,
 				E409DB141B675F1900CE3C38 /* NSArray+LM.m in Sources */,
