@@ -32,6 +32,7 @@
 		E409DB231B675F1900CE3C38 /* UITextView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB0F1B675F1900CE3C38 /* UITextView+LM.m */; };
 		E409DB241B675F1900CE3C38 /* UIView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB111B675F1900CE3C38 /* UIView+LM.m */; };
 		E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB131B675F1900CE3C38 /* UIViewController+LM.m */; };
+		E4B81DFD1B685A7D0042CAB5 /* LMPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81DFC1B685A7D0042CAB5 /* LMPlaceholderTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		E409DB111B675F1900CE3C38 /* UIView+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LM.m"; sourceTree = "<group>"; };
 		E409DB121B675F1900CE3C38 /* UIViewController+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LM.h"; sourceTree = "<group>"; };
 		E409DB131B675F1900CE3C38 /* UIViewController+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LM.m"; sourceTree = "<group>"; };
+		E4B81DFB1B685A7D0042CAB5 /* LMPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlaceholderTextView.h; sourceTree = "<group>"; };
+		E4B81DFC1B685A7D0042CAB5 /* LMPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlaceholderTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				E409DAED1B675EAD00CE3C38 /* LMCategory */,
+				E4B81DFA1B685A7D0042CAB5 /* LMPlaceholderTextView */,
 				E409DAEC1B675E8B00CE3C38 /* LMKit.h */,
 			);
 			path = LMKit;
@@ -227,6 +231,15 @@
 				E409DB131B675F1900CE3C38 /* UIViewController+LM.m */,
 			);
 			path = LMCategory;
+			sourceTree = "<group>";
+		};
+		E4B81DFA1B685A7D0042CAB5 /* LMPlaceholderTextView */ = {
+			isa = PBXGroup;
+			children = (
+				E4B81DFB1B685A7D0042CAB5 /* LMPlaceholderTextView.h */,
+				E4B81DFC1B685A7D0042CAB5 /* LMPlaceholderTextView.m */,
+			);
+			path = LMPlaceholderTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +362,7 @@
 				E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */,
 				E409DB191B675F1900CE3C38 /* NSString+LM.m in Sources */,
 				E409DB231B675F1900CE3C38 /* UITextView+LM.m in Sources */,
+				E4B81DFD1B685A7D0042CAB5 /* LMPlaceholderTextView.m in Sources */,
 				E409DB141B675F1900CE3C38 /* NSArray+LM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
