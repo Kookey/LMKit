@@ -54,4 +54,12 @@
  */
 - (NSDictionary *)lm_dictionaryProperty;
 
+/**
+ *  计算需要耗费的时间(秒)
+ *
+ *  @param block  方法
+ *  @param prefix 方法标识
+ */
+- (void)lm_logTimeToRunBlock:(void (^)(void))block withPrefix:(NSString *)prefix;
+
 @end

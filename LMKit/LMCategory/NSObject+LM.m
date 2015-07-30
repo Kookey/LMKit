@@ -99,4 +99,28 @@
     return dict;
 }
 
+#pragma mark 计算需要耗费的时间(秒)
+
+- (void)lm_logTimeToRunBlock:(void (^)(void))block withPrefix:(NSString *)prefix
+{
+    NSTimeInterval startTime = CFAbsoluteTimeGetCurrent();
+    
+    if (block) {
+        
+        block();
+    }
+    
+    NSTimeInterval elapsedTime = CFAbsoluteTimeGetCurrent() - startTime;
+    
+#if DEBUG
+    if (prefix.length) {
+        
+        NSLog(@"%@->%f", prefix, elapsedTime);
+    } else {
+        NSLog(@"elapsedTime->%f", elapsedTime);
+    }
+
+#endif
+}
+
 @end
