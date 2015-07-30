@@ -109,10 +109,8 @@
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSUInteger unit = NSCalendarUnitYear;
-    
 
     NSDateComponents *nowComponents = [calendar components:unit fromDate:[NSDate date]];
-    
     NSDateComponents *selfComponents = [calendar components:unit fromDate:self];
     
     return nowComponents.year == selfComponents.year;
@@ -128,8 +126,6 @@
     
     return [calendar components:unit fromDate:self toDate:[NSDate date] options:0];
 }
-
-#pragma mark -.-
 
 #pragma mark - 获取日、月、年、小时、分钟、秒
 
@@ -256,6 +252,64 @@
     }
     
     return NO;
+}
+
+#pragma mark - offset后的日期
+
+- (NSDate *)lm_offsetYears:(NSInteger)years
+{
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+#else
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+#endif
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setYear:years];
+    
+    return [gregorian dateByAddingComponents:components toDate:self options:0];
+}
+
+- (NSDate *)lm_offsetMonths:(NSInteger)months
+{
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+#else
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+#endif
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setMonth:months];
+    
+    return [gregorian dateByAddingComponents:components toDate:self options:0];
+}
+
+- (NSDate *)lm_offsetDays:(NSInteger)days
+{
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+#else
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+#endif
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setDay:days];
+    
+    return [gregorian dateByAddingComponents:components toDate:self options:0];
+}
+
+- (NSDate *)lm_offsetHours:(NSInteger)hours
+{
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+#else
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+#endif
+    
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setHour:hours];
+    
+    return [gregorian dateByAddingComponents:components toDate:self options:0];
 }
 
 @end

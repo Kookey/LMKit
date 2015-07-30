@@ -167,6 +167,42 @@ typedef enum {
  */
 - (BOOL)lm_isLeapYear;
 
+/**
+ *  years年后的日期
+ *
+ *  @param years 年
+ *
+ *  @return 日期
+ */
+- (NSDate *)lm_offsetYears:(NSInteger)years;
+
+/**
+ *  months月后的日期
+ *
+ *  @param months 月
+ *
+ *  @return 日期
+ */
+- (NSDate *)lm_offsetMonths:(NSInteger)months;
+
+/**
+ *  days天的日期
+ *
+ *  @param days 天
+ *
+ *  @return 日期
+ */
+- (NSDate *)lm_offsetDays:(NSInteger)days;
+
+/**
+ *  hours小时后的日期
+ *
+ *  @param hours 小时
+ *
+ *  @return 日期
+ */
+- (NSDate *)lm_offsetHours:(NSInteger)hours;
+
 @end
 
 @interface NSString (LMDateFormat)
