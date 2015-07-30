@@ -45,4 +45,31 @@
     return archivingData;
 }
 
+#pragma mark - 延时执行
+
+- (void)lm_performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay
+{
+    if (!block) {
+        
+        return;
+    }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        block();
+    });
+}
+
+- (void)lm_performBlock:(void (^)(id arg))block withObject:(id)object afterDelay:(NSTimeInterval)delay
+{
+    if (!block) {
+        
+        return;
+    }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        block(object);
+    });
+}
+
 @end
