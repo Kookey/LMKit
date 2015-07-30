@@ -29,4 +29,23 @@
     return strM;
 }
 
+#pragma 转为字符串
+
+- (NSString *)lm_JSONString
+{
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:NSJSONWritingPrettyPrinted error:&error];
+    
+    if (!jsonData) {
+#ifdef DEBUG
+        NSLog(@"fail to lm_JSONString from dictionary: %@, error: %@", self, error);
+#endif
+        return nil;
+    }
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    return jsonString;
+}
+
 @end

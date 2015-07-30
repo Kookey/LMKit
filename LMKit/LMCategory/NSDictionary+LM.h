@@ -10,4 +10,11 @@
 
 @interface NSDictionary (LM)
 
+/**
+ *  转为字符串
+ *
+ *  @return NSString
+ */
+- (NSString *)lm_JSONString;
+
 @end
