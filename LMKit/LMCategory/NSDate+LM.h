@@ -152,6 +152,15 @@ typedef enum {
 - (NSUInteger)lm_daysInYear;
 
 /**
+ *  获取某月的天数
+ *
+ *  @param month 月
+ *
+ *  @return 获取某月的天数
+ */
+- (NSUInteger)lm_daysInMonth:(NSUInteger)month;
+
+/**
  *  判断是否是闰年
  *
  *  @return 闰年/平年

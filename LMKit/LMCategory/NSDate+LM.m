@@ -217,6 +217,33 @@
     return [self lm_isLeapYear] ? 366 : 365;
 }
 
+#pragma mark - 获取某月的天数
+
+- (NSUInteger)lm_daysInMonth:(NSUInteger)month
+{
+    if (month > 12) {
+        
+        return 0;
+    }
+    
+    switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            return 31;
+            break;
+        case 2:
+            return [self lm_isLeapYear] ? 29 : 28;
+        default:
+            return 30;
+            break;
+    }
+}
+
 #pragma mark - 判断是否是闰年
 
 - (BOOL)lm_isLeapYear
