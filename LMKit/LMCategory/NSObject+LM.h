@@ -47,4 +47,11 @@
  */
 - (void)lm_performBlock:(void (^)(id arg))block withObject:(id)object afterDelay:(NSTimeInterval)delay;
 
+/**
+ *  对象转为字典
+ *
+ *  @return NSDictionary(空值忽略)
+ */
+- (NSDictionary *)lm_dictionaryProperty;
+
 @end

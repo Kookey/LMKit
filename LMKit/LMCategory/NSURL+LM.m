@@ -44,10 +44,17 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     for (NSString *param in [[self query] componentsSeparatedByString:@"&"]) {
+        
         NSArray *elts = [param componentsSeparatedByString:@"="];
-        if([elts count] < 2) continue;
+        
+        if ([elts count] < 2) {
+            
+            continue;
+        }
+        
         [params setObject:elts[1] forKey:elts[0]];
     }
+    
     return params;
 }
 

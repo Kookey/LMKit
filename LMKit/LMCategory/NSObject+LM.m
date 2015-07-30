@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+LM.h"
+#import <objc/runtime.h>
 
 @implementation NSObject (LM)
 
@@ -70,6 +71,32 @@
         
         block(object);
     });
+}
+
+#pragma mark - 对象转为字典
+
+- (NSDictionary *)lm_dictionaryProperty
+{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    unsigned int outCount;
+    objc_property_t *props = class_copyPropertyList([self class], &outCount);
+    
+    for (int i = 0; i < outCount; i++) {
+        
+        objc_property_t prop = props[i];
+        NSString *propName = [[NSString alloc] initWithCString:property_getName(prop) encoding:NSUTF8StringEncoding];
+        id propValue = [self valueForKey:propName];
+        
+        if (propValue){
+            
+            [dict setObject:propValue forKey:propName];
+        }
+    }
+    
+    free(props);
+    
+    return dict;
 }
 
 @end
