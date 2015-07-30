@@ -129,6 +129,108 @@
     return [calendar components:unit fromDate:self toDate:[NSDate date] options:0];
 }
 
+#pragma mark -.-
+
+#pragma mark - 获取日、月、年、小时、分钟、秒
+
+- (NSUInteger)lm_day
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    NSDateComponents *components = [calendar components:(NSCalendarUnitDay) fromDate:self];
+#else
+    NSDateComponents *components = [calendar components:(NSDayCalendarUnit) fromDate:self];
+#endif
+    
+    return [components day];
+}
+
+- (NSUInteger)lm_month
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    NSDateComponents *components = [calendar components:(NSCalendarUnitMonth) fromDate:self];
+#else
+    NSDateComponents *components = [calendar components:(NSMonthCalendarUnit) fromDate:self];
+#endif
+    
+    return [components month];
+}
+
+- (NSUInteger)lm_year
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear) fromDate:self];
+#else
+    NSDateComponents *components = [calendar components:(NSYearCalendarUnit) fromDate:self];
+#endif
+    
+    return [components year];
+}
+
+- (NSUInteger)lm_hour
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    NSDateComponents *components = [calendar components:(NSCalendarUnitHour) fromDate:self];
+#else
+    NSDateComponents *components = [calendar components:(NSHourCalendarUnit) fromDate:self];
+#endif
+    
+    return [components hour];
+}
+
+- (NSUInteger)lm_minute
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    NSDateComponents *components = [calendar components:(NSCalendarUnitMinute) fromDate:self];
+#else
+    NSDateComponents *components = [calendar components:(NSMinuteCalendarUnit) fromDate:self];
+#endif
+    
+    return [components minute];
+}
+
+- (NSUInteger)lm_second
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
+    NSDateComponents *components = [calendar components:(NSCalendarUnitSecond) fromDate:self];
+#else
+    NSDateComponents *components = [calendar components:(NSSecondCalendarUnit) fromDate:self];
+#endif
+    
+    return [components second];
+}
+
+#pragma mark - 获取一年的总天数
+
+- (NSUInteger)lm_daysInYear
+{
+    return [self lm_isLeapYear] ? 366 : 365;
+}
+
+#pragma mark - 判断是否是闰年
+
+- (BOOL)lm_isLeapYear
+{
+    NSUInteger year = [self lm_year];
+    
+    if ((year % 4  == 0 && year % 100 != 0) || year % 400 == 0) {
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
 @end
 
 @implementation NSString (LMDateFormat)

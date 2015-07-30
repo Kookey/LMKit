@@ -102,6 +102,62 @@ typedef enum {
  */
 - (NSDateComponents *)lm_deltaWithNow;
 
+/**
+ *  获取日
+ *
+ *  @return 日
+ */
+- (NSUInteger)lm_day;
+
+/**
+ *  获取月
+ *
+ *  @return 月
+ */
+- (NSUInteger)lm_month;
+
+/**
+ *  获取年
+ *
+ *  @return 年
+ */
+- (NSUInteger)lm_year;
+
+/**
+ *  获取小时
+ *
+ *  @return 小时
+ */
+- (NSUInteger)lm_hour;
+
+/**
+ *  获取分钟
+ *
+ *  @return 分钟
+ */
+- (NSUInteger)lm_minute;
+
+/**
+ *  获取秒
+ *
+ *  @return 秒
+ */
+- (NSUInteger)lm_second;
+
+/**
+ *  获取一年的总天数
+ *
+ *  @return 天
+ */
+- (NSUInteger)lm_daysInYear;
+
+/**
+ *  判断是否是闰年
+ *
+ *  @return 闰年/平年
+ */
+- (BOOL)lm_isLeapYear;
+
 @end
 
 @interface NSString (LMDateFormat)
