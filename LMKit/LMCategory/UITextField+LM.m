@@ -14,7 +14,7 @@
 
 - (void)lm_limitLength:(NSUInteger)length
 {
-    NSOperationQueue *mainQuene =[NSOperationQueue mainQueue];
+    NSOperationQueue *mainQuene = [NSOperationQueue mainQueue];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:mainQuene usingBlock:^(NSNotification *note) {
         

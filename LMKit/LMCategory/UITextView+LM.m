@@ -60,7 +60,7 @@ static char placeholderTextViewKey;
 
 - (void)lm_limitLength:(NSUInteger)length
 {
-    NSOperationQueue *mainQuene =[NSOperationQueue mainQueue];
+    NSOperationQueue *mainQuene = [NSOperationQueue mainQueue];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UITextViewTextDidChangeNotification object:nil queue:mainQuene usingBlock:^(NSNotification *note) {
         

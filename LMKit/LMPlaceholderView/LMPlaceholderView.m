@@ -11,7 +11,7 @@
 
 @interface LMPlaceholderView ()
 {
-    UIImageView *_imageview;
+    UIImageView *_imageView;
     UITextView *_descriptionTextView;
 }
 @end
@@ -57,10 +57,10 @@
         [view removeFromSuperview];
     }
     
-    _imageview = [[UIImageView alloc] init];
-    _imageview.alpha = 0.0f;
+    _imageView = [[UIImageView alloc] init];
+    _imageView.alpha = 0.0f;
     
-    [self addSubview:_imageview];
+    [self addSubview:_imageView];
     
     _descriptionTextView = [[UITextView alloc] init];
     [_descriptionTextView setFont:[UIFont boldSystemFontOfSize:18.0f]];
@@ -76,12 +76,12 @@
 
 - (void)lm_showViewWithImageName:(NSString *)imageName andTitle:(NSString *)title
 {
-    _imageview.image = [UIImage imageNamed:imageName];
-    _imageview.frame = CGRectMake(LMScreenWidth * 0.5 - 52.5, LMScreenHeight * 0.5 - 165, 105, 105);
-    _imageview.center = self.center;
+    _imageView.image = [UIImage imageNamed:imageName];
+    _imageView.frame = CGRectMake(LMScreenWidth * 0.5 - 52.5, LMScreenHeight * 0.5 - 165, 105, 105);
+    _imageView.center = self.center;
     
     _descriptionTextView.text = title;
-    _descriptionTextView.frame = CGRectMake(20, _imageview.frame.size.height + _imageview.frame.origin.y + 25, self.frame.size.width - 40, 10);
+    _descriptionTextView.frame = CGRectMake(20, _imageView.frame.size.height + _imageView.frame.origin.y + 25, self.frame.size.width - 40, 10);
     _descriptionTextView.textColor = LMColorWithHex(0xd4d4d4);
     CGFloat fixedWidth = _descriptionTextView.frame.size.width;
     CGSize newSize = [_descriptionTextView sizeThatFits:CGSizeMake(fixedWidth, 20)];
@@ -94,7 +94,7 @@
         self.alpha = 1.0f;
         
         _descriptionTextView.alpha = 1.0f;
-        _imageview.alpha = 1.0f;
+        _imageView.alpha = 1.0f;
         
     } completion:nil];
 }
