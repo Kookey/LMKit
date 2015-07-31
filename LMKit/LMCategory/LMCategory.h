@@ -9,6 +9,8 @@
 #ifndef LMCategory_LMCategory_h
 #define LMCategory_LMCategory_h
 
+#pragma mark - -.-
+
 #ifndef __OPTIMIZE__
 
 #define LMLog(format, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(format), ##__VA_ARGS__])
@@ -34,6 +36,59 @@
 #define LMiPhone5 (LMiPhone && LMScreenMax == 568.0)
 #define LMiPhone6 (LMiPhone && LMScreenMax == 667.0)
 #define LMiPhone6Plus (LMiPhone && LMScreenMax == 736.0)
+
+#pragma mark - -.-
+
+#define LMSingletonInterface(className)           + (instancetype)shared##className;
+
+#if __has_feature(objc_arc)
+#define LMSingletonImplementation(className) \
+static id instance; \
++ (instancetype)allocWithZone:(struct _NSZone *)zone { \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+instance = [super allocWithZone:zone]; \
+}); \
+return instance; \
+} \
++ (instancetype)shared##className { \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+instance = [[self alloc] init]; \
+}); \
+return instance; \
+} \
+- (id)copyWithZone:(NSZone *)zone { \
+return instance; \
+}
+#else
+#define LMSingletonImplementation(className) \
+static id instance; \
++ (instancetype)allocWithZone:(struct _NSZone *)zone { \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+instance = [super allocWithZone:zone]; \
+}); \
+return instance; \
+} \
++ (instancetype)shared##className { \
+static dispatch_once_t onceToken; \
+dispatch_once(&onceToken, ^{ \
+instance = [[self alloc] init]; \
+}); \
+return instance; \
+} \
+- (id)copyWithZone:(NSZone *)zone { \
+return instance; \
+} \
+- (oneway void)release {} \
+- (instancetype)retain {return instance;} \
+- (instancetype)autorelease {return instance;} \
+- (NSUInteger)retainCount {return ULONG_MAX;}
+
+#endif
+
+#pragma mark - -.-
 
 #import "NSString+LM.h"
 #import "NSDate+LM.h"
