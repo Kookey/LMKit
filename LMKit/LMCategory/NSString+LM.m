@@ -313,7 +313,7 @@
 
 - (BOOL)lm_validURL
 {
-    return [self validWithRegex:@"[a-zA-z]+://[^\\s]*"];
+    return [self validWithRegex:@"^((http)|(https))+:[^\\s]+\\.[^\\s]*$"];
 }
 
 #pragma mark 判断EMail
