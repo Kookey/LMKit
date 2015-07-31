@@ -436,6 +436,24 @@
     return [NSURL URLWithString:[self stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
+#pragma mark - 请求参数
+
+- (NSDictionary *)lm_requestParams
+{
+    NSArray *pairs = [self componentsSeparatedByString:@"&"];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    for (NSString *pair in pairs) {
+        
+        NSArray *object = [pair componentsSeparatedByString:@"="];
+        NSString *key = [[object objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        [params setObject:key forKey:[object objectAtIndex:0]];
+    }
+    
+    return params;
+}
+
 #pragma mark Encode
 
 - (NSString *)lm_encode

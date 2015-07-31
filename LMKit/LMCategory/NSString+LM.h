@@ -176,6 +176,13 @@
 - (NSURL *)lm_urlEncode;
 
 /**
+ *  请求参数
+ *
+ *  @return NSDictionary
+ */
+- (NSDictionary *)lm_requestParams;
+
+/**
  *  Encode
  *
  *  @return NSString

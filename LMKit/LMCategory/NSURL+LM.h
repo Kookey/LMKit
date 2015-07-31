@@ -15,13 +15,13 @@
  *
  *  @return 是否
  */
-+ (BOOL)networkReachability;
++ (BOOL)lm_networkReachability;
 
 /**
- *  返回请求参数
+ *  请求参数
  *
  *  @return NSDictionary
  */
-- (NSDictionary *)requestParams;
+- (NSDictionary *)lm_requestParams;
 
 @end

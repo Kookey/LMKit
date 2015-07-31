@@ -7,6 +7,7 @@
 //
 
 #import "NSURL+LM.h"
+#import "LMKit.h"
 #import <netinet/in.h>
 #import <SystemConfiguration/SCNetworkReachability.h>
 
@@ -14,7 +15,7 @@
 
 #pragma mark 判断网络是否可用
 
-+ (BOOL)networkReachability
++ (BOOL)lm_networkReachability
 {
     struct sockaddr_in initAddress;
     bzero(&initAddress, sizeof(initAddress));
@@ -37,25 +38,11 @@
     return (flagsReachable && !connectionRequired) ? YES : NO;
 }
 
-#pragma mark - 返回请求参数
+#pragma mark 请求参数
 
-- (NSDictionary *)requestParams
+- (NSDictionary *)lm_requestParams
 {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    
-    for (NSString *param in [[self query] componentsSeparatedByString:@"&"]) {
-        
-        NSArray *elts = [param componentsSeparatedByString:@"="];
-        
-        if ([elts count] < 2) {
-            
-            continue;
-        }
-        
-        [params setObject:elts[1] forKey:elts[0]];
-    }
-    
-    return params;
+    return [self query].lm_requestParams;
 }
 
 @end
