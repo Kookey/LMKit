@@ -48,6 +48,18 @@ typedef void(^lm_WriteToSavedPhotosError)(NSError *error);
  */
 - (void)lm_writeToSavedPhotosAlbumWithSuccess:(lm_WriteToSavedPhotosSuccess)success error:(lm_WriteToSavedPhotosError)error;
 
+/**
+ *  截屏
+ *
+ *  @return UIImage
+ */
 + (UIImage *)screenshot;
+
+/**
+ *  获取launchImage
+ *
+ *  @return UIImage
+ */
++ (UIImage *)lm_launchImage;
 
 @end

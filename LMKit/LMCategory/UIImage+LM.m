@@ -132,6 +132,8 @@ static char writeToSavedPhotosSuccessKey, writeToSavedPhotosErrorKey;
     }
 }
 
+#pragma mark 截屏
+
 + (UIImage *)screenshot
 {
     CGSize imageSize = [[UIScreen mainScreen] bounds].size;
@@ -163,6 +165,38 @@ static char writeToSavedPhotosSuccessKey, writeToSavedPhotosErrorKey;
     UIGraphicsEndImageContext();
     
     return image;
+}
+
+#pragma mark 获取launchImage
+
++ (UIImage *)lm_launchImage
+{
+    NSArray *imagesDict = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    
+    for (NSDictionary *dict in imagesDict) {
+        
+        if (CGSizeEqualToSize([UIScreen mainScreen].bounds.size, CGSizeFromString(dict[@"UILaunchImageSize"]))) {
+            
+            return [UIImage imageNamed:dict[@"UILaunchImageName"]];
+        }
+    }
+    
+    NSString *launchImageName = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImageFile"];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        if (UIDeviceOrientationIsPortrait([UIDevice currentDevice].orientation)) {
+            
+            return [UIImage imageNamed:[launchImageName stringByAppendingString:@"-Portrait"]];
+        }
+        
+        if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
+            
+            return [UIImage imageNamed:[launchImageName stringByAppendingString:@"-Landscape"]];
+        }
+    }
+    
+    return [UIImage imageNamed:launchImageName];
 }
 
 @end
