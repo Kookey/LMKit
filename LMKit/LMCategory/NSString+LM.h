@@ -155,6 +155,13 @@
 - (NSString *)lm_trimWhitespaceAll;
 
 /**
+ *  字符串反转
+ *
+ *  @return NSString
+ */
+- (NSString *)lm_reverse;
+
+/**
  *  URLEncode
  *
  *  @return NSString

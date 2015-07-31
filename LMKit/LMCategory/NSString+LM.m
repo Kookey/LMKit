@@ -402,6 +402,24 @@
     return [self stringByReplacingOccurrencesOfString:@" " withString:@""];
 }
 
+#pragma mark 字符串反转
+
+- (NSString *)lm_reverse
+{
+    NSMutableString *reverseString = [[NSMutableString alloc] init];
+    
+    NSInteger charIndex = [self length];
+    
+    while (charIndex > 0) {
+        
+        charIndex--;
+        NSRange subStringRange = NSMakeRange(charIndex, 1);
+        [reverseString appendString:[self substringWithRange:subStringRange]];
+    }
+    
+    return reverseString;
+}
+
 #pragma mark - -.-
 
 #pragma mark URLEncode
