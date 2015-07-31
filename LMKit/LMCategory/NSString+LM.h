@@ -169,6 +169,15 @@
 - (NSString *)lm_reverse;
 
 /**
+ *  是否包含字符串
+ *
+ *  @param aString 目标字符串
+ *
+ *  @return 是/否
+ */
+- (BOOL)lm_containsString:(NSString *)aString;
+
+/**
  *  URLEncode
  *
  *  @return NSString

@@ -427,6 +427,22 @@
     return reverseString;
 }
 
+#pragma mark 是否包含字符串
+
+- (BOOL)lm_containsString:(NSString *)aString
+{
+    NSRange rang = [self rangeOfString:aString];
+    
+    if (rang.location == NSNotFound) {
+        
+        return NO;
+        
+    } else {
+        
+        return YES;
+    }
+}
+
 #pragma mark - -.-
 
 #pragma mark URLEncode
