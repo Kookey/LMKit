@@ -83,6 +83,20 @@
 - (BOOL)lm_validEMail;
 
 /**
+ *  判断IP
+ *
+ *  @return 是/不是
+ */
+- (BOOL)lm_validIPAddress;
+
+/**
+ *  判断汉字
+ *
+ *  @return 是/不是
+ */
+- (BOOL)lm_validChinese;
+
+/**
  *  计算Size
  *
  *  @param font 当前字体

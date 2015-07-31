@@ -323,6 +323,35 @@
     return [self validWithRegex:@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"];
 }
 
+#pragma mark 判断IP
+
+- (BOOL)lm_validIPAddress
+{
+    if ([self validWithRegex:@"^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"]) {
+        
+        NSArray *components = [self componentsSeparatedByString:@"."];
+        
+        for (NSString *s in components) {
+            
+            if (s.integerValue > 255) {
+                
+                return NO;
+            }
+        }
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
+#pragma mark 判断汉字
+
+- (BOOL)lm_validChinese
+{
+    return [self validWithRegex:@"^[\u4e00-\u9fa5]+$"];
+}
+
 #pragma mark - -.-
 
 #pragma mark 计算Size
