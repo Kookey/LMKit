@@ -141,6 +141,13 @@
 - (NSString *)lm_getUserDefaults;
 
 /**
+ *  去掉字符串两端的空白
+ *
+ *  @return NSString
+ */
+- (NSString *)lm_trimWhitespace;
+
+/**
  *  去掉字符串两端的空白和回车字符
  *
  *  @return NSString

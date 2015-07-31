@@ -388,6 +388,13 @@
 
 #pragma mark - -.-
 
+#pragma mark 去掉字符串两端的空白
+
+- (NSString *)lm_trimWhitespace
+{
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
 #pragma mark 去掉字符串两端的空白和回车字符
 
 - (NSString *)lm_trimWhitespaceAndNewline
