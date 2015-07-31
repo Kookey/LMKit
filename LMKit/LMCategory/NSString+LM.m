@@ -443,4 +443,72 @@
     return [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:[NSString stringWithFormat:@"telprompt:%@", self]]];
 }
 
+#pragma mark - pinyin
+
+- (NSString *)lm_pinyinWithPhoneticSymbol
+{
+    NSMutableString *pinyin = [NSMutableString stringWithString:self];
+    
+    CFStringTransform((__bridge CFMutableStringRef)(pinyin), NULL, kCFStringTransformMandarinLatin, NO);
+    
+    return pinyin;
+}
+
+- (NSString *)lm_pinyin
+{
+    NSMutableString *pinyin = [NSMutableString stringWithString:[self lm_pinyinWithPhoneticSymbol]];
+    CFStringTransform((__bridge CFMutableStringRef)(pinyin), NULL, kCFStringTransformStripCombiningMarks, NO);
+    
+    return pinyin;
+}
+
+- (NSArray *)lm_pinyinArray
+{
+    NSArray *array = [[self lm_pinyin] componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    return array;
+}
+
+- (NSString *)lm_pinyinWithoutBlank
+{
+    NSMutableString *string = [NSMutableString stringWithString:@""];
+    
+    for (NSString *str in [self lm_pinyinArray]) {
+        
+        [string appendString:str];
+    }
+    
+    return string;
+}
+
+- (NSArray *)lm_pinyinInitialsArray
+{
+    NSMutableArray *array = [NSMutableArray array];
+    
+    for (NSString *str in [self lm_pinyinArray]) {
+        
+        if ([str length] > 0) {
+            
+            [array addObject:[str substringToIndex:1]];
+        }
+    }
+    
+    return array;
+}
+
+- (NSString *)lm_pinyinInitialsString
+{
+    NSMutableString *pinyin = [NSMutableString stringWithString:@""];
+    
+    for (NSString *str in [self lm_pinyinArray]) {
+        
+        if ([str length] > 0) {
+            
+            [pinyin appendString:[str substringToIndex:1]];
+        }
+    }
+    
+    return pinyin;
+}
+
 @end

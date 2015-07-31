@@ -182,4 +182,48 @@
  */
 - (BOOL)lm_callTelephone;
 
+#pragma mark - pinyin
+
+/**
+ *  中文->zhōng wén
+ *
+ *  @return e.g.@"zhōng wén"
+ */
+- (NSString *)lm_pinyinWithPhoneticSymbol;
+
+/**
+ *  中文->zhong wen
+ *
+ *  @return e.g.@"zhong wen"
+ */
+- (NSString *)lm_pinyin;
+
+/**
+ *  中文->[@"zhong", @"wen"]
+ *
+ *  @return e.g.@[@"zhong", @"wen"]
+ */
+- (NSArray *)lm_pinyinArray;
+
+/**
+ *  中文->zhongwen
+ *
+ *  @return e.g.@"zhongwen"
+ */
+- (NSString *)lm_pinyinWithoutBlank;
+
+/**
+ *  中文->[@"z", @"w"]
+ *
+ *  @return e.g.@[@"z", @"w"]
+ */
+- (NSArray *)lm_pinyinInitialsArray;
+
+/**
+ *  中文->zw
+ *
+ *  @return e.g.@"zw"
+ */
+- (NSString *)lm_pinyinInitialsString;
+
 @end
