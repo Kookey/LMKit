@@ -125,7 +125,6 @@
     
 #if DEBUG
     if (prefix.length) {
-        
         NSLog(@"%@->%f", prefix, elapsedTime);
     } else {
         NSLog(@"elapsedTime->%f", elapsedTime);
