@@ -25,7 +25,7 @@
  *
  *  @param file 文件名
  *  @param key  key
- *  @param AESkey AES密钥
+ *  @param AESkey AES密钥(加密、解密密钥必须一致)
  *
  *  @return 是否成功
  */
@@ -46,7 +46,7 @@
  *
  *  @param file 文件名
  *  @param key  key
- *  @param AESkey AES密钥
+ *  @param AESkey AES密钥(加密、解密密钥必须一致)
  *
  *  @return 自定义对象
  */

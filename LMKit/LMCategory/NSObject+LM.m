@@ -130,7 +130,6 @@
     } else {
         NSLog(@"elapsedTime->%f", elapsedTime);
     }
-    
 #endif
 }
 
