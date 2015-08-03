@@ -31,6 +31,7 @@
 		E409DB231B675F1900CE3C38 /* UITextView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB0F1B675F1900CE3C38 /* UITextView+LM.m */; };
 		E409DB241B675F1900CE3C38 /* UIView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB111B675F1900CE3C38 /* UIView+LM.m */; };
 		E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB131B675F1900CE3C38 /* UIViewController+LM.m */; };
+		E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E42EF1291B6F0EAC007B79C4 /* NSData+LM.m */; };
 		E43FA5951B68A5D2007048F7 /* LMPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5921B68A5D2007048F7 /* LMPlaceholderView.m */; };
 		E43FA5961B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5941B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m */; };
 		E43FA59A1B68AB3B007048F7 /* LMPlaceholderViewVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5991B68AB3B007048F7 /* LMPlaceholderViewVC1.m */; };
@@ -101,6 +102,8 @@
 		E409DB111B675F1900CE3C38 /* UIView+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LM.m"; sourceTree = "<group>"; };
 		E409DB121B675F1900CE3C38 /* UIViewController+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LM.h"; sourceTree = "<group>"; };
 		E409DB131B675F1900CE3C38 /* UIViewController+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LM.m"; sourceTree = "<group>"; };
+		E42EF1281B6F0EAC007B79C4 /* NSData+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LM.h"; sourceTree = "<group>"; };
+		E42EF1291B6F0EAC007B79C4 /* NSData+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+LM.m"; sourceTree = "<group>"; };
 		E43FA5911B68A5D2007048F7 /* LMPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlaceholderView.h; sourceTree = "<group>"; };
 		E43FA5921B68A5D2007048F7 /* LMPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlaceholderView.m; sourceTree = "<group>"; };
 		E43FA5931B68A5D2007048F7 /* UIViewController+LMPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LMPlaceholderView.h"; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				E409DAF11B675F1900CE3C38 /* NSArray+LM.m */,
 				E409DAF21B675F1900CE3C38 /* NSBundle+LM.h */,
 				E409DAF31B675F1900CE3C38 /* NSBundle+LM.m */,
+				E42EF1281B6F0EAC007B79C4 /* NSData+LM.h */,
+				E42EF1291B6F0EAC007B79C4 /* NSData+LM.m */,
 				E409DAF41B675F1900CE3C38 /* NSDate+LM.h */,
 				E409DAF51B675F1900CE3C38 /* NSDate+LM.m */,
 				E409DAF61B675F1900CE3C38 /* NSDictionary+LM.h */,
@@ -442,6 +447,7 @@
 				E409DB1E1B675F1900CE3C38 /* UIImage+LM.m in Sources */,
 				E409DAC71B675C3000CE3C38 /* main.m in Sources */,
 				E43FA5951B68A5D2007048F7 /* LMPlaceholderView.m in Sources */,
+				E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */,
 				E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */,
 				E409DB191B675F1900CE3C38 /* NSString+LM.m in Sources */,
 				E43FA5B01B68D015007048F7 /* LMApplicationTC.m in Sources */,

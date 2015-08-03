@@ -21,6 +21,17 @@
 - (BOOL)lm_archiverDataWriteToFile:(NSString *)file forKey:(NSString *)key;
 
 /**
+ *  自定义对象归档
+ *
+ *  @param file 文件名
+ *  @param key  key
+ *  @param AESkey AES密钥
+ *
+ *  @return 是否成功
+ */
+- (BOOL)lm_archiverDataWriteToFile:(NSString *)file forKey:(NSString *)key AESKey:(NSString *)AESkey;
+
+/**
  *  自定义对象解档
  *
  *  @param file 文件名
@@ -29,6 +40,17 @@
  *  @return 自定义对象
  */
 + (id)lm_unarchiverFile:(NSString *)file decodeObjectForKey:(NSString *)key;
+
+/**
+ *  自定义对象解档
+ *
+ *  @param file 文件名
+ *  @param key  key
+ *  @param AESkey AES密钥
+ *
+ *  @return 自定义对象
+ */
++ (id)lm_unarchiverFile:(NSString *)file decodeObjectForKey:(NSString *)key AESKey:(NSString *)AESkey;
 
 /**
  *  延时执行

@@ -91,6 +91,7 @@ return instance; \
 #pragma mark - -.-
 
 #import "NSString+LM.h"
+#import "NSData+LM.h"
 #import "NSDate+LM.h"
 #import "NSBundle+LM.h"
 #import "NSObject+LM.h"

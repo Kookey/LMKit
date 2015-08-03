@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+LM.h"
+#import "LMKit.h"
 #import <objc/runtime.h>
 
 @implementation NSObject (LM)
@@ -14,6 +15,11 @@
 #pragma mark 自定义对象归档
 
 - (BOOL)lm_archiverDataWriteToFile:(NSString *)file forKey:(NSString *)key
+{
+    return [self lm_archiverDataWriteToFile:file forKey:key AESKey:nil];
+}
+
+- (BOOL)lm_archiverDataWriteToFile:(NSString *)file forKey:(NSString *)key AESKey:(NSString *)AESkey
 {
     NSMutableData *data = [NSMutableData new];
     
@@ -23,12 +29,17 @@
     
     [archiver finishEncoding];
     
-    return [data writeToFile:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:file] atomically:YES];
+    return [AESkey.length ? [data lm_AES256EncryptWithKey:AESkey] : data writeToFile:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:file] atomically:YES];
 }
 
 #pragma mark 自定义对象解档
 
 + (id)lm_unarchiverFile:(NSString *)file decodeObjectForKey:(NSString *)key
+{
+    return [self lm_unarchiverFile:file decodeObjectForKey:key AESKey:nil];
+}
+
++ (id)lm_unarchiverFile:(NSString *)file decodeObjectForKey:(NSString *)key AESKey:(NSString *)AESkey
 {
     NSData *data = [[NSMutableData alloc] initWithContentsOfFile:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:file]];
     
@@ -43,7 +54,7 @@
     
     [unarchiver finishDecoding];
     
-    return archivingData;
+    return AESkey.length ? [archivingData lm_AES256DecryptWithKey:AESkey] : archivingData;
 }
 
 #pragma mark - 延时执行
