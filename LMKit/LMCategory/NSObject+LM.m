@@ -130,8 +130,8 @@
         NSLog(@"elapsedTime->%f", elapsedTime);
     }
 #endif
-    return elapsedTime;
     
+    return elapsedTime;
 }
 
 @end
