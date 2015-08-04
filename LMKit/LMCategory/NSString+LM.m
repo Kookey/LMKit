@@ -472,25 +472,6 @@
     }
 }
 
-#pragma mark 随机汉字
-
-+ (NSString *)lm_randomChinese:(NSUInteger)length
-{
-    NSString *string = @"";
-    
-    for (NSUInteger i = 0; i < length; i++) {
-        
-        NSUInteger randomH = 0xA1 + arc4random() % (0xFE - 0xA1 + 1);
-        NSUInteger randomL = 0xB0 + arc4random() % (0xF7 - 0xB0 + 1);
-        
-        NSUInteger number = (randomH << 8) + randomL;
-        
-        string = [string stringByAppendingString:[[NSString alloc] initWithData:[NSData dataWithBytes:&number length:2] encoding:CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000)]];
-    }
-    
-    return string;
-}
-
 #pragma mark - -.-
 
 #pragma mark URLEncode

@@ -8,7 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
+#define LMRandomChinese(length) [self lm_randomChinese:length]
+
 @interface NSObject (LM)
+
+/**
+ *  随机Integer
+ *
+ *  @param from 包括from
+ *  @param to   包括to
+ *
+ *  @return NSInteger
+ */
+- (NSInteger)lm_randomInteger:(NSInteger)from to:(NSInteger)to;
+
+/**
+ *  随机汉字
+ *
+ *  @param length 长度
+ *
+ *  @return 汉字
+ */
+- (NSString *)lm_randomChinese:(NSUInteger)length;
 
 /**
 *  自定义对象归档
