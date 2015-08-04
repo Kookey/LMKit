@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [UIApplication lm_firstOpenedKey:@"UIApplicationTC" flag:^(BOOL isFirstStart) {
+    [[UIApplication sharedApplication] lm_firstOpenedKey:@"UIApplicationTC" flag:^(BOOL isFirstStart) {
         
         self.isFirstOpenedLabel.text = isFirstStart ? @"首次打开UIApplicationTC" : @"不是首次打开UIApplicationTC";
     }];

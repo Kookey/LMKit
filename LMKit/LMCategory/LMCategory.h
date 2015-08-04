@@ -37,6 +37,8 @@
 #define LMiPhone6 (LMiPhone && LMScreenMax == 667.0)
 #define LMiPhone6Plus (LMiPhone && LMScreenMax == 736.0)
 
+#define LMiOS8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
+
 #pragma mark - -.-
 
 #define LMSingletonInterface(className)           + (instancetype)shared##className;
