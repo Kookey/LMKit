@@ -48,13 +48,22 @@
         return nil;
     }
     
-    NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:AESkey.length ? [data lm_AES256DecryptWithKey:AESkey] : data];
+    @try {
+        NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:AESkey.length ? [data lm_AES256DecryptWithKey:AESkey] : data];
+        
+        id archivingData = [unarchiver decodeObjectForKey:key];
+        
+        [unarchiver finishDecoding];
+        
+        return archivingData;
+    }
+    @catch (NSException *exception) {
+#if DEBUG
+        NSLog(@"Exception: %@", exception);
+#endif
+    }
     
-    id archivingData = [unarchiver decodeObjectForKey:key];
-    
-    [unarchiver finishDecoding];
-    
-    return archivingData;
+    return nil;
 }
 
 #pragma mark - 延时执行
