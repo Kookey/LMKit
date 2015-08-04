@@ -19,6 +19,17 @@
     return (NSInteger)(MIN(from, to) + (arc4random() % (MAX(from, to) - MIN(from, to) + 1)));
 }
 
+#pragma mark 随机大写字母
+
+- (NSString *)lm_randomEnglish:(NSUInteger)length
+{
+    char data[length];
+    
+    for (NSUInteger x = 0; x < length; data[x++] = (char)('A' + (arc4random_uniform(26))));
+    
+    return [[NSString alloc] initWithBytes:data length:length encoding:NSUTF8StringEncoding];
+}
+
 #pragma mark 随机汉字
 
 - (NSString *)lm_randomChinese:(NSUInteger)length

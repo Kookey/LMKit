@@ -23,6 +23,15 @@
 - (NSInteger)lm_randomInteger:(NSInteger)from to:(NSInteger)to;
 
 /**
+ *  随机大写字母
+ *
+ *  @param length 长度
+ *
+ *  @return 字母
+ */
+- (NSString *)lm_randomEnglish:(NSUInteger)length;
+
+/**
  *  随机汉字
  *
  *  @param length 长度
