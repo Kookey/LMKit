@@ -25,6 +25,7 @@
 
 #define LMTrimWhitespaceAndNewline(string) [string lm_trimWhitespaceAndNewline]
 #define LMTrimWhitespaceAll(string) [string lm_trimWhitespaceAll]
+#define LMRandomChinese(length) [NSString lm_randomChinese:length];
 
 #define LMEncode(string) [string lm_encode]
 #define LMDecode(string) [string lm_decode]
@@ -190,6 +191,15 @@
  *  @return 是/否
  */
 - (BOOL)lm_containsString:(NSString *)aString;
+
+/**
+ *  随机汉字
+ *
+ *  @param length 长度
+ *
+ *  @return 汉字
+ */
++ (NSString *)lm_randomChinese:(NSUInteger)length;
 
 /**
  *  URLEncode
