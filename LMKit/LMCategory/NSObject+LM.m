@@ -14,12 +14,12 @@
 
 #pragma mark 自定义对象归档
 
-- (BOOL)lm_archiverDataWriteToFile:(NSString *)file forKey:(NSString *)key
+- (BOOL)lm_archiverDataWriteToFile:(NSString *)path forKey:(NSString *)key
 {
-    return [self lm_archiverDataWriteToFile:file forKey:key AESKey:nil];
+    return [self lm_archiverDataWriteToFile:path forKey:key AESKey:nil];
 }
 
-- (BOOL)lm_archiverDataWriteToFile:(NSString *)file forKey:(NSString *)key AESKey:(NSString *)AESkey
+- (BOOL)lm_archiverDataWriteToFile:(NSString *)path forKey:(NSString *)key AESKey:(NSString *)AESkey
 {
     NSMutableData *data = [NSMutableData new];
     
@@ -29,19 +29,19 @@
     
     [archiver finishEncoding];
     
-    return [AESkey.length ? [data lm_AES256EncryptWithKey:AESkey] : data writeToFile:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:file] atomically:YES];
+    return [AESkey.length ? [data lm_AES256EncryptWithKey:AESkey] : data writeToFile:path atomically:YES];
 }
 
 #pragma mark 自定义对象解档
 
-+ (id)lm_unarchiverFile:(NSString *)file decodeObjectForKey:(NSString *)key
++ (id)lm_unarchiverFile:(NSString *)path decodeObjectForKey:(NSString *)key
 {
-    return [self lm_unarchiverFile:file decodeObjectForKey:key AESKey:nil];
+    return [self lm_unarchiverFile:path decodeObjectForKey:key AESKey:nil];
 }
 
-+ (id)lm_unarchiverFile:(NSString *)file decodeObjectForKey:(NSString *)key AESKey:(NSString *)AESkey
++ (id)lm_unarchiverFile:(NSString *)path decodeObjectForKey:(NSString *)key AESKey:(NSString *)AESkey
 {
-    NSData *data = [[NSMutableData alloc] initWithContentsOfFile:[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:file]];
+    NSData *data = [[NSMutableData alloc] initWithContentsOfFile:path];
     
     if (!data) {
         

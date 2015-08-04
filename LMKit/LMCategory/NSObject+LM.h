@@ -13,44 +13,44 @@
 /**
 *  自定义对象归档
 *
-*  @param file 文件名
+*  @param path 路径
 *  @param key  key
 *
 *  @return 是否成功
 */
-- (BOOL)lm_archiverDataWriteToFile:(NSString *)file forKey:(NSString *)key;
+- (BOOL)lm_archiverDataWriteToFile:(NSString *)path forKey:(NSString *)key;
 
 /**
  *  自定义对象归档
  *
- *  @param file 文件名
+ *  @param path 路径
  *  @param key  key
  *  @param AESkey AES密钥(加密、解密密钥必须一致)
  *
  *  @return 是否成功
  */
-- (BOOL)lm_archiverDataWriteToFile:(NSString *)file forKey:(NSString *)key AESKey:(NSString *)AESkey;
+- (BOOL)lm_archiverDataWriteToFile:(NSString *)path forKey:(NSString *)key AESKey:(NSString *)AESkey;
 
 /**
  *  自定义对象解档
  *
- *  @param file 文件名
+ *  @param path 路径
  *  @param key  key
  *
  *  @return 自定义对象
  */
-+ (id)lm_unarchiverFile:(NSString *)file decodeObjectForKey:(NSString *)key;
++ (id)lm_unarchiverFile:(NSString *)path decodeObjectForKey:(NSString *)key;
 
 /**
  *  自定义对象解档
  *
- *  @param file 文件名
+ *  @param path 路径
  *  @param key  key
  *  @param AESkey AES密钥(加密、解密密钥必须一致)
  *
  *  @return 自定义对象
  */
-+ (id)lm_unarchiverFile:(NSString *)file decodeObjectForKey:(NSString *)key AESKey:(NSString *)AESkey;
++ (id)lm_unarchiverFile:(NSString *)path decodeObjectForKey:(NSString *)key AESKey:(NSString *)AESkey;
 
 /**
  *  延时执行
