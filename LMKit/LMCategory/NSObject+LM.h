@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #define LMRandomChinese(length) [self lm_randomChinese:length]
+#define LMRandomEnglish(length) [self lm_randomEnglish:length]
 
 @interface NSObject (LM)
 
