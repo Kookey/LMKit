@@ -82,6 +82,6 @@
  *  @param block  方法
  *  @param prefix 方法标识
  */
-- (void)lm_logTimeToRunBlock:(void (^)(void))block withPrefix:(NSString *)prefix;
+- (NSTimeInterval)lm_logTimeToRunBlock:(void (^)(void))block withPrefix:(NSString *)prefix;
 
 @end

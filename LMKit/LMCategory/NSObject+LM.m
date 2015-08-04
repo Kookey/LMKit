@@ -112,7 +112,7 @@
 
 #pragma mark 计算需要耗费的时间(秒)
 
-- (void)lm_logTimeToRunBlock:(void (^)(void))block withPrefix:(NSString *)prefix
+- (NSTimeInterval)lm_logTimeToRunBlock:(void (^)(void))block withPrefix:(NSString *)prefix
 {
     NSTimeInterval startTime = CFAbsoluteTimeGetCurrent();
     
@@ -130,6 +130,8 @@
         NSLog(@"elapsedTime->%f", elapsedTime);
     }
 #endif
+    return elapsedTime;
+    
 }
 
 @end
