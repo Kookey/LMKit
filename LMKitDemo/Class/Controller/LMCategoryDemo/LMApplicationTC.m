@@ -26,4 +26,35 @@
     }];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    switch (indexPath.row) {
+        case 1:
+            [self lm_presentAppStoreWithITunesItemIdentifier:414478124 loading:^{
+                
+                LMLog(@"正在跳转到微信");
+                
+            } loaded:^(NSError *error) {
+                
+                if (error) {
+                    LMAlertShow(error.localizedDescription);
+                }
+                
+            } didFinish:^{
+                LMLog(@"取消");
+            }];
+            break;
+        case 2:
+            LMOpenAppStoreDetails(414478124);
+            break;
+        case 3:
+            LMOpenAppStoreReviews(414478124);
+            break;
+        default:
+            break;
+    }
+}
+
 @end
