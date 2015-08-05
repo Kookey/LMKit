@@ -256,4 +256,11 @@ static char PermissionsLocationBlockFailurePropertyKey;
     return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%li", (long)identifier]]];
 }
 
+#pragma mark 跳转到App
+
+- (BOOL)lm_openAppForURLSchemes:(NSString *)schemes
+{
+    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:schemes]];
+}
+
 @end

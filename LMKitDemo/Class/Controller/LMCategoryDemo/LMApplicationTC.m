@@ -52,6 +52,9 @@
         case 3:
             LMOpenAppStoreReviews(414478124);
             break;
+        case 4:
+            LMOpenAppForURLSchemes(@"weixin://");
+            break;
         default:
             break;
     }

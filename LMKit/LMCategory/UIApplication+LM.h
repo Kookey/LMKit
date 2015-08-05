@@ -11,6 +11,7 @@
 #define LMCallTelephone(tel) [[UIApplication sharedApplication] lm_callTelephone:tel]
 #define LMOpenAppStoreDetails(identifier) [[UIApplication sharedApplication] lm_openAppDetailsURLForIdentifier:identifier]
 #define LMOpenAppStoreReviews(identifier) [[UIApplication sharedApplication] lm_openAppReviewsURLForIdentifier:identifier]
+#define LMOpenAppForURLSchemes(schemes) [[UIApplication sharedApplication] lm_openAppForURLSchemes:schemes]
 
 @interface UIApplication (LM)
 
@@ -124,5 +125,14 @@
  *  @return 是否跳转成功
  */
 - (BOOL)lm_openAppReviewsURLForIdentifier:(NSUInteger)identifier;
+
+/**
+ *  跳转到App
+ *
+ *  @param schemes URLSchemes
+ *
+ *  @return 是否跳转成功
+ */
+- (BOOL)lm_openAppForURLSchemes:(NSString *)schemes;
 
 @end
