@@ -42,7 +42,7 @@
 - (NSString *)lm_randomChinese:(NSUInteger)length;
 
 /**
-*  自定义对象归档
+*  自定义对象归档(需要实现<NSCoding>协议)
 *
 *  @param path 路径
 *  @param key  key
@@ -52,7 +52,7 @@
 - (BOOL)lm_archiverDataWriteToFile:(NSString *)path forKey:(NSString *)key;
 
 /**
- *  自定义对象归档
+ *  自定义对象归档(需要实现<NSCoding>协议)
  *
  *  @param path 路径
  *  @param key  key
@@ -63,7 +63,7 @@
 - (BOOL)lm_archiverDataWriteToFile:(NSString *)path forKey:(NSString *)key AESKey:(NSString *)AESkey;
 
 /**
- *  自定义对象解档
+ *  自定义对象解档(需要实现<NSCoding>协议)
  *
  *  @param path 路径
  *  @param key  key
@@ -73,11 +73,11 @@
 + (id)lm_unarchiverFile:(NSString *)path decodeObjectForKey:(NSString *)key;
 
 /**
- *  自定义对象解档
+ *  自定义对象解档(需要实现<NSCoding>协议)
  *
  *  @param path 路径
  *  @param key  key
- *  @param AESkey AES密钥(加密、解密密钥必须一致)
+ *  @param AESkey AES密钥
  *
  *  @return 自定义对象
  */
