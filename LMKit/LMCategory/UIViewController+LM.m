@@ -10,15 +10,19 @@
 #import "LMCategory.h"
 #import <objc/runtime.h>
 
-@interface UIViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@import StoreKit;
+
+@interface UIViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, SKStoreProductViewControllerDelegate>
 
 @property (copy, nonatomic) LMFinishPickingMedia finishPickingMedia;
 
 @property (copy, nonatomic) LMCancelPickingMedia cancelPickingMedia;
 
+@property (copy, nonatomic) LMDidFinishAppStore didFinishAppStore;
+
 @end
 
-static char finishPickingMediaKey, cancelPickingMediaKey;
+static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey;
 
 @implementation UIViewController (LM)
 
@@ -42,6 +46,16 @@ static char finishPickingMediaKey, cancelPickingMediaKey;
 - (LMCancelPickingMedia)cancelPickingMedia {
     
     return objc_getAssociatedObject(self, &cancelPickingMediaKey);
+}
+
+- (void)setDidFinishAppStore:(LMDidFinishAppStore)didFinishAppStore {
+    
+    return objc_setAssociatedObject(self, &didFinishAppStoreKey, didFinishAppStore, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (LMDidFinishAppStore)didFinishAppStore {
+    
+    return objc_getAssociatedObject(self, &didFinishAppStoreKey);
 }
 
 #pragma mark 触摸自动隐藏键盘
@@ -184,6 +198,51 @@ static char finishPickingMediaKey, cancelPickingMediaKey;
             self.cancelPickingMedia();
         }
     }];
+}
+
+#pragma mark - 跳转到SKStoreProductViewController
+
+- (void)lm_presentAppStoreWithITunesItemIdentifier:(NSInteger)itemIdentifier loading:(LMLoadingAppStore)loadingAppStore loaded:(LMLoadedAppStore)loadedAppStore didFinish:(LMDidFinishAppStore)didFinishAppStore
+{
+    SKStoreProductViewController *storeViewController = [[SKStoreProductViewController alloc] init];
+    storeViewController.delegate = self;
+    
+    NSDictionary *parameters = @{SKStoreProductParameterITunesItemIdentifier: @(itemIdentifier), @"at": @"ct"};
+    
+    if (loadingAppStore) {
+
+        loadingAppStore();
+    }
+    
+    if (didFinishAppStore) {
+        
+        self.didFinishAppStore = didFinishAppStore;
+    }
+    
+    [storeViewController loadProductWithParameters:parameters completionBlock:^(BOOL result, NSError* error) {
+        
+        if (loadedAppStore) {
+            
+            loadedAppStore(error);
+        }
+        
+        if (result && !error) {
+            
+            [self presentViewController:storeViewController animated:YES completion:nil];
+        }
+    }];
+}
+
+#pragma mark SKStoreProductViewControllerDelegate
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+    
+    if (self.didFinishAppStore) {
+        
+        self.didFinishAppStore();
+    }
+    
+    [viewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

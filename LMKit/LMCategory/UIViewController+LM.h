@@ -31,6 +31,10 @@ typedef void(^LMTransitionCompletion)();
 typedef void(^LMFinishPickingMedia)(NSDictionary *info);
 typedef void(^LMCancelPickingMedia)();
 
+typedef void(^LMLoadingAppStore)();
+typedef void(^LMLoadedAppStore)(NSError *error);
+typedef void(^LMDidFinishAppStore)();
+
 @protocol LMBackButtonHandlderProtocol <NSObject>
 
 @optional
@@ -73,5 +77,15 @@ typedef void(^LMCancelPickingMedia)();
  *  @return UIImagePickerController
  */
 - (UIImagePickerController *)lm_presentImagePickerControllerWithSourceType:(UIImagePickerControllerSourceType)sourceType allowsEditing:(BOOL)allowsEditing completion:(void (^)(void))completion didFinishPickingMedia:(LMFinishPickingMedia)finish didCancelPickingMediaWithInfo:(LMCancelPickingMedia)cancel;
+
+/**
+ *  跳转到AppStore
+ *
+ *  @param itemIdentifier       应用Identifier
+ *  @param loadingAppStore      加载中回调
+ *  @param loadedAppStore       跳转回调
+  *  @param didFinishAppStore   点击取消回调
+ */
+- (void)lm_presentAppStoreWithITunesItemIdentifier:(NSInteger)itemIdentifier loading:(LMLoadingAppStore)loadingAppStore loaded:(LMLoadedAppStore)loadedAppStore didFinish:(LMDidFinishAppStore)didFinishAppStore;
 
 @end
