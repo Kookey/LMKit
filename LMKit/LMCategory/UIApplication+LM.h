@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#define LMCallTelephone(tel) [[UIApplication sharedApplication] lm_callTelephone:tel]
+#define LMOpenAppStoreDetails(identifier) [[UIApplication sharedApplication] lm_openAppDetailsURLForIdentifier:identifier]
+#define LMOpenAppStoreReviews(identifier) [[UIApplication sharedApplication] lm_openAppReviewsURLForIdentifier:identifier]
+
 @interface UIApplication (LM)
 
 /**
@@ -93,5 +97,32 @@
  *  @param accessDenied  授权失败
  */
 - (void)lm_requestAccessGrantedToLocationWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
+
+/**
+ *  打电话
+ *
+ *  @param tel 电话号码
+ *
+ *  @return 是否拨打成功
+ */
+- (BOOL)lm_callTelephone:(NSString *)tel;
+
+/**
+ *  跳转到appStroe应用详情
+ *
+ *  @param identifier 应用identifier
+ *
+ *  @return 是否跳转成功
+ */
+- (BOOL)lm_openAppDetailsURLForIdentifier:(NSUInteger)identifier;
+
+/**
+ *  跳转到appStroe应用评论
+ *
+ *  @param identifier 应用identifier
+ *
+ *  @return 是否跳转成功
+ */
+- (BOOL)lm_openAppReviewsURLForIdentifier:(NSUInteger)identifier;
 
 @end

@@ -29,8 +29,6 @@
 #define LMEncode(string) [string lm_encode]
 #define LMDecode(string) [string lm_decode]
 
-#define LMCallTelephone(string) [string lm_callTelephone]
-
 @interface NSString (LM)
 
 /**
@@ -218,13 +216,6 @@
  *  @return NSString
  */
 - (NSString *)lm_decode;
-
-/**
- *  打电话
- *
- *  @return 是否拨打成功
- */
-- (BOOL)lm_callTelephone;
 
 #pragma mark - pinyin
 

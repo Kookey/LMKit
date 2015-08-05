@@ -203,7 +203,7 @@ static char PermissionsLocationBlockFailurePropertyKey;
     objc_setAssociatedObject(self, &PermissionsLocationBlockFailurePropertyKey, locationFailureCallbackProperty, OBJC_ASSOCIATION_COPY);
 }
 
-#pragma mark - Location manager delegate
+#pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     
@@ -225,6 +225,35 @@ static char PermissionsLocationBlockFailurePropertyKey;
             self.locationFailureCallbackProperty();
         }
     }
+}
+
+#pragma mark -
+
+#pragma mark 打电话
+
+- (BOOL)lm_callTelephone:(NSString *)tel
+{
+    if (!tel.length) {
+        
+        return FALSE;
+    }
+    
+    return [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:[NSString stringWithFormat:@"telprompt:%@", tel]]];
+}
+
+#pragma mark 跳转到appStroe应用详情
+
+- (BOOL)lm_openAppDetailsURLForIdentifier:(NSUInteger)identifier
+{
+    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%li", (long)identifier]]];
+}
+
+
+#pragma mark 跳转到appStroe应用评论
+
+- (BOOL)lm_openAppReviewsURLForIdentifier:(NSUInteger)identifier
+{
+    return [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%li", (long)identifier]]];
 }
 
 @end

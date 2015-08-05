@@ -519,18 +519,6 @@
 
 #pragma mark - -.-
 
-#pragma mark 打电话
-
-- (BOOL)lm_callTelephone
-{
-    if (!self.length) {
-        
-        return FALSE;
-    }
-    
-    return [[UIApplication sharedApplication] openURL:[[NSURL alloc] initWithString:[NSString stringWithFormat:@"telprompt:%@", self]]];
-}
-
 #pragma mark - pinyin
 
 - (NSString *)lm_pinyinWithPhoneticSymbol
