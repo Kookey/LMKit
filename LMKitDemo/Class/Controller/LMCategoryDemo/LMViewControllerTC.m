@@ -8,6 +8,7 @@
 
 #import "LMViewControllerTC.h"
 #import "LMKit.h"
+#import "SVProgressHUD.h"
 
 @interface LMViewControllerTC ()
 
@@ -42,14 +43,20 @@
                 
                 LMLog(@"正在跳转到微信");
                 
+                [SVProgressHUD showWithStatus:@"正在跳转到微信" maskType:SVProgressHUDMaskTypeClear];
+                
             } loaded:^(NSError *error) {
                 
                 if (error) {
                     LMAlertShow(error.localizedDescription);
                 }
                 
+                [SVProgressHUD dismiss];
+                
             } didFinish:^{
                 LMLog(@"取消");
+                
+                [SVProgressHUD dismiss];
             }];
             break;
     }

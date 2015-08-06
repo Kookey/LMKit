@@ -41,6 +41,9 @@
 		E4B81E011B685B1D0042CAB5 /* LMCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */; };
 		E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */; };
 		E4E0F40E1B7385A2006323C4 /* LMViewControllerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F40D1B7385A2006323C4 /* LMViewControllerTC.m */; };
+		E4E0F4161B73896C006323C4 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F4121B73896C006323C4 /* SVIndefiniteAnimatedView.m */; };
+		E4E0F4171B73896C006323C4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E4E0F4131B73896C006323C4 /* SVProgressHUD.bundle */; };
+		E4E0F4181B73896C006323C4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F4151B73896C006323C4 /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +126,11 @@
 		E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButtonVC.m; sourceTree = "<group>"; };
 		E4E0F40C1B7385A2006323C4 /* LMViewControllerTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMViewControllerTC.h; sourceTree = "<group>"; };
 		E4E0F40D1B7385A2006323C4 /* LMViewControllerTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMViewControllerTC.m; sourceTree = "<group>"; };
+		E4E0F4111B73896C006323C4 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		E4E0F4121B73896C006323C4 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		E4E0F4131B73896C006323C4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		E4E0F4141B73896C006323C4 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		E4E0F4151B73896C006323C4 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B81E481B686F400042CAB5 /* Controller */,
+				E4E0F40F1B73896C006323C4 /* Vendor */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -328,6 +337,26 @@
 				E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */,
 			);
 			path = LMCountDownButtonDemo;
+			sourceTree = "<group>";
+		};
+		E4E0F40F1B73896C006323C4 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E4E0F4101B73896C006323C4 /* SVProgressHUD */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		E4E0F4101B73896C006323C4 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				E4E0F4111B73896C006323C4 /* SVIndefiniteAnimatedView.h */,
+				E4E0F4121B73896C006323C4 /* SVIndefiniteAnimatedView.m */,
+				E4E0F4131B73896C006323C4 /* SVProgressHUD.bundle */,
+				E4E0F4141B73896C006323C4 /* SVProgressHUD.h */,
+				E4E0F4151B73896C006323C4 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +442,7 @@
 				E409DAD01B675C3000CE3C38 /* Main.storyboard in Resources */,
 				E409DAD51B675C3000CE3C38 /* LaunchScreen.xib in Resources */,
 				E409DAD21B675C3000CE3C38 /* Images.xcassets in Resources */,
+				E4E0F4171B73896C006323C4 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,8 +469,10 @@
 				E409DB1D1B675F1900CE3C38 /* UIDevice+LM.m in Sources */,
 				E409DB221B675F1900CE3C38 /* UITextField+LM.m in Sources */,
 				E43FA5961B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m in Sources */,
+				E4E0F4181B73896C006323C4 /* SVProgressHUD.m in Sources */,
 				E43FA5A91B68C6E8007048F7 /* UIApplication+LM.m in Sources */,
 				E409DB161B675F1900CE3C38 /* NSDate+LM.m in Sources */,
+				E4E0F4161B73896C006323C4 /* SVIndefiniteAnimatedView.m in Sources */,
 				E409DB1F1B675F1900CE3C38 /* UIImageView+LM.m in Sources */,
 				E409DB201B675F1900CE3C38 /* UIStoryboard+LM.m in Sources */,
 				E409DB181B675F1900CE3C38 /* NSObject+LM.m in Sources */,
