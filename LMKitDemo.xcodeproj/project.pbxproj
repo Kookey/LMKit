@@ -40,6 +40,7 @@
 		E43FA5B01B68D015007048F7 /* LMApplicationTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5AF1B68D015007048F7 /* LMApplicationTC.m */; };
 		E4B81E011B685B1D0042CAB5 /* LMCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */; };
 		E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */; };
+		E4E0F40E1B7385A2006323C4 /* LMViewControllerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F40D1B7385A2006323C4 /* LMViewControllerTC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,8 @@
 		E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButton.m; sourceTree = "<group>"; };
 		E4B81E4A1B686F6B0042CAB5 /* LMCountDownButtonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCountDownButtonVC.h; sourceTree = "<group>"; };
 		E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButtonVC.m; sourceTree = "<group>"; };
+		E4E0F40C1B7385A2006323C4 /* LMViewControllerTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMViewControllerTC.h; sourceTree = "<group>"; };
+		E4E0F40D1B7385A2006323C4 /* LMViewControllerTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMViewControllerTC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +288,8 @@
 			children = (
 				E43FA5AE1B68D015007048F7 /* LMApplicationTC.h */,
 				E43FA5AF1B68D015007048F7 /* LMApplicationTC.m */,
+				E4E0F40C1B7385A2006323C4 /* LMViewControllerTC.h */,
+				E4E0F40D1B7385A2006323C4 /* LMViewControllerTC.m */,
 			);
 			path = LMCategoryDemo;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 				E409DB211B675F1900CE3C38 /* UITableViewCell+LM.m in Sources */,
 				E409DB1C1B675F1900CE3C38 /* UIColor+LM.m in Sources */,
 				E409DB1E1B675F1900CE3C38 /* UIImage+LM.m in Sources */,
+				E4E0F40E1B7385A2006323C4 /* LMViewControllerTC.m in Sources */,
 				E409DAC71B675C3000CE3C38 /* main.m in Sources */,
 				E43FA5951B68A5D2007048F7 /* LMPlaceholderView.m in Sources */,
 				E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */,

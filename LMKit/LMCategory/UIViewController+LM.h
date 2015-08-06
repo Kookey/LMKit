@@ -84,7 +84,7 @@ typedef void(^LMDidFinishAppStore)();
  *  @param itemIdentifier       应用Identifier
  *  @param loadingAppStore      加载中回调
  *  @param loadedAppStore       跳转回调
-  *  @param didFinishAppStore   点击取消回调
+ *  @param didFinishAppStore    点击取消回调
  */
 - (void)lm_presentAppStoreWithITunesItemIdentifier:(NSInteger)itemIdentifier loading:(LMLoadingAppStore)loadingAppStore loaded:(LMLoadedAppStore)loadedAppStore didFinish:(LMDidFinishAppStore)didFinishAppStore;
 

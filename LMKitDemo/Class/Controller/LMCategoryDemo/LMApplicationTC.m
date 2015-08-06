@@ -54,19 +54,10 @@
     
     switch (indexPath.row) {
         case 1:
-            [self lm_presentAppStoreWithITunesItemIdentifier:414478124 loading:^{
+            if (!LMCallTelephone(@"010-65919155,1379")) {
                 
-                LMLog(@"正在跳转到微信");
-                
-            } loaded:^(NSError *error) {
-                
-                if (error) {
-                    LMAlertShow(error.localizedDescription);
-                }
-                
-            } didFinish:^{
-                LMLog(@"取消");
-            }];
+                LMAlertShow(@"拨打失败");
+            }
             break;
         case 2:
             if (!LMOpenAppStoreDetails(414478124)) {
