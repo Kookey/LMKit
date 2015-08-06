@@ -26,9 +26,29 @@
     }];
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
+    if (indexPath.row == 0) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    } else{
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    }
+    
+    return cell;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (TARGET_IPHONE_SIMULATOR && indexPath.row < 5 && indexPath.row > 0) {
+    
+        LMAlertShow(@"不支持模拟器");
+        
+        return;
+    }
     
     switch (indexPath.row) {
         case 1:
@@ -47,13 +67,69 @@
             }];
             break;
         case 2:
-            LMOpenAppStoreDetails(414478124);
+            if (!LMOpenAppStoreDetails(414478124)) {
+                
+                LMAlertShow(@"跳转失败");
+            }
             break;
         case 3:
-            LMOpenAppStoreReviews(414478124);
+            if (!LMOpenAppStoreReviews(414478124)) {
+                
+                LMAlertShow(@"跳转失败");
+            }
             break;
         case 4:
-            LMOpenAppForURLSchemes(@"weixin://");
+            if (!LMOpenAppForURLSchemes(@"weixin://")) {
+                
+                LMAlertShow(@"跳转失败");
+            }
+            break;
+        case 5:
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToCalendarWithSuccess:^{
+                LMAlertShow(@"授权成功");
+            } andFailure:^{
+                LMAlertShow(@"授权失败");
+            }];
+            break;
+        case 6:
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToContactsWithSuccess:^{
+                LMAlertShow(@"授权成功");
+            } andFailure:^{
+                LMAlertShow(@"授权失败");
+            }];
+            break;
+        case 7:
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToMicrophoneWithSuccess:^{
+                LMAlertShow(@"授权成功");
+            } andFailure:^{
+                LMAlertShow(@"授权失败");
+            }];
+            break;
+        case 8:
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToPhotosWithSuccess:^{
+                LMAlertShow(@"授权成功");
+            } andFailure:^{
+                LMAlertShow(@"授权失败");
+            }];
+            break;
+        case 9:
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToRemindersWithSuccess:^{
+                LMAlertShow(@"授权成功");
+            } andFailure:^{
+                LMAlertShow(@"授权失败");
+            }];
+            break;
+        case 10:
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToMotionWithSuccess:^{
+                LMAlertShow(@"授权成功");
+            }];
+            break;
+        case 11:
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToLocationWithSuccess:^{
+                LMAlertShow(@"授权成功");
+            } andFailure:^{
+                LMAlertShow(@"授权失败");
+            }];
             break;
         default:
             break;
