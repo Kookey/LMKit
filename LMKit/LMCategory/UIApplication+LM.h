@@ -85,7 +85,7 @@
 - (void)lm_requestAccessGrantedToRemindersWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
 
 /**
- *  请求Motion权限
+ *  请求Motion权限(授权失败也可以用)
  *
  *  @param accessGranted 授权成功
  */
