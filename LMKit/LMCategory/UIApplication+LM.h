@@ -100,6 +100,13 @@
 - (void)lm_requestAccessGrantedToLocationWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
 
 /**
+ *  调用定位获取GPS坐标(CLLocation)
+ *
+ *  @param didUpdateLocations 成功回调
+ */
+- (void)lm_locationDidUpdate:(void (^)(NSArray *locations, NSError *error))didUpdateLocations;
+
+/**
  *  打电话
  *
  *  @param tel 电话号码

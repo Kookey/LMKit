@@ -9,6 +9,8 @@
 #import "LMApplicationTC.h"
 #import "LMKit.h"
 
+@import CoreLocation;
+
 @interface LMApplicationTC ()
 
 @property (weak, nonatomic) IBOutlet UILabel *isFirstOpenedLabel;
@@ -129,6 +131,28 @@
                 LMAlertShow(@"授权成功");
             } andFailure:^{
                 LMAlertShow(@"授权失败");
+            }];
+            break;
+        case 12:
+            [[UIApplication sharedApplication] lm_locationDidUpdate:^(NSArray *locations, NSError *error) {
+                
+                if (error) {
+                    
+                    LMAlertShowFormat(@"%@", error);
+                    
+                    return ;
+                }
+                
+                CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+                
+                [geocoder reverseGeocodeLocation:locations.lastObject completionHandler:^(NSArray *placemarks, NSError *error) {
+                    
+                    if (placemarks) {
+                        LMAlertShowFormat(@"%@", placemarks.lastObject);
+                    } else {
+                        LMAlertShowFormat(@"%@", error);
+                    }
+                }];
             }];
             break;
         default:

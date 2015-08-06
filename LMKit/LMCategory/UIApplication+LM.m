@@ -24,18 +24,21 @@
 
 typedef void (^LocationSuccessCallback)();
 typedef void (^LocationFailureCallback)();
+typedef void (^LocationDidUpdateLocationsCallback)();
 
 @interface UIApplication () <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *permissionsLocationManager;
-@property (nonatomic, copy) LocationSuccessCallback locationSuccessCallbackProperty;
-@property (nonatomic, copy) LocationFailureCallback locationFailureCallbackProperty;
+@property (copy, nonatomic) LocationSuccessCallback locationSuccessCallbackProperty;
+@property (copy, nonatomic) LocationFailureCallback locationFailureCallbackProperty;
+@property (copy, nonatomic) LocationDidUpdateLocationsCallback locationDidUpdateLocations;
 
 @end
 
-static char PermissionsLocationManagerPropertyKey;
-static char PermissionsLocationBlockSuccessPropertyKey;
-static char PermissionsLocationBlockFailurePropertyKey;
+static char PermissionsLocationManagerKey;
+static char PermissionsLocationBlockSuccessKey;
+static char PermissionsLocationBlockFailureKey;
+static char LocationDidUpdateLocationsKey;
 
 @implementation UIApplication (LM)
 
@@ -156,51 +159,76 @@ static char PermissionsLocationBlockFailurePropertyKey;
 
 - (void)lm_requestAccessGrantedToLocationWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
 {
-    self.permissionsLocationManager = [[CLLocationManager alloc] init];
-    self.permissionsLocationManager.delegate = self;
+    if (!self.permissionsLocationManager) {
+        
+        self.permissionsLocationManager = [[CLLocationManager alloc] init];
+        self.permissionsLocationManager.delegate = self;
+    }
     
     if (LMiOS8) {
         [self.permissionsLocationManager requestWhenInUseAuthorization];
     } else {
-        
         [self.permissionsLocationManager startUpdatingLocation];
+        self.locationDidUpdateLocations = nil;
     }
     
     self.locationSuccessCallbackProperty = accessGranted;
     self.locationFailureCallbackProperty = accessDenied;
 }
 
+- (void)lm_locationDidUpdate:(void (^)(NSArray *, NSError *))didUpdateLocations
+{
+    if (!self.permissionsLocationManager) {
+        
+        self.permissionsLocationManager = [[CLLocationManager alloc] init];
+        self.permissionsLocationManager.delegate = self;
+    }
+    
+    [self.permissionsLocationManager startUpdatingLocation];
+    
+    self.locationDidUpdateLocations = didUpdateLocations;
+}
 
-#pragma mark -.-
+#pragma mark - -.-
 
 - (CLLocationManager *)permissionsLocationManager {
     
-    return objc_getAssociatedObject(self, &PermissionsLocationManagerPropertyKey);
+    return objc_getAssociatedObject(self, &PermissionsLocationManagerKey);
 }
 
 - (void)setPermissionsLocationManager:(CLLocationManager *)manager {
     
-    objc_setAssociatedObject(self, &PermissionsLocationManagerPropertyKey, manager, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, &PermissionsLocationManagerKey, manager, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (LocationSuccessCallback)locationSuccessCallbackProperty {
     
-    return objc_getAssociatedObject(self, &PermissionsLocationBlockSuccessPropertyKey);
+    return objc_getAssociatedObject(self, &PermissionsLocationBlockSuccessKey);
 }
 
 - (void)setLocationSuccessCallbackProperty:(LocationSuccessCallback)locationCallbackProperty {
     
-    objc_setAssociatedObject(self, &PermissionsLocationBlockSuccessPropertyKey, locationCallbackProperty, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(self, &PermissionsLocationBlockSuccessKey, locationCallbackProperty, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (LocationFailureCallback)locationFailureCallbackProperty {
     
-    return objc_getAssociatedObject(self, &PermissionsLocationBlockFailurePropertyKey);
+    return objc_getAssociatedObject(self, &PermissionsLocationBlockFailureKey);
 }
 
 - (void)setLocationFailureCallbackProperty:(LocationFailureCallback)locationFailureCallbackProperty {
     
-    objc_setAssociatedObject(self, &PermissionsLocationBlockFailurePropertyKey, locationFailureCallbackProperty, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(self, &PermissionsLocationBlockFailureKey, locationFailureCallbackProperty, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (LocationDidUpdateLocationsCallback)locationDidUpdateLocations {
+    
+    return objc_getAssociatedObject(self, &LocationDidUpdateLocationsKey);
+}
+
+- (void)setLocationDidUpdateLocations:(LocationDidUpdateLocationsCallback)locationDidUpdateLocations {
+    
+    objc_setAssociatedObject(self, &LocationDidUpdateLocationsKey, locationDidUpdateLocations, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -233,6 +261,24 @@ static char PermissionsLocationBlockFailurePropertyKey;
             }
         }
     }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    
+    if (self.locationDidUpdateLocations) {
+        
+        self.locationDidUpdateLocations(nil, error);
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    
+    if (locations && self.locationDidUpdateLocations) {
+        
+        self.locationDidUpdateLocations(locations, nil);
+    }
+    
+    [self.permissionsLocationManager stopUpdatingLocation];
 }
 
 #pragma mark -
