@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LMKit"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "Fast Developer App Kit"
   s.homepage     = "https://github.com/limenglook/LMKit"
   s.license      = "MIT"
