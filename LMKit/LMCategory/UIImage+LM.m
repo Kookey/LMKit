@@ -10,6 +10,8 @@
 #import "LMCategory.h"
 #import <objc/runtime.h>
 
+@import CoreImage;
+
 @interface UIImage ()
 
 @property(copy, nonatomic) lm_WriteToSavedPhotosSuccess writeToSavedPhotosSuccess;
@@ -44,19 +46,20 @@ static char writeToSavedPhotosSuccessKey, writeToSavedPhotosErrorKey;
     return objc_getAssociatedObject(self, &writeToSavedPhotosErrorKey);
 }
 
-#pragma mark 将图片大小转为新大小
+#pragma mark 调整图片大小、质量
 
-- (UIImage *)lm_imageToSize:(CGSize)newSize
+- (UIImage *)lm_imageResizeWithSize:(CGSize)size quality:(CGInterpolationQuality)quality
 {
-    UIGraphicsBeginImageContext(newSize);
+    UIImage *resized = nil;
     
-    [self drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-    
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    
+    UIGraphicsBeginImageContext(CGSizeMake(size.width, size.height));
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetInterpolationQuality(context, quality);
+    [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    resized = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    return newImage;
+    return resized;
 }
 
 #pragma mark 将UIColor转为UIImage
@@ -197,6 +200,29 @@ static char writeToSavedPhotosSuccessKey, writeToSavedPhotosErrorKey;
     }
     
     return [UIImage imageNamed:launchImageName];
+}
+
+#pragma mark 创建二维码
+
++ (UIImage *)lm_imageWithQRCode:(NSString *)QRCode
+{
+    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    
+    [filter setDefaults];
+    
+    NSData *data = [QRCode dataUsingEncoding:NSUTF8StringEncoding];
+    [filter setValue:data forKey:@"inputMessage"];
+    
+    CIImage *outputImage = [filter outputImage];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgImage = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    
+    UIImage *image = [UIImage imageWithCGImage:cgImage scale:1.0 orientation:UIImageOrientationUp];
+    
+    CGImageRelease(cgImage);
+
+    return image;
 }
 
 @end

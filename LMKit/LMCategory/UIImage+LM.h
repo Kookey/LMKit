@@ -14,14 +14,15 @@ typedef void(^lm_WriteToSavedPhotosError)(NSError *error);
 @interface UIImage (LM)
 
 /**
- *  将图片大小转为新大小
+ *  调整图片大小、质量
  *
- *  @param newSize 新大小
+ *  @param size    大小
+ *  @param quality 质量
  *
  *  @return UIImage
  */
-- (UIImage *)lm_imageToSize:(CGSize)newSize;
 
+- (UIImage *)lm_imageResizeWithSize:(CGSize)size quality:(CGInterpolationQuality)quality;
 /**
  *  将UIColor转为UIImage
  *
@@ -61,5 +62,14 @@ typedef void(^lm_WriteToSavedPhotosError)(NSError *error);
  *  @return UIImage
  */
 + (UIImage *)lm_launchImage;
+
+/**
+ *  创建二维码
+ *
+ *  @param QRCode 二维码内容
+ *
+ *  @return UIImage
+ */
++ (UIImage *)lm_imageWithQRCode:(NSString *)QRCode;
 
 @end
