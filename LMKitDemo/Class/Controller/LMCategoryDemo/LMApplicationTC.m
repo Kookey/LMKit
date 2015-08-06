@@ -149,26 +149,34 @@
         }
             break;
         case 12:
-            [[UIApplication sharedApplication] lm_locationDidUpdate:^(NSArray *locations, NSError *error) {
+            
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToLocationWithSuccess:^{
                 
-                if (error) {
+                [[UIApplication sharedApplication] lm_locationDidUpdate:^(NSArray *locations, NSError *error) {
                     
-                    LMAlertShowFormat(@"%@", error);
-                    
-                    return ;
-                }
-                
-                CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-                
-                [geocoder reverseGeocodeLocation:locations.lastObject completionHandler:^(NSArray *placemarks, NSError *error) {
-                    
-                    if (placemarks) {
-                        LMAlertShowFormat(@"%@", placemarks.lastObject);
-                    } else {
+                    if (error) {
+                        
                         LMAlertShowFormat(@"%@", error);
+                        
+                        return ;
                     }
+                    
+                    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+                    
+                    [geocoder reverseGeocodeLocation:locations.lastObject completionHandler:^(NSArray *placemarks, NSError *error) {
+                        
+                        if (placemarks) {
+                            LMAlertShowFormat(@"%@", placemarks.lastObject);
+                        } else {
+                            LMAlertShowFormat(@"%@", error);
+                        }
+                    }];
                 }];
+                
+            } andFailure:^{
+                LMAlertShow(@"授权失败");
             }];
+            
             break;
         default:
             break;

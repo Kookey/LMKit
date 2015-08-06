@@ -159,6 +159,32 @@ static char LocationDidUpdateLocationsKey;
 
 - (void)lm_requestAccessGrantedToLocationWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
 {
+    switch ([CLLocationManager authorizationStatus]) {
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+        case kCLAuthorizationStatusAuthorizedAlways:
+            
+            if (accessGranted) {
+
+                accessGranted();
+                
+                return;
+            }
+            
+            break;
+        case kCLAuthorizationStatusDenied:
+
+            if (accessDenied) {
+                
+                accessDenied();
+                
+                return;
+            }
+            
+            break;
+        default:
+            break;
+    }
+    
     if (!self.permissionsLocationManager) {
         
         self.permissionsLocationManager = [[CLLocationManager alloc] init];
