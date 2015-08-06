@@ -13,7 +13,7 @@
 #define LMColorWithHexString(hexString) [UIColor lm_colorWithHexString:hexString]
 #define LMColorWithRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 #define LMColorWithRGB(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f]
-#define LMColorWithRamdom [UIColor lm_colorWithRamdom];
+#define LMRandomColor [UIColor lm_colorWithRamdom];
 
 @interface UIColor (LM)
 

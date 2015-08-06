@@ -27,7 +27,7 @@
     
     [self lm_showPlaceholderInitWithImageName:@"icon_placeholder_network" andTitle:@"网络请求失败\n点击屏幕重新加载" andFrame:CGRectMake(0, 0, LMScreenWidth, LMScreenHeight - 44) andRefresBlock:^{
         
-        self.view.backgroundColor = LMColorWithRamdom;
+        self.view.backgroundColor = LMRandomColor;
         
         [[[UIAlertView alloc] initWithTitle:@"加载成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
         
