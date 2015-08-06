@@ -94,6 +94,11 @@
 /**
  *  请求Location权限(iOS8需要在Info.plist添加NSLocationWhenInUseUsageDescription)
  *
+ *  获取断授权状态[CLLocationManager authorizationStatus]
+ *  kCLAuthorizationStatusNotDetermined -> 第一次授权
+ *  kCLAuthorizationStatusAuthorizedWhenInUse、kCLAuthorizationStatusAuthorizedAlways -> 已授权
+ *  kCLAuthorizationStatusDenied -> 拒绝授权
+ *
  *  @param accessGranted 授权成功
  *  @param accessDenied  授权失败
  */
