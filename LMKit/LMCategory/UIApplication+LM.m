@@ -210,9 +210,13 @@ static char PermissionsLocationBlockFailurePropertyKey;
     if (LMiOS8) {
         
         if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-            self.locationSuccessCallbackProperty();
+            if (self.locationSuccessCallbackProperty) {
+                self.locationSuccessCallbackProperty();
+            }
         } else if (status != kCLAuthorizationStatusNotDetermined) {
-            self.locationFailureCallbackProperty();
+            if (self.locationFailureCallbackProperty) {
+                self.locationFailureCallbackProperty();
+            }
         }
         
     } else {
@@ -220,9 +224,13 @@ static char PermissionsLocationBlockFailurePropertyKey;
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
         if (status == kCLAuthorizationStatusAuthorized) {
 #pragma clang diagnostic pop
-            self.locationSuccessCallbackProperty();
+            if (self.locationSuccessCallbackProperty) {
+                self.locationSuccessCallbackProperty();
+            }
         } else if (status != kCLAuthorizationStatusNotDetermined) {
-            self.locationFailureCallbackProperty();
+            if (self.locationFailureCallbackProperty) {
+                self.locationFailureCallbackProperty();
+            }
         }
     }
 }
