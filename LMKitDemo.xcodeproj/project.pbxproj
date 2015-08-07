@@ -31,6 +31,7 @@
 		E409DB231B675F1900CE3C38 /* UITextView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB0F1B675F1900CE3C38 /* UITextView+LM.m */; };
 		E409DB241B675F1900CE3C38 /* UIView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB111B675F1900CE3C38 /* UIView+LM.m */; };
 		E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB131B675F1900CE3C38 /* UIViewController+LM.m */; };
+		E42A72611B74B1C000B05753 /* LMNavigationShouldPopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A72601B74B1C000B05753 /* LMNavigationShouldPopVC.m */; };
 		E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E42EF1291B6F0EAC007B79C4 /* NSData+LM.m */; };
 		E43FA5951B68A5D2007048F7 /* LMPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5921B68A5D2007048F7 /* LMPlaceholderView.m */; };
 		E43FA5961B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5941B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m */; };
@@ -107,6 +108,8 @@
 		E409DB111B675F1900CE3C38 /* UIView+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LM.m"; sourceTree = "<group>"; };
 		E409DB121B675F1900CE3C38 /* UIViewController+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LM.h"; sourceTree = "<group>"; };
 		E409DB131B675F1900CE3C38 /* UIViewController+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LM.m"; sourceTree = "<group>"; };
+		E42A725F1B74B1C000B05753 /* LMNavigationShouldPopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNavigationShouldPopVC.h; sourceTree = "<group>"; };
+		E42A72601B74B1C000B05753 /* LMNavigationShouldPopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNavigationShouldPopVC.m; sourceTree = "<group>"; };
 		E42EF1281B6F0EAC007B79C4 /* NSData+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LM.h"; sourceTree = "<group>"; };
 		E42EF1291B6F0EAC007B79C4 /* NSData+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+LM.m"; sourceTree = "<group>"; };
 		E43FA5911B68A5D2007048F7 /* LMPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlaceholderView.h; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 				E47298251B7483380084C12D /* LMTransitionVC.m */,
 				E47298201B7482C00084C12D /* LMViewControllerTC.h */,
 				E47298211B7482C00084C12D /* LMViewControllerTC.m */,
+				E42A725F1B74B1C000B05753 /* LMNavigationShouldPopVC.h */,
+				E42A72601B74B1C000B05753 /* LMNavigationShouldPopVC.m */,
 			);
 			path = LMViewController;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E42A72611B74B1C000B05753 /* LMNavigationShouldPopVC.m in Sources */,
 				E409DB151B675F1900CE3C38 /* NSBundle+LM.m in Sources */,
 				E43FA59A1B68AB3B007048F7 /* LMPlaceholderViewVC1.m in Sources */,
 				E409DB171B675F1900CE3C38 /* NSDictionary+LM.m in Sources */,
