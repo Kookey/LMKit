@@ -35,6 +35,8 @@ typedef void(^LMLoadingAppStore)();
 typedef void(^LMLoadedAppStore)(NSError *error);
 typedef void(^LMDidFinishAppStore)();
 
+typedef void (^LMStoryboardSegue) (id sender, UIStoryboardSegue *segue);
+
 @protocol LMBackButtonHandlderProtocol <NSObject>
 
 @optional
@@ -87,5 +89,22 @@ typedef void(^LMDidFinishAppStore)();
  *  @param didFinishAppStore    点击取消回调
  */
 - (void)lm_presentAppStoreWithITunesItemIdentifier:(NSInteger)itemIdentifier loading:(LMLoadingAppStore)loadingAppStore loaded:(LMLoadedAppStore)loadedAppStore didFinish:(LMDidFinishAppStore)didFinishAppStore;
+
+/**
+ *  storyboardSegue连线跳转
+ *
+ *  @param identifier      identifier
+ *  @param storyboardSegue 回调
+ */
+- (void)lm_prepareForSegueWithIdentifier:(NSString *)identifier storyboardSegue:(LMStoryboardSegue)storyboardSegue;
+
+/**
+ *  storyboardSegue代码跳转(回调不能为空)
+ *
+ *  @param identifier      identifier
+ *  @param sender          sender
+ *  @param storyboardSegue 回调
+ */
+- (void)lm_performSegueWithIdentifier:(NSString *)identifier sender:(id)sender storyboardSegue:(LMStoryboardSegue)storyboardSegue;
 
 @end

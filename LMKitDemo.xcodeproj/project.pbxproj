@@ -315,10 +315,10 @@
 		E472981F1B7482C00084C12D /* LMViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E47298201B7482C00084C12D /* LMViewControllerTC.h */,
-				E47298211B7482C00084C12D /* LMViewControllerTC.m */,
 				E47298241B7483380084C12D /* LMTransitionVC.h */,
 				E47298251B7483380084C12D /* LMTransitionVC.m */,
+				E47298201B7482C00084C12D /* LMViewControllerTC.h */,
+				E47298211B7482C00084C12D /* LMViewControllerTC.m */,
 			);
 			path = LMViewController;
 			sourceTree = "<group>";

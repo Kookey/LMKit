@@ -7,6 +7,7 @@
 //
 
 #import "LMTransitionVC.h"
+#import "LMKit.h"
 
 @interface LMTransitionVC ()
 
@@ -25,6 +26,8 @@
 }
 
 - (IBAction)cancel:(id)sender {
+    
+    [self lm_addTransitionType:[self lm_randomInteger:0 to:7] direction:LMTransitionDirectionRight duration:2 completion:nil];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

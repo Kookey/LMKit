@@ -64,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="1615" y="-628"/>
         </scene>
-        <!--View ControllerTC-->
+        <!--UIViewController+LM-->
         <scene sceneID="TKN-b7-hEN">
             <objects>
                 <tableViewController id="FvL-ew-VRO" customClass="LMViewControllerTC" sceneMemberID="viewController">
@@ -242,8 +242,9 @@
                             <outlet property="delegate" destination="FvL-ew-VRO" id="qiV-bu-wxv"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="UIViewController+LM" id="UI4-Jl-v1h"/>
                     <connections>
-                        <segue destination="QMO-kI-xbe" kind="presentation" id="0Tl-xC-fT9"/>
+                        <segue destination="QMO-kI-xbe" kind="presentation" identifier="TransitionVC" id="0Tl-xC-fT9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rN9-Mn-ae9" userLabel="First Responder" sceneMemberID="firstResponder"/>

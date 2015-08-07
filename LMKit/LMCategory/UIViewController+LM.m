@@ -7,7 +7,6 @@
 //
 
 #import "UIViewController+LM.h"
-#import "LMCategory.h"
 #import <objc/runtime.h>
 
 @import StoreKit;
@@ -22,7 +21,7 @@
 
 @end
 
-static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey;
+static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey, segueDictionaryKey;
 
 @implementation UIViewController (LM)
 
@@ -56,6 +55,21 @@ static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey;
 - (LMDidFinishAppStore)didFinishAppStore {
     
     return objc_getAssociatedObject(self, &didFinishAppStoreKey);
+}
+
+- (NSMutableDictionary *)segueDictionary {
+    
+    return objc_getAssociatedObject(self, &segueDictionaryKey);
+}
+
+- (NSMutableDictionary *)setSegueDictionary {
+    
+    if (!self.segueDictionary) {
+        
+        objc_setAssociatedObject(self, &segueDictionaryKey, [NSMutableDictionary dictionary], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    
+    return self.segueDictionary;
 }
 
 #pragma mark 触摸自动隐藏键盘
@@ -169,7 +183,7 @@ static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey;
     [pickController setSourceType:sourceType];
     [pickController setDelegate:self];
     [pickController setAllowsEditing:allowsEditing];
-
+    
     [self presentViewController:pickController animated:YES completion:completion];
     
     self.finishPickingMedia = finishPickingMedia;
@@ -210,7 +224,7 @@ static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey;
     NSDictionary *parameters = @{SKStoreProductParameterITunesItemIdentifier: @(itemIdentifier), @"at": @"ct"};
     
     if (loadingAppStore) {
-
+        
         loadingAppStore();
     }
     
@@ -243,6 +257,78 @@ static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey;
     }
     
     [viewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - StoryboardSegue
+
+- (void)lm_prepareForSegueWithIdentifier:(NSString *)identifier storyboardSegue:(LMStoryboardSegue)storyboardSegue
+{
+    if (!identifier) {
+        
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Segue identifier can not be nil" userInfo:nil];
+    }
+    
+    if (!storyboardSegue) {
+        
+        return ;
+    }
+    
+    NSMutableDictionary *segueDictionary = self.segueDictionary ?: [self setSegueDictionary];
+    
+    [segueDictionary setObject:storyboardSegue forKey:identifier];
+}
+
+- (void)lm_performSegueWithIdentifier:(NSString *)identifier sender:(id)sender storyboardSegue:(LMStoryboardSegue)storyboardSegue
+{
+    if (!identifier) {
+        
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Segue identifier can not be nil" userInfo:nil];
+    }
+    
+    if (!storyboardSegue) {
+        
+#ifdef DEBUG
+        NSLog(@"storyboardSegue can not be nil");
+#endif
+        return ;
+    }
+    
+    [self lm_prepareForSegueWithIdentifier:identifier storyboardSegue:storyboardSegue];
+    
+    [self performSegueWithIdentifier:identifier sender:sender];
+}
+
+- (void)_prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if (!segue.identifier.length) {
+        
+        return;
+    }
+    
+    if (!self.segueDictionary || !self.segueDictionary[segue.identifier]) {
+        
+#ifdef DEBUG
+        NSLog(@"Segue identifier '%@' doesn't exist", segue.identifier);
+#endif
+        return;
+    }
+    
+    LMStoryboardSegue segueBlock = self.segueDictionary[segue.identifier];
+    segueBlock(sender, segue);
+}
+
+__attribute__((constructor))
+void LM(void) {
+    
+    Class currentClass = [UIViewController class];
+    
+    SEL originalSel = @selector(prepareForSegue:sender:);
+    SEL swizzledSel = @selector(_prepareForSegue:sender:);
+    
+    Method originalMethod = class_getInstanceMethod(currentClass, originalSel);
+    IMP swizzledImplementation = class_getMethodImplementation(currentClass, swizzledSel);
+    
+    method_setImplementation(originalMethod, swizzledImplementation);
 }
 
 @end
