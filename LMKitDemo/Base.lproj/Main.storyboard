@@ -244,7 +244,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="UIViewController+LM" id="UI4-Jl-v1h"/>
                     <connections>
-                        <segue destination="QMO-kI-xbe" kind="presentation" identifier="TransitionVC" id="0Tl-xC-fT9"/>
+                        <segue destination="QMO-kI-xbe" kind="presentation" identifier="TransitionVC" animates="NO" id="0Tl-xC-fT9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rN9-Mn-ae9" userLabel="First Responder" sceneMemberID="firstResponder"/>
