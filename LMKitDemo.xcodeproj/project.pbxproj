@@ -37,10 +37,11 @@
 		E43FA59A1B68AB3B007048F7 /* LMPlaceholderViewVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5991B68AB3B007048F7 /* LMPlaceholderViewVC1.m */; };
 		E43FA5A01B68AC1F007048F7 /* LMPlaceholderViewVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA59F1B68AC1F007048F7 /* LMPlaceholderViewVC2.m */; };
 		E43FA5A91B68C6E8007048F7 /* UIApplication+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5A81B68C6E8007048F7 /* UIApplication+LM.m */; };
-		E43FA5B01B68D015007048F7 /* LMApplicationTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5AF1B68D015007048F7 /* LMApplicationTC.m */; };
+		E47298221B7482C00084C12D /* LMApplicationTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E472981E1B7482C00084C12D /* LMApplicationTC.m */; };
+		E47298231B7482C00084C12D /* LMViewControllerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E47298211B7482C00084C12D /* LMViewControllerTC.m */; };
+		E47298261B7483380084C12D /* LMTransitionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E47298251B7483380084C12D /* LMTransitionVC.m */; };
 		E4B81E011B685B1D0042CAB5 /* LMCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */; };
 		E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */; };
-		E4E0F40E1B7385A2006323C4 /* LMViewControllerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F40D1B7385A2006323C4 /* LMViewControllerTC.m */; };
 		E4E0F4161B73896C006323C4 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F4121B73896C006323C4 /* SVIndefiniteAnimatedView.m */; };
 		E4E0F4171B73896C006323C4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E4E0F4131B73896C006323C4 /* SVProgressHUD.bundle */; };
 		E4E0F4181B73896C006323C4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F4151B73896C006323C4 /* SVProgressHUD.m */; };
@@ -118,14 +119,16 @@
 		E43FA59F1B68AC1F007048F7 /* LMPlaceholderViewVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlaceholderViewVC2.m; sourceTree = "<group>"; };
 		E43FA5A71B68C6E8007048F7 /* UIApplication+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+LM.h"; sourceTree = "<group>"; };
 		E43FA5A81B68C6E8007048F7 /* UIApplication+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+LM.m"; sourceTree = "<group>"; };
-		E43FA5AE1B68D015007048F7 /* LMApplicationTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMApplicationTC.h; sourceTree = "<group>"; };
-		E43FA5AF1B68D015007048F7 /* LMApplicationTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMApplicationTC.m; sourceTree = "<group>"; };
+		E472981D1B7482C00084C12D /* LMApplicationTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMApplicationTC.h; sourceTree = "<group>"; };
+		E472981E1B7482C00084C12D /* LMApplicationTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMApplicationTC.m; sourceTree = "<group>"; };
+		E47298201B7482C00084C12D /* LMViewControllerTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMViewControllerTC.h; sourceTree = "<group>"; };
+		E47298211B7482C00084C12D /* LMViewControllerTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMViewControllerTC.m; sourceTree = "<group>"; };
+		E47298241B7483380084C12D /* LMTransitionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMTransitionVC.h; sourceTree = "<group>"; };
+		E47298251B7483380084C12D /* LMTransitionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMTransitionVC.m; sourceTree = "<group>"; };
 		E4B81DFF1B685B1D0042CAB5 /* LMCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCountDownButton.h; sourceTree = "<group>"; };
 		E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButton.m; sourceTree = "<group>"; };
 		E4B81E4A1B686F6B0042CAB5 /* LMCountDownButtonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCountDownButtonVC.h; sourceTree = "<group>"; };
 		E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButtonVC.m; sourceTree = "<group>"; };
-		E4E0F40C1B7385A2006323C4 /* LMViewControllerTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMViewControllerTC.h; sourceTree = "<group>"; };
-		E4E0F40D1B7385A2006323C4 /* LMViewControllerTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMViewControllerTC.m; sourceTree = "<group>"; };
 		E4E0F4111B73896C006323C4 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		E4E0F4121B73896C006323C4 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		E4E0F4131B73896C006323C4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -294,12 +297,30 @@
 		E43FA5AA1B68CA33007048F7 /* LMCategoryDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E43FA5AE1B68D015007048F7 /* LMApplicationTC.h */,
-				E43FA5AF1B68D015007048F7 /* LMApplicationTC.m */,
-				E4E0F40C1B7385A2006323C4 /* LMViewControllerTC.h */,
-				E4E0F40D1B7385A2006323C4 /* LMViewControllerTC.m */,
+				E472981C1B7482C00084C12D /* LMApplication */,
+				E472981F1B7482C00084C12D /* LMViewController */,
 			);
 			path = LMCategoryDemo;
+			sourceTree = "<group>";
+		};
+		E472981C1B7482C00084C12D /* LMApplication */ = {
+			isa = PBXGroup;
+			children = (
+				E472981D1B7482C00084C12D /* LMApplicationTC.h */,
+				E472981E1B7482C00084C12D /* LMApplicationTC.m */,
+			);
+			path = LMApplication;
+			sourceTree = "<group>";
+		};
+		E472981F1B7482C00084C12D /* LMViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E47298201B7482C00084C12D /* LMViewControllerTC.h */,
+				E47298211B7482C00084C12D /* LMViewControllerTC.m */,
+				E47298241B7483380084C12D /* LMTransitionVC.h */,
+				E47298251B7483380084C12D /* LMTransitionVC.m */,
+			);
+			path = LMViewController;
 			sourceTree = "<group>";
 		};
 		E4B81DFE1B685B1D0042CAB5 /* LMCountDownButton */ = {
@@ -473,6 +494,7 @@
 				E43FA5A91B68C6E8007048F7 /* UIApplication+LM.m in Sources */,
 				E409DB161B675F1900CE3C38 /* NSDate+LM.m in Sources */,
 				E4E0F4161B73896C006323C4 /* SVIndefiniteAnimatedView.m in Sources */,
+				E47298221B7482C00084C12D /* LMApplicationTC.m in Sources */,
 				E409DB1F1B675F1900CE3C38 /* UIImageView+LM.m in Sources */,
 				E409DB201B675F1900CE3C38 /* UIStoryboard+LM.m in Sources */,
 				E409DB181B675F1900CE3C38 /* NSObject+LM.m in Sources */,
@@ -482,15 +504,15 @@
 				E409DB211B675F1900CE3C38 /* UITableViewCell+LM.m in Sources */,
 				E409DB1C1B675F1900CE3C38 /* UIColor+LM.m in Sources */,
 				E409DB1E1B675F1900CE3C38 /* UIImage+LM.m in Sources */,
-				E4E0F40E1B7385A2006323C4 /* LMViewControllerTC.m in Sources */,
 				E409DAC71B675C3000CE3C38 /* main.m in Sources */,
 				E43FA5951B68A5D2007048F7 /* LMPlaceholderView.m in Sources */,
 				E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */,
 				E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */,
 				E409DB191B675F1900CE3C38 /* NSString+LM.m in Sources */,
-				E43FA5B01B68D015007048F7 /* LMApplicationTC.m in Sources */,
 				E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */,
+				E47298261B7483380084C12D /* LMTransitionVC.m in Sources */,
 				E409DB231B675F1900CE3C38 /* UITextView+LM.m in Sources */,
+				E47298231B7482C00084C12D /* LMViewControllerTC.m in Sources */,
 				E409DB141B675F1900CE3C38 /* NSArray+LM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

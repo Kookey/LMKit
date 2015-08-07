@@ -242,10 +242,54 @@
                             <outlet property="delegate" destination="FvL-ew-VRO" id="qiV-bu-wxv"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="QMO-kI-xbe" kind="presentation" id="0Tl-xC-fT9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rN9-Mn-ae9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2415" y="-1329"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ngZ-Lj-hwk">
+            <objects>
+                <navigationController id="QMO-kI-xbe" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nzh-aq-qQ1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Mjh-gP-vcZ" kind="relationship" relationship="rootViewController" id="Bko-4Z-NUt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ff-8y-BaO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3141" y="-1329"/>
+        </scene>
+        <!--TransitionVC-->
+        <scene sceneID="QBo-Ep-DKB">
+            <objects>
+                <viewController id="Mjh-gP-vcZ" customClass="LMTransitionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KjA-I8-AbW"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZJu-OM-fvc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QbD-45-97x">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jOc-XU-5qG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="kv9-aA-El5">
+                            <connections>
+                                <action selector="cancel:" destination="Mjh-gP-vcZ" id="rn7-a7-hcw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3N7-il-E9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3891" y="-1329"/>
         </scene>
         <!--UIApplication+LM-->
         <scene sceneID="eTC-Oh-jix">
