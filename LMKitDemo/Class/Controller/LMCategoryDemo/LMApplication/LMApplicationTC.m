@@ -8,6 +8,7 @@
 
 #import "LMApplicationTC.h"
 #import "LMKit.h"
+#import "SVProgressHUD.h"
 
 @import CoreLocation;
 
@@ -140,8 +141,16 @@
         }
             break;
         case 12:
+            if (TARGET_IPHONE_SIMULATOR) {
+                
+                LMAlertShow(@"不支持模拟器");
+                
+                return;
+            }
             
             [[UIApplication sharedApplication] lm_requestAccessGrantedToLocationWithSuccess:^{
+                
+                [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
                 
                 [[UIApplication sharedApplication] lm_locationDidUpdate:^(NSArray *locations, NSError *error) {
                     
@@ -149,12 +158,16 @@
                         
                         LMAlertShowFormat(@"%@", error);
                         
+                        [SVProgressHUD dismiss];
+                        
                         return ;
                     }
                     
                     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
                     
                     [geocoder reverseGeocodeLocation:locations.lastObject completionHandler:^(NSArray *placemarks, NSError *error) {
+                        
+                        [SVProgressHUD dismiss];
                         
                         if (placemarks) {
                             LMAlertShowFormat(@"%@", placemarks.lastObject);
@@ -165,9 +178,12 @@
                 }];
                 
             } andFailure:^{
+                
                 LMAlertShow(@"授权失败");
+                
+                [SVProgressHUD dismiss];
             }];
-            
+
             break;
         default:
             break;
