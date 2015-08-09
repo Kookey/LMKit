@@ -106,6 +106,7 @@ return instance; \
 #import "UIImageView+LM.h"
 #import "UITextField+LM.h"
 #import "UITextView+LM.h"
+#import "UIButton+LM.h"
 #import "UIColor+LM.h"
 #import "UIStoryboard+LM.h"
 #import "UIAlertView+LM.h"

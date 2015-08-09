@@ -50,6 +50,23 @@
                                             <segue destination="FvL-ew-VRO" kind="show" id="XfX-vJ-gP1"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="SOu-pc-GEa" style="IBUITableViewCellStyleDefault" id="rGJ-Qm-dgW">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rGJ-Qm-dgW" id="ytP-a2-lCX">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="UIButton+LM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SOu-pc-GEa">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="lc7-7V-isT" kind="show" id="RHV-TO-qTm"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -742,6 +759,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7NE-22-aDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1615" y="951"/>
+        </scene>
+        <!--LMButton-->
+        <scene sceneID="oGa-67-F2C">
+            <objects>
+                <tableViewController id="lc7-7V-isT" customClass="LMButtonTC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="PY1-rg-bSX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="NUk-ba-9m0">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6rm-NU-Nmx">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6rm-NU-Nmx" id="afC-bM-rJI">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXn-yo-fY0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                                    <state key="normal" title="登录">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="loginAction:" destination="lc7-7V-isT" eventType="touchUpInside" id="bZN-oD-c2i"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qXn-yo-fY0" firstAttribute="leading" secondItem="afC-bM-rJI" secondAttribute="leading" id="4yo-QN-CYf"/>
+                                                <constraint firstAttribute="bottom" secondItem="qXn-yo-fY0" secondAttribute="bottom" id="Ifs-hd-vKW"/>
+                                                <constraint firstAttribute="trailing" secondItem="qXn-yo-fY0" secondAttribute="trailing" id="bhw-4P-qWY"/>
+                                                <constraint firstItem="qXn-yo-fY0" firstAttribute="top" secondItem="afC-bM-rJI" secondAttribute="top" id="ypb-Ij-gl5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="lc7-7V-isT" id="2tY-xy-z5T"/>
+                            <outlet property="delegate" destination="lc7-7V-isT" id="4kC-AM-euz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="LMButton" id="Oj8-0G-GpM"/>
+                    <connections>
+                        <outlet property="loginButton" destination="qXn-yo-fY0" id="4D2-TZ-hf4"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xSn-Wt-nKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3319" y="197"/>
         </scene>
         <!--LMPlaceholderViewVC2-->
         <scene sceneID="4NO-bl-Ipl">
