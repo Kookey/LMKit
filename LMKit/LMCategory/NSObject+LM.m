@@ -156,6 +156,38 @@
     return dict;
 }
 
+#pragma mark - associated
+
+- (id)lm_getAssociatedObject:(SEL)selector
+{
+    return objc_getAssociatedObject(self, selector);
+}
+
+- (void)lm_setAssociated_ASSOCIATION_ASSIGN:(id)object selector:(SEL)selector
+{
+    objc_setAssociatedObject(self, selector, object, OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (void)lm_setAssociated_ASSOCIATION_RETAIN_NONATOMIC:(id)object selector:(SEL)selector
+{
+    objc_setAssociatedObject(self, selector, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)lm_setAssociated_ASSOCIATION_COPY_NONATOMIC:(id)object selector:(SEL)selector
+{
+    objc_setAssociatedObject(self, selector, object, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)lm_setAssociated_ASSOCIATION_RETAIN:(id)object selector:(SEL)selector
+{
+    objc_setAssociatedObject(self, selector, object, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (void)lm_setAssociated_ASSOCIATION_COPY:(id)object selector:(SEL)selector
+{
+    objc_setAssociatedObject(self, selector, object, OBJC_ASSOCIATION_COPY);
+}
+
 #pragma mark 计算需要耗费的时间(秒)
 
 - (NSTimeInterval)lm_logTimeToRunBlock:(void (^)(void))block withPrefix:(NSString *)prefix

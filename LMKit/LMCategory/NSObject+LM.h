@@ -13,6 +13,8 @@
 
 @interface NSObject (LM)
 
+#pragma mark - random
+
 /**
  *  随机Integer
  *
@@ -40,6 +42,8 @@
  *  @return 汉字
  */
 - (NSString *)lm_randomChinese:(NSUInteger)length;
+
+#pragma mark - archiver
 
 /**
 *  自定义对象归档(需要实现<NSCoding>协议)
@@ -83,6 +87,8 @@
  */
 + (id)lm_unarchiverFile:(NSString *)path decodeObjectForKey:(NSString *)key AESKey:(NSString *)AESkey;
 
+#pragma mark - perform
+
 /**
  *  延时执行
  *
@@ -100,12 +106,30 @@
  */
 - (void)lm_performBlock:(void (^)(id arg))block withObject:(id)object afterDelay:(NSTimeInterval)delay;
 
+#pragma mark - Property
+
 /**
  *  对象转为字典
  *
  *  @return NSDictionary(空值忽略)
  */
 - (NSDictionary *)lm_dictionaryProperty;
+
+#pragma mark - associated
+
+- (id)lm_getAssociatedObject:(SEL)selector;
+
+- (void)lm_setAssociated_ASSOCIATION_ASSIGN:(id)object selector:(SEL)selector;
+
+- (void)lm_setAssociated_ASSOCIATION_RETAIN_NONATOMIC:(id)object selector:(SEL)selector;
+
+- (void)lm_setAssociated_ASSOCIATION_COPY_NONATOMIC:(id)object selector:(SEL)selector;
+
+- (void)lm_setAssociated_ASSOCIATION_RETAIN:(id)object selector:(SEL)selector;
+
+- (void)lm_setAssociated_ASSOCIATION_COPY:(id)object selector:(SEL)selector;
+
+#pragma mark - log
 
 /**
  *  计算需要耗费的时间(秒)
