@@ -129,6 +129,24 @@
 
 - (void)lm_setAssociated_ASSOCIATION_COPY:(id)object selector:(SEL)selector;
 
+#pragma mark - swizzle
+
+/**
+ *  交换类方法
+ *
+ *  @param original    原方法
+ *  @param replacement 新方法
+ */
++ (void)lm_swizzle:(SEL)original with:(SEL)replacement;
+
+/**
+ *  交换实例方法
+ *
+ *  @param original    原方法
+ *  @param replacement 新方法
+ */
+- (void)lm_swizzle:(SEL)original with:(SEL)replacement;
+
 #pragma mark - log
 
 /**

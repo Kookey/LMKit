@@ -188,6 +188,33 @@
     objc_setAssociatedObject(self, selector, object, OBJC_ASSOCIATION_COPY);
 }
 
+#pragma mark - swizzle
+
++ (void)lm_swizzle:(SEL)original with:(SEL)replacement
+{
+    [self _swizzle:original with:replacement class:object_getClass([self class])];
+}
+
+- (void)lm_swizzle:(SEL)original with:(SEL)replacement
+{
+    [self _swizzle:original with:replacement class:[self class]];
+}
+
+- (void)_swizzle:(SEL)original with:(SEL)replacement class:(Class)class
+{
+    Method originalMethod = class_getInstanceMethod(class, original);
+    Method replacementMethod = class_getInstanceMethod(class, replacement);
+    
+    if (class_addMethod(class, original, method_getImplementation(replacementMethod), method_getTypeEncoding(replacementMethod))) {
+        
+        class_replaceMethod(class, replacement, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+        
+    } else {
+        
+        method_exchangeImplementations(originalMethod, replacementMethod);
+    }
+}
+
 #pragma mark 计算需要耗费的时间(秒)
 
 - (NSTimeInterval)lm_logTimeToRunBlock:(void (^)(void))block withPrefix:(NSString *)prefix
