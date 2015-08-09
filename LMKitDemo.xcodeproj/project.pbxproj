@@ -33,6 +33,8 @@
 		E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB131B675F1900CE3C38 /* UIViewController+LM.m */; };
 		E42A72611B74B1C000B05753 /* LMNavigationShouldPopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A72601B74B1C000B05753 /* LMNavigationShouldPopVC.m */; };
 		E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E42EF1291B6F0EAC007B79C4 /* NSData+LM.m */; };
+		E43050631B778EC400042368 /* UINavigationItem+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E43050621B778EC400042368 /* UINavigationItem+LM.m */; };
+		E43050671B779B1500042368 /* LMNavigationItemTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E43050661B779B1500042368 /* LMNavigationItemTC.m */; };
 		E43FA5951B68A5D2007048F7 /* LMPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5921B68A5D2007048F7 /* LMPlaceholderView.m */; };
 		E43FA5961B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5941B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m */; };
 		E43FA59A1B68AB3B007048F7 /* LMPlaceholderViewVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5991B68AB3B007048F7 /* LMPlaceholderViewVC1.m */; };
@@ -114,6 +116,10 @@
 		E42A72601B74B1C000B05753 /* LMNavigationShouldPopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNavigationShouldPopVC.m; sourceTree = "<group>"; };
 		E42EF1281B6F0EAC007B79C4 /* NSData+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LM.h"; sourceTree = "<group>"; };
 		E42EF1291B6F0EAC007B79C4 /* NSData+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+LM.m"; sourceTree = "<group>"; };
+		E43050611B778EC400042368 /* UINavigationItem+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+LM.h"; sourceTree = "<group>"; };
+		E43050621B778EC400042368 /* UINavigationItem+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+LM.m"; sourceTree = "<group>"; };
+		E43050651B779B1500042368 /* LMNavigationItemTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNavigationItemTC.h; sourceTree = "<group>"; };
+		E43050661B779B1500042368 /* LMNavigationItemTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNavigationItemTC.m; sourceTree = "<group>"; };
 		E43FA5911B68A5D2007048F7 /* LMPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlaceholderView.h; sourceTree = "<group>"; };
 		E43FA5921B68A5D2007048F7 /* LMPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlaceholderView.m; sourceTree = "<group>"; };
 		E43FA5931B68A5D2007048F7 /* UIViewController+LMPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LMPlaceholderView.h"; sourceTree = "<group>"; };
@@ -267,6 +273,8 @@
 				E409DB051B675F1900CE3C38 /* UIImage+LM.m */,
 				E409DB061B675F1900CE3C38 /* UIImageView+LM.h */,
 				E409DB071B675F1900CE3C38 /* UIImageView+LM.m */,
+				E43050611B778EC400042368 /* UINavigationItem+LM.h */,
+				E43050621B778EC400042368 /* UINavigationItem+LM.m */,
 				E409DB081B675F1900CE3C38 /* UIStoryboard+LM.h */,
 				E409DB091B675F1900CE3C38 /* UIStoryboard+LM.m */,
 				E409DB0A1B675F1900CE3C38 /* UITableViewCell+LM.h */,
@@ -281,6 +289,15 @@
 				E409DB131B675F1900CE3C38 /* UIViewController+LM.m */,
 			);
 			path = LMCategory;
+			sourceTree = "<group>";
+		};
+		E43050641B779AFF00042368 /* LMNavigationItem */ = {
+			isa = PBXGroup;
+			children = (
+				E43050651B779B1500042368 /* LMNavigationItemTC.h */,
+				E43050661B779B1500042368 /* LMNavigationItemTC.m */,
+			);
+			path = LMNavigationItem;
 			sourceTree = "<group>";
 		};
 		E43FA5901B68A5D2007048F7 /* LMPlaceholderView */ = {
@@ -310,6 +327,7 @@
 			children = (
 				E472981C1B7482C00084C12D /* LMApplication */,
 				E46E4E3F1B7756A7006236BD /* LMButton */,
+				E43050641B779AFF00042368 /* LMNavigationItem */,
 				E472981F1B7482C00084C12D /* LMViewController */,
 			);
 			path = LMCategoryDemo;
@@ -512,6 +530,7 @@
 				E409DB1B1B675F1900CE3C38 /* UIAlertView+LM.m in Sources */,
 				E4B81E011B685B1D0042CAB5 /* LMCountDownButton.m in Sources */,
 				E46E4E421B7756DC006236BD /* LMButtonTC.m in Sources */,
+				E43050671B779B1500042368 /* LMNavigationItemTC.m in Sources */,
 				E409DB1D1B675F1900CE3C38 /* UIDevice+LM.m in Sources */,
 				E409DB221B675F1900CE3C38 /* UITextField+LM.m in Sources */,
 				E43FA5961B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m in Sources */,
@@ -536,6 +555,7 @@
 				E409DB191B675F1900CE3C38 /* NSString+LM.m in Sources */,
 				E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */,
 				E47298261B7483380084C12D /* LMTransitionVC.m in Sources */,
+				E43050631B778EC400042368 /* UINavigationItem+LM.m in Sources */,
 				E409DB231B675F1900CE3C38 /* UITextView+LM.m in Sources */,
 				E47298231B7482C00084C12D /* LMViewControllerTC.m in Sources */,
 				E46E4E451B7756F1006236BD /* UIButton+LM.m in Sources */,
