@@ -11,7 +11,8 @@
 #define LMUUIDCreat [UIDevice lm_UUIDCreate]
 #define LMSystemName [UIDevice lm_systemName]
 #define LMSystemVersion [UIDevice lm_systemVersion]
-#define LMDeviceModelName [UIDevice lm_deviceModelName]
+#define LMDeviceMachine [UIDevice lm_deviceMachine]
+#define LMDeviceName [UIDevice lm_deviceName]
 
 @interface UIDevice (LM)
 
@@ -39,8 +40,15 @@
 /**
  *  获取设备型号
  *
+ *  @return (iPhone7,2)
+ */
++ (NSString *)lm_deviceMachine;
+
+/**
+ *  获取设备型号
+ *
  *  @return 设备型号(iPhone 6 Plus)
  */
-+ (NSString *)lm_deviceModelName;
++ (NSString *)lm_deviceName;
 
 @end
