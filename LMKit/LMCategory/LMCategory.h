@@ -114,5 +114,6 @@ return instance; \
 #import "UIApplication+LM.h"
 #import "UIView+LM.h"
 #import "UIViewController+LM.h"
+#import "UIWebView+LM.h"
 
 #endif

@@ -47,6 +47,7 @@
 		E47298261B7483380084C12D /* LMTransitionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E47298251B7483380084C12D /* LMTransitionVC.m */; };
 		E4B81E011B685B1D0042CAB5 /* LMCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */; };
 		E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */; };
+		E4D172491B784EA200744B59 /* UIWebView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D172481B784EA200744B59 /* UIWebView+LM.m */; };
 		E4E0F4161B73896C006323C4 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F4121B73896C006323C4 /* SVIndefiniteAnimatedView.m */; };
 		E4E0F4171B73896C006323C4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E4E0F4131B73896C006323C4 /* SVProgressHUD.bundle */; };
 		E4E0F4181B73896C006323C4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F4151B73896C006323C4 /* SVProgressHUD.m */; };
@@ -144,6 +145,8 @@
 		E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButton.m; sourceTree = "<group>"; };
 		E4B81E4A1B686F6B0042CAB5 /* LMCountDownButtonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCountDownButtonVC.h; sourceTree = "<group>"; };
 		E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButtonVC.m; sourceTree = "<group>"; };
+		E4D172471B784EA200744B59 /* UIWebView+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+LM.h"; sourceTree = "<group>"; };
+		E4D172481B784EA200744B59 /* UIWebView+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+LM.m"; sourceTree = "<group>"; };
 		E4E0F4111B73896C006323C4 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		E4E0F4121B73896C006323C4 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		E4E0F4131B73896C006323C4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -287,6 +290,8 @@
 				E409DB111B675F1900CE3C38 /* UIView+LM.m */,
 				E409DB121B675F1900CE3C38 /* UIViewController+LM.h */,
 				E409DB131B675F1900CE3C38 /* UIViewController+LM.m */,
+				E4D172471B784EA200744B59 /* UIWebView+LM.h */,
+				E4D172481B784EA200744B59 /* UIWebView+LM.m */,
 			);
 			path = LMCategory;
 			sourceTree = "<group>";
@@ -536,6 +541,7 @@
 				E43FA5961B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m in Sources */,
 				E4E0F4181B73896C006323C4 /* SVProgressHUD.m in Sources */,
 				E43FA5A91B68C6E8007048F7 /* UIApplication+LM.m in Sources */,
+				E4D172491B784EA200744B59 /* UIWebView+LM.m in Sources */,
 				E409DB161B675F1900CE3C38 /* NSDate+LM.m in Sources */,
 				E4E0F4161B73896C006323C4 /* SVIndefiniteAnimatedView.m in Sources */,
 				E47298221B7482C00084C12D /* LMApplicationTC.m in Sources */,

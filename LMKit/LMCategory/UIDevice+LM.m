@@ -42,12 +42,16 @@
 
 #pragma mark 获取设备型号
 
-+ (NSString *)lm_deviceModelName
++ (NSString *)lm_deviceMachine
 {
     struct utsname systemInfo;
     uname(&systemInfo);
-    NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     
+    return [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+}
+
++ (NSString *)lm_deviceName
+{
     NSArray *modelArray = @[
                             @"i386", @"x86_64",
                             
@@ -147,7 +151,7 @@
     
     NSInteger modelIndex = - 1;
     NSString *modelNameString = @"";
-    modelIndex = [modelArray indexOfObject:deviceString];
+    modelIndex = [modelArray indexOfObject:[UIDevice lm_deviceMachine]];
     
     if (modelIndex >= 0 && modelIndex < [modelNameArray count]) {
         

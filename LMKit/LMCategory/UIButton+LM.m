@@ -58,11 +58,6 @@
 
 - (void)lm_stopActivityIndicator
 {
-    if (self.enabled) {
-        
-        return;
-    }
-    
     self.enabled = YES;
     
     [self setTitle:self.lm_buttonTitle forState:UIControlStateDisabled];
