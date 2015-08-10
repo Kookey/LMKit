@@ -287,9 +287,8 @@ static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey, 
     
     if (!storyboardSegue) {
         
-#ifdef DEBUG
-        NSLog(@"storyboardSegue can not be nil");
-#endif
+        [self performSegueWithIdentifier:identifier sender:sender];
+        
         return ;
     }
     
@@ -307,9 +306,6 @@ static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey, 
     
     if (!self.segueDictionary || !self.segueDictionary[segue.identifier]) {
         
-#ifdef DEBUG
-        NSLog(@"Segue identifier '%@' doesn't exist", segue.identifier);
-#endif
         return;
     }
     
