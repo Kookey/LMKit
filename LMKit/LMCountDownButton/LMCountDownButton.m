@@ -24,7 +24,7 @@
 
 - (void)lm_startWithTotalSecond:(NSInteger)totalSecond didChange:(DidChange)didChange didFinished:(DidFinished)didFinished
 {
-    [self startWithTotalSecond:totalSecond];
+    [self startWithTotalSecond:totalSecond + 1];
     
     _didChange = didChange;
     _didFinished = didFinished;
