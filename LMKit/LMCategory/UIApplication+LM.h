@@ -69,6 +69,13 @@
 - (void)lm_requestAccessGrantedToMicrophoneWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
 
 /**
+ *  请求Camera权限
+ *
+ *  @param accessGranted 授权成功
+ *  @param accessDenied  授权失败
+ */
+- (void)lm_requestAccessGrantedToCameraWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
+/**
  *  请求Photos权限
  *
  *  @param accessGranted 授权成功

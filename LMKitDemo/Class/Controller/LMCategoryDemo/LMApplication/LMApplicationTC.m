@@ -100,32 +100,39 @@
             }];
             break;
         case 8:
-            [[UIApplication sharedApplication] lm_requestAccessGrantedToPhotosWithSuccess:^{
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToCameraWithSuccess:^{
                 LMAlertShow(@"授权成功");
             } andFailure:^{
                 LMAlertShow(@"授权失败");
             }];
             break;
         case 9:
-            [[UIApplication sharedApplication] lm_requestAccessGrantedToRemindersWithSuccess:^{
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToPhotosWithSuccess:^{
                 LMAlertShow(@"授权成功");
             } andFailure:^{
                 LMAlertShow(@"授权失败");
             }];
             break;
         case 10:
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToRemindersWithSuccess:^{
+                LMAlertShow(@"授权成功");
+            } andFailure:^{
+                LMAlertShow(@"授权失败");
+            }];
+            break;
+        case 11:
             [[UIApplication sharedApplication] lm_requestAccessGrantedToMotionWithSuccess:^{
                 LMAlertShow(@"授权成功");
             }];
             break;
-        case 11:
+        case 12:
             [[UIApplication sharedApplication] lm_requestAccessGrantedToLocationWithSuccess:^{
                 LMAlertShow(@"授权成功");
             } andFailure:^{
                 LMAlertShow(@"授权失败");
             }];
             break;
-        case 12:
+        case 13:
             if (TARGET_IPHONE_SIMULATOR) {
                 
                 LMAlertShow(@"不支持模拟器");

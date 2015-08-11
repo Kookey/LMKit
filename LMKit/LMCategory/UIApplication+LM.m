@@ -209,6 +209,55 @@ static char LocationDidUpdateLocationsKey;
     }];
 }
 
+- (void)lm_requestAccessGrantedToCameraWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
+{
+    switch ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo]) {
+        case ALAuthorizationStatusNotDetermined:
+        {
+            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    if (granted) {
+                        
+                        if (accessGranted) {
+                            
+                            accessGranted();
+                        }
+                        
+                    } else {
+                        
+                        if (accessDenied) {
+                            
+                            accessDenied();
+                        }
+                    }
+                });
+            }];
+        }
+            break;
+        case ALAuthorizationStatusAuthorized:
+        {
+            if (accessGranted) {
+                
+                accessGranted();
+            }
+        }
+            break;
+        case ALAuthorizationStatusDenied:
+        case ALAuthorizationStatusRestricted:
+        {
+            if (accessDenied) {
+                
+                accessDenied();
+            }
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)lm_requestAccessGrantedToPhotosWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
 {
     switch ([ALAssetsLibrary authorizationStatus]) {
