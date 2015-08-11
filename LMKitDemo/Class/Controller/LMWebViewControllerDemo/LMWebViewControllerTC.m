@@ -31,6 +31,7 @@
         LMWebViewController *webVC = [LMWebViewController webViewControllerLoadRequestsURL:@"http://www.baidu.com"];
         webVC.lm_showHtmlTitle = YES;
         webVC.lm_showGoBack = YES;
+        webVC.lm_progressBarTintColor = self.navigationController.navigationBar.tintColor;
         
         [self.navigationController pushViewController:webVC animated:YES];
     }

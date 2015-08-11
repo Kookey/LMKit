@@ -16,6 +16,8 @@
 
 @property (assign, nonatomic) BOOL lm_showGoBack;
 
+@property (strong, nonatomic) UIColor *lm_progressBarTintColor;
+
 + (instancetype)webViewControllerLoadRequestsURL:(NSString *)URLString;
 
 + (instancetype)webViewControllerLoadLocalHtml:(NSString *)htmlName;
