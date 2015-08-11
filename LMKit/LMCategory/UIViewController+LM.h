@@ -35,7 +35,7 @@ typedef void(^LMLoadingAppStore)();
 typedef void(^LMLoadedAppStore)(NSError *error);
 typedef void(^LMDidFinishAppStore)();
 
-typedef void (^LMStoryboardSegue) (id sender, UIStoryboardSegue *segue);
+typedef void (^LMStoryboardSegue) (id sender, UIStoryboardSegue *segue, id destinationViewController);
 
 @protocol LMBackButtonHandlderProtocol <NSObject>
 

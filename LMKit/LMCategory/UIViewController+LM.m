@@ -310,7 +310,7 @@ static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey, 
     }
     
     LMStoryboardSegue segueBlock = self.segueDictionary[segue.identifier];
-    segueBlock(sender, segue);
+    segueBlock(sender, segue, segue.destinationViewController);
 }
 
 __attribute__((constructor))

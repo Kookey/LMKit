@@ -77,9 +77,9 @@
 
 - (void)transition:(LMTransitionType)type
 {
-    [self lm_performSegueWithIdentifier:@"TransitionVC" sender:nil storyboardSegue:^(id sender, UIStoryboardSegue *segue) {
+    [self lm_performSegueWithIdentifier:@"TransitionVC" sender:nil storyboardSegue:^(id sender, UIStoryboardSegue *segue, UINavigationController *destinationViewController) {
 
-        ((UINavigationController *)segue.destinationViewController).topViewController.view.backgroundColor = LMRandomColor;
+        destinationViewController.topViewController.view.backgroundColor = LMRandomColor;
         
         [segue.destinationViewController lm_addTransitionType:type direction:LMTransitionDirectionLeft duration:[self lm_randomInteger:1 to:2] completion:nil];
     }];
