@@ -95,6 +95,27 @@ static char LocationDidUpdateLocationsKey;
 
 - (void)lm_requestAccessGrantedToContactsWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
 {
+    switch (ABAddressBookGetAuthorizationStatus()) {
+        case kABAuthorizationStatusAuthorized:
+        {
+            accessGranted();
+            
+            return;
+        }
+            break;
+            
+        case kABAuthorizationStatusDenied:
+        {
+            accessDenied();
+            
+            return;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
     if(addressBook) {
         ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
