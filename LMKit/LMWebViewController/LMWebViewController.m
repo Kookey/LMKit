@@ -15,6 +15,16 @@
 
 @implementation LMWebViewController
 
++ (instancetype)webViewControllerLoadRequestsURL:(NSString *)URLString {
+    
+    return [[self alloc] initWithRequestsURL:URLString];
+}
+
++ (instancetype)webViewControllerLoadLocalHtml:(NSString *)htmlName {
+    
+    return [[self alloc] initWithRequestsURL:htmlName];
+}
+
 - (UIWebView *)lm_webView {
     
     if (!_lm_webView) {
@@ -29,16 +39,6 @@
     }
     
     return _lm_webView;
-}
-
-+ (instancetype)webViewControllerLoadRequestsURL:(NSString *)URLString {
-    
-    return [[self alloc] initWithRequestsURL:URLString];
-}
-
-+ (instancetype)webViewControllerLoadLocalHtml:(NSString *)htmlName {
-    
-    return [[self alloc] initWithRequestsURL:htmlName];
 }
 
 - (instancetype)initWithRequestsURL:(NSString *)URLString {
@@ -59,6 +59,25 @@
     }
     
     return self;
+}
+
+- (BOOL)lm_navigationShouldPopOnBackButton
+{
+    if (self.lm_showGoBack) {
+        
+        if ([self.lm_webView canGoBack]) {
+            
+            [self.lm_webView goBack];
+            
+        } else {
+            
+            return YES;
+        }
+        
+        return NO;
+    }
+    
+    return YES;
 }
 
 #pragma mark - UIWebViewDelegate

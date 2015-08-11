@@ -14,6 +14,8 @@
 
 @property (assign, nonatomic) BOOL lm_showHtmlTitle;
 
+@property (assign, nonatomic) BOOL lm_showGoBack;
+
 + (instancetype)webViewControllerLoadRequestsURL:(NSString *)URLString;
 
 + (instancetype)webViewControllerLoadLocalHtml:(NSString *)htmlName;

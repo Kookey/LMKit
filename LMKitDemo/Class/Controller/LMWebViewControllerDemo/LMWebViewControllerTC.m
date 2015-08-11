@@ -30,6 +30,7 @@
         
         LMWebViewController *webVC = [LMWebViewController webViewControllerLoadRequestsURL:@"http://www.baidu.com"];
         webVC.lm_showHtmlTitle = YES;
+        webVC.lm_showGoBack = YES;
         
         [self.navigationController pushViewController:webVC animated:YES];
     }
