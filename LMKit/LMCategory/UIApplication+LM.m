@@ -81,64 +81,129 @@ static char LocationDidUpdateLocationsKey;
 
 - (void)lm_requestAccessGrantedToCalendarWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
 {
-    EKEventStore *eventStore = [[EKEventStore alloc] init];
-    [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (granted) {
+    switch ([EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent]) {
+        case EKAuthorizationStatusNotDetermined:
+        {
+            EKEventStore *eventStore = [[EKEventStore alloc] init];
+            
+            [eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    if (granted) {
+                        
+                        if (accessGranted) {
+                            
+                            accessGranted();
+                        }
+                        
+                    } else {
+                        
+                        if (accessDenied) {
+                            
+                            accessDenied();
+                        }
+                    }
+                });
+            }];
+        }
+            break;
+        case EKAuthorizationStatusAuthorized:
+        {
+            if (accessGranted) {
+                
                 accessGranted();
-            } else {
+            }
+        }
+            break;
+        case EKAuthorizationStatusDenied:
+        case EKAuthorizationStatusRestricted:
+        {
+            if (accessDenied) {
+                
                 accessDenied();
             }
-        });
-    }];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)lm_requestAccessGrantedToContactsWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
 {
     switch (ABAddressBookGetAuthorizationStatus()) {
+        case kABAuthorizationStatusNotDetermined:
+        {
+            ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+            
+            if (addressBook) {
+                
+                ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+                    
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        if (granted) {
+                            
+                            if (granted) {
+                                
+                                accessGranted();
+                            }
+                            
+                        } else {
+                            
+                            if (accessDenied) {
+                                
+                                accessDenied();
+                            }
+                        }
+                    });
+                });
+            }
+        }
+            break;
         case kABAuthorizationStatusAuthorized:
         {
-            accessGranted();
-            
-            return;
+            if (accessGranted) {
+                
+                accessGranted();
+            }
         }
             break;
-            
+        case kABAuthorizationStatusRestricted:
         case kABAuthorizationStatusDenied:
         {
-            accessDenied();
-            
-            return;
+            if (accessDenied) {
+                
+                accessDenied();
+            }
         }
             break;
-            
         default:
             break;
-    }
-    
-    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
-    if(addressBook) {
-        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (granted) {
-                    accessGranted();
-                } else {
-                    accessDenied();
-                }
-            });
-        });
     }
 }
 
 - (void)lm_requestAccessGrantedToMicrophoneWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
 {
     AVAudioSession *session = [[AVAudioSession alloc] init];
+    
     [session requestRecordPermission:^(BOOL granted) {
+        
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             if (granted) {
-                accessGranted();
+                
+                if (accessGranted) {
+                    
+                    accessGranted();
+                }
+                
             } else {
-                accessDenied();
+                
+                if (accessDenied) {
+                    
+                    accessDenied();
+                }
             }
         });
     }];
@@ -146,34 +211,110 @@ static char LocationDidUpdateLocationsKey;
 
 - (void)lm_requestAccessGrantedToPhotosWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
 {
-    ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
-    [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-        accessGranted();
-    } failureBlock:^(NSError *error) {
-        accessDenied();
-    }];
+    switch ([ALAssetsLibrary authorizationStatus]) {
+        case ALAuthorizationStatusNotDetermined:
+        {
+            ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
+            
+            [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupAlbum usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+                
+                if (accessGranted) {
+                    
+                    accessGranted();
+                }
+                
+            } failureBlock:^(NSError *error) {
+                
+                if (accessDenied) {
+
+                    accessDenied();
+                }
+            }];
+        }
+            break;
+        case ALAuthorizationStatusAuthorized:
+        {
+            if (accessGranted) {
+                
+                accessGranted();
+            }
+        }
+            break;
+        case ALAuthorizationStatusDenied:
+        case ALAuthorizationStatusRestricted:
+        {
+            if (accessDenied) {
+                
+                accessDenied();
+            }
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)lm_requestAccessGrantedToRemindersWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
 {
-    EKEventStore *eventStore = [[EKEventStore alloc] init];
-    [eventStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (granted) {
+    switch ([EKEventStore authorizationStatusForEntityType:EKEntityTypeReminder]) {
+        case EKAuthorizationStatusNotDetermined:
+        {
+            EKEventStore *eventStore = [[EKEventStore alloc] init];
+            
+            [eventStore requestAccessToEntityType:EKEntityTypeReminder completion:^(BOOL granted, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    if (granted) {
+                        
+                        if (accessGranted) {
+                            
+                            accessGranted();
+                        }
+                        
+                    } else {
+                        
+                        if (accessDenied) {
+                            
+                            accessDenied();
+                        }
+                    }
+                });
+            }];
+        }
+            break;
+        case EKAuthorizationStatusAuthorized:
+        {
+            if (accessGranted) {
+                
                 accessGranted();
-            } else {
+            }
+        }
+            break;
+        case EKAuthorizationStatusDenied:
+        case EKAuthorizationStatusRestricted:
+        {
+            if (accessDenied) {
+                
                 accessDenied();
             }
-        });
-    }];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)lm_requestAccessGrantedToMotionWithSuccess:(void(^)())accessGranted
 {
     CMMotionActivityManager *motionManager = [[CMMotionActivityManager alloc] init];
-    NSOperationQueue *motionQueue = [[NSOperationQueue alloc] init];
-    [motionManager startActivityUpdatesToQueue:motionQueue withHandler:^(CMMotionActivity *activity) {
-        accessGranted();
+    
+    [motionManager startActivityUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMMotionActivity *activity) {
+        
+        if (accessGranted) {
+            
+            accessGranted();
+        }
+        
         [motionManager stopActivityUpdates];
     }];
 }
@@ -181,46 +322,46 @@ static char LocationDidUpdateLocationsKey;
 - (void)lm_requestAccessGrantedToLocationWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied
 {
     switch ([CLLocationManager authorizationStatus]) {
-        case kCLAuthorizationStatusAuthorizedWhenInUse:
-        case kCLAuthorizationStatusAuthorizedAlways:
-            
-            if (accessGranted) {
-
-                accessGranted();
+        case kCLAuthorizationStatusNotDetermined:
+        {
+            if (!self.permissionsLocationManager) {
                 
-                return;
+                self.permissionsLocationManager = [[CLLocationManager alloc] init];
+                self.permissionsLocationManager.delegate = self;
             }
             
+            if (LMiOS8) {
+                [self.permissionsLocationManager requestWhenInUseAuthorization];
+            } else {
+                [self.permissionsLocationManager startUpdatingLocation];
+                self.locationDidUpdateLocations = nil;
+            }
+            
+            self.locationSuccessCallbackProperty = accessGranted;
+            self.locationFailureCallbackProperty = accessDenied;
+        }
             break;
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+        case kCLAuthorizationStatusAuthorizedAlways:
+        {
+            if (accessGranted) {
+                
+                accessGranted();
+            }
+        }
+            break;
+        case kCLAuthorizationStatusRestricted:
         case kCLAuthorizationStatusDenied:
-
+        {
             if (accessDenied) {
                 
                 accessDenied();
-                
-                return;
             }
-            
+        }
             break;
         default:
             break;
     }
-    
-    if (!self.permissionsLocationManager) {
-        
-        self.permissionsLocationManager = [[CLLocationManager alloc] init];
-        self.permissionsLocationManager.delegate = self;
-    }
-    
-    if (LMiOS8) {
-        [self.permissionsLocationManager requestWhenInUseAuthorization];
-    } else {
-        [self.permissionsLocationManager startUpdatingLocation];
-        self.locationDidUpdateLocations = nil;
-    }
-    
-    self.locationSuccessCallbackProperty = accessGranted;
-    self.locationFailureCallbackProperty = accessDenied;
 }
 
 - (void)lm_locationDidUpdate:(void (^)(NSArray *, NSError *))didUpdateLocations

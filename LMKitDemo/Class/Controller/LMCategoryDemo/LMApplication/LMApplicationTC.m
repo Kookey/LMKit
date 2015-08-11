@@ -119,26 +119,11 @@
             }];
             break;
         case 11:
-        {
-            switch ([CLLocationManager authorizationStatus]) {
-                case kCLAuthorizationStatusNotDetermined:
-                    [[UIApplication sharedApplication] lm_requestAccessGrantedToLocationWithSuccess:^{
-                        LMAlertShow(@"授权成功");
-                    } andFailure:^{
-                        LMAlertShow(@"授权失败");
-                    }];
-                    break;
-                case kCLAuthorizationStatusAuthorizedWhenInUse:
-                case kCLAuthorizationStatusAuthorizedAlways:
-                    LMAlertShow(@"已经授权");
-                    break;
-                case kCLAuthorizationStatusDenied:
-                    LMAlertShow(@"授权被拒绝了，在设置->隐私中打开");
-                    break;
-                default:
-                    break;
-            }   
-        }
+            [[UIApplication sharedApplication] lm_requestAccessGrantedToLocationWithSuccess:^{
+                LMAlertShow(@"授权成功");
+            } andFailure:^{
+                LMAlertShow(@"授权失败");
+            }];
             break;
         case 12:
             if (TARGET_IPHONE_SIMULATOR) {
