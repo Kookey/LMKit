@@ -107,4 +107,11 @@ typedef void (^LMStoryboardSegue) (id sender, UIStoryboardSegue *segue, id desti
  */
 - (void)lm_performSegueWithIdentifier:(NSString *)identifier sender:(id)sender storyboardSegue:(LMStoryboardSegue)storyboardSegue;
 
+/**
+ *  当前ViewController
+ *
+ *  @return UIViewController
+ */
++ (UIViewController *)lm_currentViewController;
+
 @end
