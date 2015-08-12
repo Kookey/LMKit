@@ -14,10 +14,14 @@
 #define LMAlertShow(title) [UIAlertView lm_showAlertViewWithTitle:title]
 #define LMAlertShowCancel(cancelTitle,title) [UIAlertView lm_showAlertViewWithTitle:title cancelButtonTitle:cancelTitle]
 
+typedef void(^LMAlertHandler)(UIAlertView *alertView, NSInteger buttonIndex);
+
 @interface UIAlertView (LM)
 
 + (void)lm_showAlertViewWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle;
 
 + (void)lm_showAlertViewWithTitle:(NSString *)title;
+
++ (void)lm_showAlertViewWithTitle:(NSString *)title message:(NSString *)message cancelButtonName:(NSString *)cancelButtonName otherButtonTitles:(NSArray *)otherButtonTitles handler:(LMAlertHandler)block;
 
 @end
