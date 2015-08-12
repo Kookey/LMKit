@@ -99,7 +99,7 @@ typedef void (^LMStoryboardSegue) (id sender, UIStoryboardSegue *segue, id desti
 - (void)lm_prepareForSegueWithIdentifier:(NSString *)identifier storyboardSegue:(LMStoryboardSegue)storyboardSegue;
 
 /**
- *  storyboardSegue代码跳转(回调不能为空)
+ *  storyboardSegue代码跳转
  *
  *  @param identifier      identifier
  *  @param sender          sender
