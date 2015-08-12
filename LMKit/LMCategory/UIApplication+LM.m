@@ -26,7 +26,7 @@ typedef void (^LocationSuccessCallback)();
 typedef void (^LocationFailureCallback)();
 typedef void (^LocationDidUpdateLocationsCallback)();
 
-@interface UIApplication () <CLLocationManagerDelegate>
+@interface UIApplication () <CLLocationManagerDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) CLLocationManager *permissionsLocationManager;
 @property (copy, nonatomic) LocationSuccessCallback locationSuccessCallbackProperty;
@@ -426,6 +426,20 @@ static char LocationDidUpdateLocationsKey;
     self.locationDidUpdateLocations = didUpdateLocations;
 }
 
+- (void)lm_showGrantedAccessDeniedWithType:(NSString *)type title:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle
+{
+    if (LMiOS8) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"请进入系统\"设置\">\"隐私\">\"%@\"中打开开关", type] delegate:self cancelButtonTitle:cancelButtonTitle ? cancelButtonTitle : @"确定" otherButtonTitles:@"设置", nil];
+        [alertView show];
+        
+    } else {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"请进入系统\"设置\">\"隐私\">\"%@\"中打开开关", type] delegate:self cancelButtonTitle:cancelButtonTitle ? cancelButtonTitle : @"确定" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
 #pragma mark - -.-
 
 - (CLLocationManager *)permissionsLocationManager {
@@ -516,6 +530,16 @@ static char LocationDidUpdateLocationsKey;
     }
     
     [self.permissionsLocationManager stopUpdatingLocation];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    }
 }
 
 #pragma mark -

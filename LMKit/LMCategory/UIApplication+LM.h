@@ -13,6 +13,8 @@
 #define LMOpenAppStoreReviews(identifier) [[UIApplication sharedApplication] lm_openAppReviewsURLForIdentifier:identifier]
 #define LMOpenAppForURLSchemes(schemes) [[UIApplication sharedApplication] lm_openAppForURLSchemes:schemes]
 
+#define LMShowGrantedAccessDenied(type, alertTitle, cancelTitle) [[UIApplication sharedApplication] lm_showGrantedAccessDeniedWithType:type title:alertTitle cancelButtonTitle:cancelTitle]
+
 @interface UIApplication (LM)
 
 /**
@@ -110,6 +112,15 @@
  *  @param accessDenied  授权失败
  */
 - (void)lm_requestAccessGrantedToLocationWithSuccess:(void(^)())accessGranted andFailure:(void(^)())accessDenied;
+
+/**
+ *  授权失败提醒
+ *
+ *  @param type              授权类型(e.g.通讯录)
+ *  @param title             title
+ *  @param cancelButtonTitle cancelButtonTitle
+ */
+- (void)lm_showGrantedAccessDeniedWithType:(NSString *)type title:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle;
 
 /**
  *  调用定位获取GPS坐标(CLLocation)
