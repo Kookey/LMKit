@@ -472,6 +472,31 @@
     }
 }
 
+- (NSString *)lm_joinSeparatedByString:(NSString *)separatedString otherStrings:(NSString *)otherStrings, ...NS_REQUIRES_NIL_TERMINATION;
+{
+    NSMutableString *mutableString = [NSMutableString stringWithString:self];
+    
+    va_list args;
+    
+    if (otherStrings) {
+        
+        separatedString.length ? [mutableString appendFormat:@"%@%@", separatedString, otherStrings] : [mutableString appendString:otherStrings];
+        
+        va_start(args, otherStrings);
+        
+        NSString *other;
+        
+        while ((other = va_arg(args, NSString *))) {
+            
+            separatedString.length ? [mutableString appendFormat:@"%@%@", separatedString, other] : [mutableString appendString:other];
+        }
+        
+        va_end(args);
+    }
+    
+    return mutableString;
+}
+
 #pragma mark - -.-
 
 #pragma mark URLEncode

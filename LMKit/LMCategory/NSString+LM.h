@@ -190,6 +190,16 @@
 - (BOOL)lm_containsString:(NSString *)aString;
 
 /**
+ *  字符串拼接
+ *
+ *  @param separatedString 分割符
+ *  @param string          目标字符串
+ *
+ *  @return NSString
+ */
+- (NSString *)lm_joinSeparatedByString:(NSString *)separatedString otherStrings:(NSString *)otherStrings, ...NS_REQUIRES_NIL_TERMINATION;
+
+/**
  *  URLEncode
  *
  *  @return NSString
