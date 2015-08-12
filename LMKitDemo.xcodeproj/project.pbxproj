@@ -45,8 +45,8 @@
 		E47298221B7482C00084C12D /* LMApplicationTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E472981E1B7482C00084C12D /* LMApplicationTC.m */; };
 		E47298231B7482C00084C12D /* LMViewControllerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E47298211B7482C00084C12D /* LMViewControllerTC.m */; };
 		E47298261B7483380084C12D /* LMTransitionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E47298251B7483380084C12D /* LMTransitionVC.m */; };
-		E49144FE1B79C9BD0074346D /* LMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49144FD1B79C9BD0074346D /* LMWebViewController.m */; };
 		E49145061B79D1E40074346D /* LMWebViewControllerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E49145051B79D1E40074346D /* LMWebViewControllerTC.m */; };
+		E4955A221B7ACBE300F5513C /* LMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4955A211B7ACBE300F5513C /* LMWebViewController.m */; };
 		E4B81E011B685B1D0042CAB5 /* LMCountDownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */; };
 		E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B81E4B1B686F6B0042CAB5 /* LMCountDownButtonVC.m */; };
 		E4D172491B784EA200744B59 /* UIWebView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D172481B784EA200744B59 /* UIWebView+LM.m */; };
@@ -143,10 +143,10 @@
 		E47298211B7482C00084C12D /* LMViewControllerTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMViewControllerTC.m; sourceTree = "<group>"; };
 		E47298241B7483380084C12D /* LMTransitionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMTransitionVC.h; sourceTree = "<group>"; };
 		E47298251B7483380084C12D /* LMTransitionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMTransitionVC.m; sourceTree = "<group>"; };
-		E49144FC1B79C9BD0074346D /* LMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMWebViewController.h; sourceTree = "<group>"; };
-		E49144FD1B79C9BD0074346D /* LMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMWebViewController.m; sourceTree = "<group>"; };
 		E49145041B79D1E40074346D /* LMWebViewControllerTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMWebViewControllerTC.h; sourceTree = "<group>"; };
 		E49145051B79D1E40074346D /* LMWebViewControllerTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMWebViewControllerTC.m; sourceTree = "<group>"; };
+		E4955A201B7ACBE300F5513C /* LMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMWebViewController.h; sourceTree = "<group>"; };
+		E4955A211B7ACBE300F5513C /* LMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMWebViewController.m; sourceTree = "<group>"; };
 		E4B81DFF1B685B1D0042CAB5 /* LMCountDownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCountDownButton.h; sourceTree = "<group>"; };
 		E4B81E001B685B1D0042CAB5 /* LMCountDownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMCountDownButton.m; sourceTree = "<group>"; };
 		E4B81E4A1B686F6B0042CAB5 /* LMCountDownButtonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMCountDownButtonVC.h; sourceTree = "<group>"; };
@@ -182,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				E409DAEA1B675DBF00CE3C38 /* LMKit */,
-				E49144FB1B79C9980074346D /* LMWebViewController */,
 				E409DAC31B675C3000CE3C38 /* LMKitDemo */,
 				E409DADD1B675C3000CE3C38 /* LMKitDemoTests */,
 				E409DAC21B675C3000CE3C38 /* Products */,
@@ -245,6 +244,7 @@
 				E409DAED1B675EAD00CE3C38 /* LMCategory */,
 				E4B81DFE1B685B1D0042CAB5 /* LMCountDownButton */,
 				E43FA5901B68A5D2007048F7 /* LMPlaceholderView */,
+				E4955A1F1B7ACBE300F5513C /* LMWebViewController */,
 			);
 			path = LMKit;
 			sourceTree = "<group>";
@@ -376,16 +376,6 @@
 			path = LMViewController;
 			sourceTree = "<group>";
 		};
-		E49144FB1B79C9980074346D /* LMWebViewController */ = {
-			isa = PBXGroup;
-			children = (
-				E49144FC1B79C9BD0074346D /* LMWebViewController.h */,
-				E49144FD1B79C9BD0074346D /* LMWebViewController.m */,
-			);
-			name = LMWebViewController;
-			path = LMKit/LMWebViewController;
-			sourceTree = "<group>";
-		};
 		E49145031B79D1C00074346D /* LMWebViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +383,15 @@
 				E49145051B79D1E40074346D /* LMWebViewControllerTC.m */,
 			);
 			path = LMWebViewControllerDemo;
+			sourceTree = "<group>";
+		};
+		E4955A1F1B7ACBE300F5513C /* LMWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E4955A201B7ACBE300F5513C /* LMWebViewController.h */,
+				E4955A211B7ACBE300F5513C /* LMWebViewController.m */,
+			);
+			path = LMWebViewController;
 			sourceTree = "<group>";
 		};
 		E4B81DFE1B685B1D0042CAB5 /* LMCountDownButton */ = {
@@ -554,6 +553,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4955A221B7ACBE300F5513C /* LMWebViewController.m in Sources */,
 				E42A72611B74B1C000B05753 /* LMNavigationShouldPopVC.m in Sources */,
 				E409DB151B675F1900CE3C38 /* NSBundle+LM.m in Sources */,
 				E43FA59A1B68AB3B007048F7 /* LMPlaceholderViewVC1.m in Sources */,
@@ -585,7 +585,6 @@
 				E409DAC71B675C3000CE3C38 /* main.m in Sources */,
 				E43FA5951B68A5D2007048F7 /* LMPlaceholderView.m in Sources */,
 				E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */,
-				E49144FE1B79C9BD0074346D /* LMWebViewController.m in Sources */,
 				E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */,
 				E409DB191B675F1900CE3C38 /* NSString+LM.m in Sources */,
 				E4B81E4C1B686F6B0042CAB5 /* LMCountDownButtonVC.m in Sources */,
