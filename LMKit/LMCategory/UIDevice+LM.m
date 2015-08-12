@@ -161,4 +161,11 @@
     return modelNameString;
 }
 
+#pragma mark - 是否有摄像头
+
++ (BOOL)lm_availableCamera
+{
+    return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
+}
+
 @end

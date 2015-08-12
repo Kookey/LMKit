@@ -13,6 +13,7 @@
 #define LMSystemVersion [UIDevice lm_systemVersion]
 #define LMDeviceMachine [UIDevice lm_deviceMachine]
 #define LMDeviceName [UIDevice lm_deviceName]
+#define LMAvailableCamera [UIDevice lm_availableCamera]
 
 @interface UIDevice (LM)
 
@@ -50,5 +51,12 @@
  *  @return 设备型号(iPhone 6 Plus)
  */
 + (NSString *)lm_deviceName;
+
+/**
+ *  是否有摄像头
+ *
+ *  @return 可以/不可以
+ */
++ (BOOL)lm_availableCamera;
 
 @end

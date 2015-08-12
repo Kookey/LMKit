@@ -41,7 +41,7 @@
 
 #pragma mark - -.-
 
-#define LMSingletonInterface(className)           + (instancetype)shared##className;
+#define LMSingletonInterface(className) + (instancetype)shared##className;
 
 #if __has_feature(objc_arc)
 #define LMSingletonImplementation(className) \
