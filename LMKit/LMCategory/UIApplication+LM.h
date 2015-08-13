@@ -13,7 +13,7 @@
 #define LMOpenAppStoreReviews(identifier) [[UIApplication sharedApplication] lm_openAppReviewsURLForIdentifier:identifier]
 #define LMOpenAppForURLSchemes(schemes) [[UIApplication sharedApplication] lm_openAppForURLSchemes:schemes]
 
-#define LMShowGrantedAccessDenied(type, alertTitle, cancelTitle) [[UIApplication sharedApplication] lm_showGrantedAccessDeniedWithType:type title:alertTitle cancelButtonTitle:cancelTitle]
+#define LMAlertShowGrantedAccessDenied(type, alertTitle, cancelTitle) [[UIApplication sharedApplication] lm_showGrantedAccessDeniedWithType:type title:alertTitle cancelButtonTitle:cancelTitle]
 
 @interface UIApplication (LM)
 

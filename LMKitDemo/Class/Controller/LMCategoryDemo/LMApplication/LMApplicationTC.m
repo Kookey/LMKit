@@ -89,7 +89,7 @@
             [[UIApplication sharedApplication] lm_requestAccessGrantedToContactsWithSuccess:^{
                 LMAlertShow(@"授权成功");
             } andFailure:^{
-                LMShowGrantedAccessDenied(@"通讯录", nil, nil);
+                LMAlertShowGrantedAccessDenied(@"通讯录", nil, nil);
             }];
             break;
         case 7:
