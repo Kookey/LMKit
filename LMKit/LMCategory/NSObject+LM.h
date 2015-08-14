@@ -10,6 +10,7 @@
 
 #define LMRandomChinese(length) [self lm_randomChinese:length]
 #define LMRandomEnglish(length) [self lm_randomEnglish:length]
+#define LMRandomInteger(formNum,toNum) [self lm_randomInteger:formNum to:toNum]
 
 @interface NSObject (LM)
 
@@ -23,7 +24,7 @@
  *
  *  @return NSInteger
  */
-- (NSInteger)lm_randomInteger:(NSInteger)from to:(NSInteger)to;
+- (NSInteger)lm_randomInteger:(NSInteger)fromNum to:(NSInteger)toNum;
 
 /**
  *  随机大写字母

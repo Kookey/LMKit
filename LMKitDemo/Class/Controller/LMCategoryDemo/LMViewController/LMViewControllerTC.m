@@ -81,7 +81,7 @@
 
         destinationViewController.topViewController.view.backgroundColor = LMRandomColor;
         
-        [segue.destinationViewController lm_addTransitionType:type direction:LMTransitionDirectionLeft duration:[self lm_randomInteger:1 to:2] completion:nil];
+        [segue.destinationViewController lm_addTransitionType:type direction:LMTransitionDirectionLeft duration:LMRandomInteger(1, 2) completion:nil];
     }];
 }
 

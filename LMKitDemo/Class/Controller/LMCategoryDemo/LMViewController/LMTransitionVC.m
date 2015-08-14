@@ -27,7 +27,7 @@
 
 - (IBAction)cancel:(id)sender {
     
-    [self lm_addTransitionType:[self lm_randomInteger:0 to:7] direction:LMTransitionDirectionRight duration:2 completion:nil];
+    [self lm_addTransitionType:LMRandomInteger(0, 7) direction:LMTransitionDirectionRight duration:2 completion:nil];
     
     [self dismissViewControllerAnimated:NO completion:nil];
 }

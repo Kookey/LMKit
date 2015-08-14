@@ -14,9 +14,9 @@
 
 #pragma mark 随机Integer
 
-- (NSInteger)lm_randomInteger:(NSInteger)from to:(NSInteger)to
+- (NSInteger)lm_randomInteger:(NSInteger)fromNum to:(NSInteger)toNum
 {
-    return (NSInteger)(MIN(from, to) + (arc4random() % (MAX(from, to) - MIN(from, to) + 1)));
+    return (NSInteger)(MIN(fromNum, toNum) + (arc4random() % (MAX(fromNum, toNum) - MIN(fromNum, toNum) + 1)));
 }
 
 #pragma mark 随机大写字母
