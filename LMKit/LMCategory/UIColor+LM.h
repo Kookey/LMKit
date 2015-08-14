@@ -9,10 +9,17 @@
 #import <UIKit/UIKit.h>
 
 #define LMColorWithHex(hex) [UIColor lm_colorWithHex:hex]
-#define LMColorWithHexA(hex,a) [UIColor lm_colorWithHex:hex alpha:a]
+#define LMColorWithHexAlpha(hex,a) [UIColor lm_colorWithHex:hex alpha:a]
 #define LMColorWithHexString(hexString) [UIColor lm_colorWithHexString:hexString]
 #define LMColorWithRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
 #define LMColorWithRGB(r,g,b) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:1.0f]
+
+#define LMColorWithClear [UIColor clearColor]
+#define LMColorWithBlack [UIColor blackColor]
+#define LMColorWithWhite [UIColor whiteColor]
+#define LMColorWithRed [UIColor redColor]
+#define LMColorWithGray [UIColor grayColor]
+
 #define LMRandomColor [UIColor lm_colorWithRamdom];
 
 @interface UIColor (LM)
