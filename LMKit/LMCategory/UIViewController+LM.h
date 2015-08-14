@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define LMCurrentViewController [UIViewController lm_currentViewController]
+#define LMCurrentNavigationController [UIViewController lm_currentViewController].navigationController
+
 typedef enum : NSUInteger {
     LMTransitionTypeFade,
     LMTransitionTypePush,
