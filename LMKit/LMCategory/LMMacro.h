@@ -93,6 +93,8 @@ return instance; \
 
 #endif
 
+@import UIKit;
+
 static inline BOOL LMIsEmpty(id objcet) {
     
     return objcet == nil || [objcet isEqual:[NSNull null]] || ([objcet respondsToSelector:@selector(length)] && [(NSData *)objcet length] == 0) || ([objcet respondsToSelector:@selector(count)] && [(NSArray *)objcet count] == 0);
