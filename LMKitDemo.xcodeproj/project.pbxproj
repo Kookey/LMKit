@@ -133,6 +133,7 @@
 		E43FA59F1B68AC1F007048F7 /* LMPlaceholderViewVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlaceholderViewVC2.m; sourceTree = "<group>"; };
 		E43FA5A71B68C6E8007048F7 /* UIApplication+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+LM.h"; sourceTree = "<group>"; };
 		E43FA5A81B68C6E8007048F7 /* UIApplication+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+LM.m"; sourceTree = "<group>"; };
+		E4559F391B7D78E3009A12EB /* LMMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMMacro.h; sourceTree = "<group>"; };
 		E46E4E401B7756DC006236BD /* LMButtonTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMButtonTC.h; sourceTree = "<group>"; };
 		E46E4E411B7756DC006236BD /* LMButtonTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMButtonTC.m; sourceTree = "<group>"; };
 		E46E4E431B7756F1006236BD /* UIButton+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LM.h"; sourceTree = "<group>"; };
@@ -253,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				E409DAEE1B675F1900CE3C38 /* LMCategory.h */,
+				E4559F391B7D78E3009A12EB /* LMMacro.h */,
 				E409DAF01B675F1900CE3C38 /* NSArray+LM.h */,
 				E409DAF11B675F1900CE3C38 /* NSArray+LM.m */,
 				E409DAF21B675F1900CE3C38 /* NSBundle+LM.h */,

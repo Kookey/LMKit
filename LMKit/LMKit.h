@@ -9,6 +9,7 @@
 #ifndef LMKitDemo_LMKit_h
 #define LMKitDemo_LMKit_h
 
+#import "LMMacro.h"
 #import "LMCategory.h"
 
 #import "LMCountDownButton.h"

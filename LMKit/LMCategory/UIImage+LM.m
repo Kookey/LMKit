@@ -7,7 +7,7 @@
 //
 
 #import "UIImage+LM.h"
-#import "LMCategory.h"
+#import "LMKit.h"
 #import <objc/runtime.h>
 
 @import CoreImage;
