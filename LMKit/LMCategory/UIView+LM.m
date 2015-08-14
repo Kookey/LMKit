@@ -23,6 +23,132 @@ static char tapGestureBlockKey, longPressGestureBlockKey, panGestureBlockKey;
 
 @implementation UIView (LM)
 
+#pragma mark - frame
+
+- (CGPoint)lm_origin {
+    
+    return self.frame.origin;
+}
+
+- (void)setLm_origin:(CGPoint)lm_origin {
+    
+    CGRect frame = self.frame;
+    frame.origin = lm_origin;
+    
+    self.frame = frame;
+}
+
+- (CGSize)lm_size {
+    
+    return self.frame.size;
+}
+
+- (void)setLm_size:(CGSize)lm_size {
+    
+    CGRect frame = self.frame;
+    frame.size = lm_size;
+    
+    self.frame = frame;
+}
+
+- (CGFloat)lm_width {
+    
+    return self.frame.size.width;
+}
+
+- (void)setLm_width:(CGFloat)lm_width {
+    
+    CGRect frame = self.frame;
+    frame.size.width = lm_width;
+
+    self.frame = frame;
+}
+
+- (CGFloat)lm_height {
+    
+    return self.frame.size.height;
+}
+
+- (void)setLm_height:(CGFloat)lm_height {
+    
+    CGRect frame = self.frame;
+    frame.size.height = lm_height;
+    
+    self.frame = frame;
+}
+
+- (CGFloat)lm_centerX {
+    
+    return self.center.x;
+}
+
+- (void)setLm_centerX:(CGFloat)lm_centerX {
+    
+    self.center = CGPointMake(lm_centerX, self.center.y);
+}
+
+- (CGFloat)lm_centerY {
+    
+    return self.center.y;
+}
+
+- (void)setLm_centerY:(CGFloat)lm_centerY {
+    
+    self.center = CGPointMake(self.center.x, lm_centerY);
+}
+
+- (CGFloat)lm_top {
+    
+    return self.frame.origin.y;
+}
+
+- (void)setLm_top:(CGFloat)lm_top {
+    
+    CGRect frame = self.frame;
+    frame.origin.y = lm_top;
+    
+    self.frame = frame;
+}
+
+- (CGFloat)lm_bottom {
+    
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (void)setLm_bottom:(CGFloat)lm_bottom {
+    
+    CGRect frame = self.frame;
+    frame.origin.y = lm_bottom - self.frame.size.height;
+    
+    self.frame = frame;
+}
+
+- (CGFloat)lm_left {
+    
+    return self.frame.origin.x;
+}
+
+- (void)setLm_left:(CGFloat)lm_left {
+    
+    CGRect frame = self.frame;
+    frame.origin.x = lm_left;
+    
+    self.frame = frame;
+}
+
+- (CGFloat)lm_right {
+    
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+- (void)setLm_right:(CGFloat)lm_right {
+    
+    CGRect frame = self.frame;
+    frame.origin.x = lm_right - self.frame.size.width;
+    
+    self.frame = frame;
+}
+
 #pragma mark -.-
 
 - (void)setTapAction:(lm_TapGestureBlock)tapAction {

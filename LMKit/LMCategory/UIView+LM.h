@@ -14,6 +14,24 @@ typedef void(^lm_PanGestureBlock)(UIPanGestureRecognizer *gestureRecognizer);
 
 @interface UIView (LM)
 
+#pragma mark - frame
+
+@property (nonatomic, assign) CGPoint lm_origin;
+@property (nonatomic, assign) CGSize lm_size;
+
+@property (nonatomic) CGFloat lm_width;
+@property (nonatomic) CGFloat lm_height;
+
+@property (nonatomic) CGFloat lm_centerX;
+@property (nonatomic) CGFloat lm_centerY;
+
+@property (nonatomic) CGFloat lm_top;
+@property (nonatomic) CGFloat lm_bottom;
+@property (nonatomic) CGFloat lm_left;
+@property (nonatomic) CGFloat lm_right;
+
+#pragma mark - TapGesture
+
 /**
  *  TapGesture回调
  *
@@ -40,6 +58,8 @@ typedef void(^lm_PanGestureBlock)(UIPanGestureRecognizer *gestureRecognizer);
  *  @return UIPanGestureRecognizer
  */
 - (UIPanGestureRecognizer *)lm_addPanGesture:(lm_PanGestureBlock)panAction;
+
+#pragma mark - animation
 
 /**
  *  shakeView
