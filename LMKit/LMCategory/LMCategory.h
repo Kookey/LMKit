@@ -29,6 +29,7 @@
 #import "UIStoryboard+LM.h"
 #import "UIAlertView+LM.h"
 #import "UIApplication+LM.h"
+#import "UITableViewCell+LM.h"
 #import "UIView+LM.h"
 #import "UIViewController+LM.h"
 #import "UIWebView+LM.h"
