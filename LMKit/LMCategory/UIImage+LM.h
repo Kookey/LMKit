@@ -22,7 +22,7 @@ typedef void(^lm_WriteToSavedPhotosError)(NSError *error);
  *  @return UIImage
  */
 
-- (UIImage *)lm_imageResizeWithSize:(CGSize)size quality:(CGInterpolationQuality)quality;
+- (UIImage *)lm_imageWithResize:(CGSize)size quality:(CGInterpolationQuality)quality;
 /**
  *  将UIColor转为UIImage
  *
@@ -71,5 +71,14 @@ typedef void(^lm_WriteToSavedPhotosError)(NSError *error);
  *  @return UIImage
  */
 + (UIImage *)lm_imageWithQRCode:(NSString *)QRCode;
+
+/**
+ *  创建条形码
+ *
+ *  @param QRCode 条形码内容
+ *
+ *  @return UIImage
+ */
++ (UIImage *)lm_imageWithBarcodeCode:(NSString *)BarcodeCode;
 
 @end

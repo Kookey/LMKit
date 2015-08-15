@@ -48,7 +48,7 @@ static char writeToSavedPhotosSuccessKey, writeToSavedPhotosErrorKey;
 
 #pragma mark 调整图片大小、质量
 
-- (UIImage *)lm_imageResizeWithSize:(CGSize)size quality:(CGInterpolationQuality)quality
+- (UIImage *)lm_imageWithResize:(CGSize)size quality:(CGInterpolationQuality)quality
 {
     UIImage *resized = nil;
     
@@ -206,11 +206,23 @@ static char writeToSavedPhotosSuccessKey, writeToSavedPhotosErrorKey;
 
 + (UIImage *)lm_imageWithQRCode:(NSString *)QRCode
 {
-    CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
+    return [UIImage lm_imageWithfilterName:@"CIQRCodeGenerator" code:QRCode];
+}
+
+#pragma mark 创建条形码
+
++ (UIImage *)lm_imageWithBarcodeCode:(NSString *)BarcodeCode
+{
+    return [UIImage lm_imageWithfilterName:@"CICode128BarcodeGenerator" code:BarcodeCode];
+}
+
++ (UIImage *)lm_imageWithfilterName:(NSString *)name code:(NSString *)code
+{
+    CIFilter *filter = [CIFilter filterWithName:name];
     
     [filter setDefaults];
     
-    NSData *data = [QRCode dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [code dataUsingEncoding:NSUTF8StringEncoding];
     [filter setValue:data forKey:@"inputMessage"];
     
     CIImage *outputImage = [filter outputImage];
@@ -221,7 +233,7 @@ static char writeToSavedPhotosSuccessKey, writeToSavedPhotosErrorKey;
     UIImage *image = [UIImage imageWithCGImage:cgImage scale:1.0 orientation:UIImageOrientationUp];
     
     CGImageRelease(cgImage);
-
+    
     return image;
 }
 
