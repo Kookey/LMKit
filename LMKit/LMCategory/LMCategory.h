@@ -28,6 +28,7 @@
 #import "UINavigationItem+LM.h"
 #import "UIStoryboard+LM.h"
 #import "UIAlertView+LM.h"
+#import "UIActionSheet+LM.h"
 #import "UIApplication+LM.h"
 #import "UITableViewCell+LM.h"
 #import "UIView+LM.h"

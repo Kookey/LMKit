@@ -31,6 +31,7 @@
 		E409DB231B675F1900CE3C38 /* UITextView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB0F1B675F1900CE3C38 /* UITextView+LM.m */; };
 		E409DB241B675F1900CE3C38 /* UIView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB111B675F1900CE3C38 /* UIView+LM.m */; };
 		E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB131B675F1900CE3C38 /* UIViewController+LM.m */; };
+		E41280E71B80E24D007C9408 /* UIActionSheet+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E41280E61B80E24D007C9408 /* UIActionSheet+LM.m */; };
 		E42A72611B74B1C000B05753 /* LMNavigationShouldPopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A72601B74B1C000B05753 /* LMNavigationShouldPopVC.m */; };
 		E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E42EF1291B6F0EAC007B79C4 /* NSData+LM.m */; };
 		E43050631B778EC400042368 /* UINavigationItem+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E43050621B778EC400042368 /* UINavigationItem+LM.m */; };
@@ -115,6 +116,8 @@
 		E409DB111B675F1900CE3C38 /* UIView+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LM.m"; sourceTree = "<group>"; };
 		E409DB121B675F1900CE3C38 /* UIViewController+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LM.h"; sourceTree = "<group>"; };
 		E409DB131B675F1900CE3C38 /* UIViewController+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LM.m"; sourceTree = "<group>"; };
+		E41280E51B80E24D007C9408 /* UIActionSheet+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+LM.h"; sourceTree = "<group>"; };
+		E41280E61B80E24D007C9408 /* UIActionSheet+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+LM.m"; sourceTree = "<group>"; };
 		E42A725F1B74B1C000B05753 /* LMNavigationShouldPopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNavigationShouldPopVC.h; sourceTree = "<group>"; };
 		E42A72601B74B1C000B05753 /* LMNavigationShouldPopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNavigationShouldPopVC.m; sourceTree = "<group>"; };
 		E42EF1281B6F0EAC007B79C4 /* NSData+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LM.h"; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				E409DAFB1B675F1900CE3C38 /* NSString+LM.m */,
 				E409DAFC1B675F1900CE3C38 /* NSURL+LM.h */,
 				E409DAFD1B675F1900CE3C38 /* NSURL+LM.m */,
+				E41280E51B80E24D007C9408 /* UIActionSheet+LM.h */,
+				E41280E61B80E24D007C9408 /* UIActionSheet+LM.m */,
 				E409DAFE1B675F1900CE3C38 /* UIAlertView+LM.h */,
 				E409DAFF1B675F1900CE3C38 /* UIAlertView+LM.m */,
 				E43FA5A71B68C6E8007048F7 /* UIApplication+LM.h */,
@@ -567,6 +572,7 @@
 				E43050671B779B1500042368 /* LMNavigationItemTC.m in Sources */,
 				E409DB1D1B675F1900CE3C38 /* UIDevice+LM.m in Sources */,
 				E49145061B79D1E40074346D /* LMWebViewControllerTC.m in Sources */,
+				E41280E71B80E24D007C9408 /* UIActionSheet+LM.m in Sources */,
 				E409DB221B675F1900CE3C38 /* UITextField+LM.m in Sources */,
 				E43FA5961B68A5D2007048F7 /* UIViewController+LMPlaceholderView.m in Sources */,
 				E4E0F4181B73896C006323C4 /* SVProgressHUD.m in Sources */,
