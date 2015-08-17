@@ -54,6 +54,7 @@
 		E4E0F4161B73896C006323C4 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F4121B73896C006323C4 /* SVIndefiniteAnimatedView.m */; };
 		E4E0F4171B73896C006323C4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E4E0F4131B73896C006323C4 /* SVProgressHUD.bundle */; };
 		E4E0F4181B73896C006323C4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F4151B73896C006323C4 /* SVProgressHUD.m */; };
+		E4E744581B8161490062C8D8 /* UIBarButtonItem+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E744571B8161490062C8D8 /* UIBarButtonItem+LM.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,8 @@
 		E4E0F4131B73896C006323C4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		E4E0F4141B73896C006323C4 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		E4E0F4151B73896C006323C4 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		E4E744561B8161490062C8D8 /* UIBarButtonItem+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LM.h"; sourceTree = "<group>"; };
+		E4E744571B8161490062C8D8 /* UIBarButtonItem+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LM.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +283,8 @@
 				E409DAFF1B675F1900CE3C38 /* UIAlertView+LM.m */,
 				E43FA5A71B68C6E8007048F7 /* UIApplication+LM.h */,
 				E43FA5A81B68C6E8007048F7 /* UIApplication+LM.m */,
+				E4E744561B8161490062C8D8 /* UIBarButtonItem+LM.h */,
+				E4E744571B8161490062C8D8 /* UIBarButtonItem+LM.m */,
 				E46E4E431B7756F1006236BD /* UIButton+LM.h */,
 				E46E4E441B7756F1006236BD /* UIButton+LM.m */,
 				E409DB001B675F1900CE3C38 /* UIColor+LM.h */,
@@ -563,6 +568,7 @@
 				E4955A221B7ACBE300F5513C /* LMWebViewController.m in Sources */,
 				E42A72611B74B1C000B05753 /* LMNavigationShouldPopVC.m in Sources */,
 				E409DB151B675F1900CE3C38 /* NSBundle+LM.m in Sources */,
+				E4E744581B8161490062C8D8 /* UIBarButtonItem+LM.m in Sources */,
 				E43FA59A1B68AB3B007048F7 /* LMPlaceholderViewVC1.m in Sources */,
 				E409DB171B675F1900CE3C38 /* NSDictionary+LM.m in Sources */,
 				E43FA5A01B68AC1F007048F7 /* LMPlaceholderViewVC2.m in Sources */,
