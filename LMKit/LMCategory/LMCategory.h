@@ -28,6 +28,7 @@
 #import "UIImage+LM.h"
 #import "UIImageView+LM.h"
 #import "UINavigationItem+LM.h"
+#import "UISearchBar+LM.h"
 #import "UIStoryboard+LM.h"
 #import "UITableViewCell+LM.h"
 #import "UITextField+LM.h"

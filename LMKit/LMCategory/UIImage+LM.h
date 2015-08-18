@@ -23,6 +23,7 @@ typedef void(^lm_WriteToSavedPhotosError)(NSError *error);
  */
 
 - (UIImage *)lm_imageWithResize:(CGSize)size quality:(CGInterpolationQuality)quality;
+
 /**
  *  将UIColor转为UIImage
  *
@@ -31,6 +32,16 @@ typedef void(^lm_WriteToSavedPhotosError)(NSError *error);
  *  @return UIImage
  */
 + (UIImage *)lm_imageWithColor:(UIColor *)color;
+
+/**
+ *  将UIColor转为UIImage
+ *
+ *  @param color UIColor
+ *  @param frame CGRect
+ *
+ *  @return UIImage
+ */
++ (UIImage *)lm_imageWithColor:(UIColor *)color withFrame:(CGRect)frame;
 
 /**
  *  根据设备加载图片名

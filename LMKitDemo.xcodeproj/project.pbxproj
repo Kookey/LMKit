@@ -32,6 +32,7 @@
 		E409DB241B675F1900CE3C38 /* UIView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB111B675F1900CE3C38 /* UIView+LM.m */; };
 		E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB131B675F1900CE3C38 /* UIViewController+LM.m */; };
 		E41280E71B80E24D007C9408 /* UIActionSheet+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E41280E61B80E24D007C9408 /* UIActionSheet+LM.m */; };
+		E428B94C1B82B8F2002C3D6D /* UISearchBar+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E428B94B1B82B8F2002C3D6D /* UISearchBar+LM.m */; };
 		E42A72611B74B1C000B05753 /* LMNavigationShouldPopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A72601B74B1C000B05753 /* LMNavigationShouldPopVC.m */; };
 		E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E42EF1291B6F0EAC007B79C4 /* NSData+LM.m */; };
 		E43050631B778EC400042368 /* UINavigationItem+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E43050621B778EC400042368 /* UINavigationItem+LM.m */; };
@@ -119,6 +120,8 @@
 		E409DB131B675F1900CE3C38 /* UIViewController+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LM.m"; sourceTree = "<group>"; };
 		E41280E51B80E24D007C9408 /* UIActionSheet+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+LM.h"; sourceTree = "<group>"; };
 		E41280E61B80E24D007C9408 /* UIActionSheet+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+LM.m"; sourceTree = "<group>"; };
+		E428B94A1B82B8F2002C3D6D /* UISearchBar+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+LM.h"; sourceTree = "<group>"; };
+		E428B94B1B82B8F2002C3D6D /* UISearchBar+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+LM.m"; sourceTree = "<group>"; };
 		E42A725F1B74B1C000B05753 /* LMNavigationShouldPopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNavigationShouldPopVC.h; sourceTree = "<group>"; };
 		E42A72601B74B1C000B05753 /* LMNavigationShouldPopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNavigationShouldPopVC.m; sourceTree = "<group>"; };
 		E42EF1281B6F0EAC007B79C4 /* NSData+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LM.h"; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				E409DB071B675F1900CE3C38 /* UIImageView+LM.m */,
 				E43050611B778EC400042368 /* UINavigationItem+LM.h */,
 				E43050621B778EC400042368 /* UINavigationItem+LM.m */,
+				E428B94A1B82B8F2002C3D6D /* UISearchBar+LM.h */,
+				E428B94B1B82B8F2002C3D6D /* UISearchBar+LM.m */,
 				E409DB081B675F1900CE3C38 /* UIStoryboard+LM.h */,
 				E409DB091B675F1900CE3C38 /* UIStoryboard+LM.m */,
 				E409DB0A1B675F1900CE3C38 /* UITableViewCell+LM.h */,
@@ -597,6 +602,7 @@
 				E409DB1C1B675F1900CE3C38 /* UIColor+LM.m in Sources */,
 				E409DB1E1B675F1900CE3C38 /* UIImage+LM.m in Sources */,
 				E409DAC71B675C3000CE3C38 /* main.m in Sources */,
+				E428B94C1B82B8F2002C3D6D /* UISearchBar+LM.m in Sources */,
 				E43FA5951B68A5D2007048F7 /* LMPlaceholderView.m in Sources */,
 				E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */,
 				E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */,

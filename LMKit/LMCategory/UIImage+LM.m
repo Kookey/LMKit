@@ -66,11 +66,15 @@ static char writeToSavedPhotosSuccessKey, writeToSavedPhotosErrorKey;
 
 + (UIImage *)lm_imageWithColor:(UIColor *)color
 {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
+    return [UIImage lm_imageWithColor:color withFrame:CGRectMake(0, 0, 1, 1)];
+}
+
++ (UIImage *)lm_imageWithColor:(UIColor *)color withFrame:(CGRect)frame
+{
+    UIGraphicsBeginImageContext(frame.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
+    CGContextFillRect(context, frame);
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
