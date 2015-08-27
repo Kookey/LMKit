@@ -82,7 +82,7 @@
             [[UIApplication sharedApplication] lm_requestAccessGrantedToCalendarWithSuccess:^{
                 LMAlertShow(@"授权成功");
             } andFailure:^{
-                LMAlertShow(@"授权失败");
+                LMAlertShowGrantedAccessDeniedCalendar(nil, nil);
             }];
             break;
         case 6:
@@ -96,28 +96,28 @@
             [[UIApplication sharedApplication] lm_requestAccessGrantedToMicrophoneWithSuccess:^{
                 LMAlertShow(@"授权成功");
             } andFailure:^{
-                LMAlertShow(@"授权失败");
+                LMAlertShowGrantedAccessDeniedMicrophone(nil, nil);
             }];
             break;
         case 8:
             [[UIApplication sharedApplication] lm_requestAccessGrantedToCameraWithSuccess:^{
                 LMAlertShow(@"授权成功");
             } andFailure:^{
-                LMAlertShow(@"授权失败");
+                LMAlertShowGrantedAccessDeniedCamera(nil, nil);
             }];
             break;
         case 9:
             [[UIApplication sharedApplication] lm_requestAccessGrantedToPhotosWithSuccess:^{
                 LMAlertShow(@"授权成功");
             } andFailure:^{
-                LMAlertShow(@"授权失败");
+                LMAlertShowGrantedAccessDeniedPhotos(nil, nil);
             }];
             break;
         case 10:
             [[UIApplication sharedApplication] lm_requestAccessGrantedToRemindersWithSuccess:^{
                 LMAlertShow(@"授权成功");
             } andFailure:^{
-                LMAlertShow(@"授权失败");
+                LMAlertShowGrantedAccessDeniedReminders(nil, nil);
             }];
             break;
         case 11:
@@ -129,7 +129,7 @@
             [[UIApplication sharedApplication] lm_requestAccessGrantedToLocationWithSuccess:^{
                 LMAlertShow(@"授权成功");
             } andFailure:^{
-                LMAlertShow(@"授权失败");
+                LMAlertShowGrantedAccessDeniedLocation(@"无法获取你的位置信息", nil);
             }];
             break;
         case 13:

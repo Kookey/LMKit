@@ -15,6 +15,15 @@
 
 #define LMAlertShowGrantedAccessDenied(type, alertTitle, cancelTitle) [[UIApplication sharedApplication] lm_showGrantedAccessDeniedWithType:type title:alertTitle cancelButtonTitle:cancelTitle]
 
+
+#define LMAlertShowGrantedAccessDeniedCalendar(alertTitle, cancelTitle) LMAlertShowGrantedAccessDenied(@"日历", alertTitle, cancelTitle)
+#define LMAlertShowGrantedAccessDeniedContacts(alertTitle, cancelTitle) LMAlertShowGrantedAccessDenied(@"通讯录", alertTitle, cancelTitle)
+#define LMAlertShowGrantedAccessDeniedMicrophone(alertTitle, cancelTitle) LMAlertShowGrantedAccessDenied(@"麦克风", alertTitle, cancelTitle)
+#define LMAlertShowGrantedAccessDeniedCamera(alertTitle, cancelTitle) LMAlertShowGrantedAccessDenied(@"相机", alertTitle, cancelTitle)
+#define LMAlertShowGrantedAccessDeniedPhotos(alertTitle, cancelTitle) LMAlertShowGrantedAccessDenied(@"照片", alertTitle, cancelTitle)
+#define LMAlertShowGrantedAccessDeniedReminders(alertTitle, cancelTitle) LMAlertShowGrantedAccessDenied(@"提醒事项", alertTitle, cancelTitle)
+#define LMAlertShowGrantedAccessDeniedLocation(alertTitle, cancelTitle) LMAlertShowGrantedAccessDenied(@"定位服务", alertTitle, cancelTitle)
+
 @interface UIApplication (LM)
 
 /**

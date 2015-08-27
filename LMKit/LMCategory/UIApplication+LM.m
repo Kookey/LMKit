@@ -430,12 +430,12 @@ static char LocationDidUpdateLocationsKey;
 {
     if (LMiOS8) {
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"请进入系统\"设置\">\"隐私\">\"%@\"中打开开关", type] delegate:self cancelButtonTitle:cancelButtonTitle ? cancelButtonTitle : @"确定" otherButtonTitles:@"设置", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"请在系统设置中，打开\"隐私-%@\"，并允许%@使用%@", type, LMAppName, type] delegate:self cancelButtonTitle:cancelButtonTitle ? cancelButtonTitle : @"确定" otherButtonTitles:@"设置", nil];
         [alertView show];
         
     } else {
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"请进入系统\"设置\">\"隐私\">\"%@\"中打开开关", type] delegate:self cancelButtonTitle:cancelButtonTitle ? cancelButtonTitle : @"确定" otherButtonTitles:nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:[NSString stringWithFormat:@"请在系统设置中，打开\"隐私-%@\"，并允许%@使用%@", type, LMAppName, type] delegate:self cancelButtonTitle:cancelButtonTitle ? cancelButtonTitle : @"确定" otherButtonTitles:nil];
         [alertView show];
     }
 }
