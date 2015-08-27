@@ -20,7 +20,7 @@
 #define LMColorWithRed [UIColor redColor]
 #define LMColorWithGray [UIColor grayColor]
 
-#define LMRandomColor [UIColor lm_colorWithRamdom];
+#define LMRandomColor [UIColor lm_colorWithRamdom]
 
 @interface UIColor (LM)
 

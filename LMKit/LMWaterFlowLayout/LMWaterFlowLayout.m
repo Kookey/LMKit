@@ -48,7 +48,7 @@
 
 - (void)layoutForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIEdgeInsets edgeInsets = UIEdgeInsetsMake(5, 5, 5, 5);
+    UIEdgeInsets edgeInsets = self.sectionInset;
     
     if ([self.collectionView.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
         
