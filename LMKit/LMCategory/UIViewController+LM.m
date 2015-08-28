@@ -131,6 +131,9 @@ static char finishPickingMediaKey, cancelPickingMediaKey, didFinishAppStoreKey, 
         case LMTransitionTypePageUnCurl:
             animation.type = @"pageUnCurl";
             break;
+        case LMTransitionTypeSuckEffect:
+            animation.type = @"suckEffect";
+            break;
         case LMTransitionTypePageCameraOpen:
             animation.type = @"cameraIrisHollowOpen";
             break;

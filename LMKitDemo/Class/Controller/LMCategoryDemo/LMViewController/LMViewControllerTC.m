@@ -27,7 +27,7 @@
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (TARGET_IPHONE_SIMULATOR && indexPath.row == 10) {
+    if (TARGET_IPHONE_SIMULATOR && indexPath.row == 11) {
         
         LMAlertShow(@"不支持模拟器");
         
@@ -44,11 +44,12 @@
         case 7:
         case 8:
         case 9:
+        case 10:
         {
             [self transition:indexPath.row - 1];
         }
             break;
-        case 10:
+        case 11:
             [self lm_presentAppStoreWithITunesItemIdentifier:414478124 loading:^{
                 
                 LMLog(@"正在跳转到微信");
@@ -69,7 +70,7 @@
                 [SVProgressHUD dismiss];
             }];
             break;
-        case 11:
+        case 12:
             
             break;
     }

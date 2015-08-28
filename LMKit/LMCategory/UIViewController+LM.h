@@ -19,6 +19,7 @@ typedef enum : NSUInteger {
     LMTransitionTypeRipple,
     LMTransitionTypePageCurl,
     LMTransitionTypePageUnCurl,
+    LMTransitionTypeSuckEffect,
     LMTransitionTypePageCameraOpen,
     LMTransitionTypePageCamreaClose
 } LMTransitionType;
