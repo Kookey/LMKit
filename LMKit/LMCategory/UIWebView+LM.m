@@ -14,7 +14,7 @@
 - (void)lm_loadRequestURL:(NSString *)URLString
 {
 #if DEBUG
-    NSLog(@"---------------------loadRequestURL--------------------\n%@\n---------------------loadRequestURL--------------------", URLString);
+    NSLog(@"\n---------------------loadRequestURL--------------------\n%@\n---------------------loadRequestURL--------------------", URLString);
 #endif
     [self loadRequest:[NSURLRequest requestWithURL:[URLString lm_urlEncode]]];
 }
