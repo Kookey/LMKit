@@ -47,6 +47,8 @@
 		E47298221B7482C00084C12D /* LMApplicationTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E472981E1B7482C00084C12D /* LMApplicationTC.m */; };
 		E47298231B7482C00084C12D /* LMViewControllerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E47298211B7482C00084C12D /* LMViewControllerTC.m */; };
 		E47298261B7483380084C12D /* LMTransitionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E47298251B7483380084C12D /* LMTransitionVC.m */; };
+		E476FBC71B9301F0004C105C /* LMPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E476FBC61B9301F0004C105C /* LMPickerView.m */; };
+		E476FBCB1B9302A2004C105C /* LMPickerViewTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E476FBCA1B9302A2004C105C /* LMPickerViewTC.m */; };
 		E47BABBB1B8EA83700EE907D /* LMWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E47BABBA1B8EA83700EE907D /* LMWaterFlowLayout.m */; };
 		E49145061B79D1E40074346D /* LMWebViewControllerTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E49145051B79D1E40074346D /* LMWebViewControllerTC.m */; };
 		E4955A221B7ACBE300F5513C /* LMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4955A211B7ACBE300F5513C /* LMWebViewController.m */; };
@@ -153,6 +155,10 @@
 		E47298211B7482C00084C12D /* LMViewControllerTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMViewControllerTC.m; sourceTree = "<group>"; };
 		E47298241B7483380084C12D /* LMTransitionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMTransitionVC.h; sourceTree = "<group>"; };
 		E47298251B7483380084C12D /* LMTransitionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMTransitionVC.m; sourceTree = "<group>"; };
+		E476FBC51B9301F0004C105C /* LMPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPickerView.h; sourceTree = "<group>"; };
+		E476FBC61B9301F0004C105C /* LMPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPickerView.m; sourceTree = "<group>"; };
+		E476FBC91B9302A2004C105C /* LMPickerViewTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPickerViewTC.h; sourceTree = "<group>"; };
+		E476FBCA1B9302A2004C105C /* LMPickerViewTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPickerViewTC.m; sourceTree = "<group>"; };
 		E47BABB91B8EA83700EE907D /* LMWaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMWaterFlowLayout.h; sourceTree = "<group>"; };
 		E47BABBA1B8EA83700EE907D /* LMWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMWaterFlowLayout.m; sourceTree = "<group>"; };
 		E49145041B79D1E40074346D /* LMWebViewControllerTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMWebViewControllerTC.h; sourceTree = "<group>"; };
@@ -259,6 +265,7 @@
 				E409DAEC1B675E8B00CE3C38 /* LMKit.h */,
 				E409DAED1B675EAD00CE3C38 /* LMCategory */,
 				E4B81DFE1B685B1D0042CAB5 /* LMCountDownButton */,
+				E476FBC11B9301DF004C105C /* LMPickerView */,
 				E43FA5901B68A5D2007048F7 /* LMPlaceholderView */,
 				E47BABB81B8EA81A00EE907D /* LMWaterFlowLayout */,
 				E4955A1F1B7ACBE300F5513C /* LMWebViewController */,
@@ -400,6 +407,24 @@
 			path = LMViewController;
 			sourceTree = "<group>";
 		};
+		E476FBC11B9301DF004C105C /* LMPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				E476FBC51B9301F0004C105C /* LMPickerView.h */,
+				E476FBC61B9301F0004C105C /* LMPickerView.m */,
+			);
+			path = LMPickerView;
+			sourceTree = "<group>";
+		};
+		E476FBC81B93025D004C105C /* LMPickerViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				E476FBC91B9302A2004C105C /* LMPickerViewTC.h */,
+				E476FBCA1B9302A2004C105C /* LMPickerViewTC.m */,
+			);
+			path = LMPickerViewDemo;
+			sourceTree = "<group>";
+		};
 		E47BABB81B8EA81A00EE907D /* LMWaterFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +484,7 @@
 			children = (
 				E43FA5AA1B68CA33007048F7 /* LMCategoryDemo */,
 				E4B81E491B686F400042CAB5 /* LMCountDownButtonDemo */,
+				E476FBC81B93025D004C105C /* LMPickerViewDemo */,
 				E43FA5971B68AAF3007048F7 /* LMPlaceholderViewDemo */,
 				E4B81DB41B8ED970007FBD0E /* LMWaterFlowLayoutDemo */,
 				E49145031B79D1C00074346D /* LMWebViewControllerDemo */,
@@ -607,6 +633,7 @@
 				E4B81E011B685B1D0042CAB5 /* LMCountDownButton.m in Sources */,
 				E46E4E421B7756DC006236BD /* LMButtonTC.m in Sources */,
 				E43050671B779B1500042368 /* LMNavigationItemTC.m in Sources */,
+				E476FBC71B9301F0004C105C /* LMPickerView.m in Sources */,
 				E409DB1D1B675F1900CE3C38 /* UIDevice+LM.m in Sources */,
 				E49145061B79D1E40074346D /* LMWebViewControllerTC.m in Sources */,
 				E41280E71B80E24D007C9408 /* UIActionSheet+LM.m in Sources */,
@@ -615,6 +642,7 @@
 				E47BABBB1B8EA83700EE907D /* LMWaterFlowLayout.m in Sources */,
 				E4E0F4181B73896C006323C4 /* SVProgressHUD.m in Sources */,
 				E43FA5A91B68C6E8007048F7 /* UIApplication+LM.m in Sources */,
+				E476FBCB1B9302A2004C105C /* LMPickerViewTC.m in Sources */,
 				E4D172491B784EA200744B59 /* UIWebView+LM.m in Sources */,
 				E409DB161B675F1900CE3C38 /* NSDate+LM.m in Sources */,
 				E4E0F4161B73896C006323C4 /* SVIndefiniteAnimatedView.m in Sources */,

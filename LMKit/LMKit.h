@@ -16,5 +16,6 @@
 #import "UIViewController+LMPlaceholderView.h"
 #import "LMWebViewController.h"
 #import "LMWaterFlowLayout.h"
+#import "LMPickerView.h"
 
 #endif
