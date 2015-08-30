@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#define LMArrayWithOrderTime(day,begin,end) [NSArray orderTimeWithDay:day beginHour:begin endHour:end]
+
 @interface NSArray (LM)
+
++ (NSArray *)orderTimeWithDay:(NSUInteger)day beginHour:(NSTimeInterval)begin endHour:(NSTimeInterval)end;
 
 @end
