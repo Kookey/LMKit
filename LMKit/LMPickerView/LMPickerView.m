@@ -104,7 +104,7 @@
     return _doneBarButtonItem;
 }
 
-- (void)addBarItem:(UIBarButtonItem *)barItem
+- (void)lm_addBarItem:(UIBarButtonItem *)barItem
 {
     if (self.itemBarAttributes) {
         
@@ -114,7 +114,7 @@
     self.toolBar.items = @[self.edgeBarButtonItem, self.cancelBarButtonItem, self.spaceBarButtonItem, barItem, self.spaceBarButtonItem, self.doneBarButtonItem, self.edgeBarButtonItem];
 }
 
-- (void)showPickerViewWithCancel:(dispatch_block_t)cancelAction done:(dispatch_block_t)doneAction
+- (void)lm_showPickerViewWithCancel:(dispatch_block_t)cancelAction done:(dispatch_block_t)doneAction
 {
     if (self.itemBarAttributes) {
         
@@ -161,7 +161,7 @@
     }];
 }
 
-- (void)dismiss
+- (void)lm_dismiss
 {
     if (!_isShow) {
         
@@ -190,14 +190,14 @@
 {
     LMBlock_Safe_Run(self.cancelBlock);
     
-    [self dismiss];
+    [self lm_dismiss];
 }
 
 - (void)doneAction
 {
     LMBlock_Safe_Run(self.doneBlock);
     
-    [self dismiss];
+    [self lm_dismiss];
 }
 
 @end

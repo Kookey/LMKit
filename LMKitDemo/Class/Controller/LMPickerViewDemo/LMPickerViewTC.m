@@ -26,14 +26,14 @@
     
     self.pickerView.itemBarAttributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17], NSForegroundColorAttributeName: LMColorWithRed};
     
-    [self.pickerView addBarItem:[[UIBarButtonItem alloc] initWithTitle:@"自定义" style:UIBarButtonItemStylePlain target:self action:@selector(customAction)]];
+    [self.pickerView lm_addBarItem:[[UIBarButtonItem alloc] initWithTitle:@"自定义" style:UIBarButtonItemStylePlain target:self action:@selector(customAction)]];
 }
 
 - (void)customAction
 {
     LMLog(@"customAction");
     
-    [self.pickerView dismiss];
+    [self.pickerView lm_dismiss];
 }
 
 #pragma mark - UITableViewDelegate
@@ -42,7 +42,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    [self.pickerView showPickerViewWithCancel:^{
+    [self.pickerView lm_showPickerViewWithCancel:^{
         LMLog(@"Cancel");
     } done:^{
         LMLog(@"Done");

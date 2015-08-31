@@ -15,10 +15,10 @@
 
 @property (strong, nonatomic) NSDictionary *itemBarAttributes;
 
-- (void)addBarItem:(UIBarButtonItem *)barItem;
+- (void)lm_addBarItem:(UIBarButtonItem *)barItem;
 
-- (void)showPickerViewWithCancel:(dispatch_block_t)cancelAction done:(dispatch_block_t)doneAction;
+- (void)lm_showPickerViewWithCancel:(dispatch_block_t)cancelAction done:(dispatch_block_t)doneAction;
 
-- (void)dismiss;
+- (void)lm_dismiss;
 
 @end
