@@ -11,9 +11,9 @@
 @interface LMPickerView : UIView
 
 @property (assign,nonatomic) id <UIPickerViewDataSource> dataSource;
-@property (assign, nonatomic) id <UIPickerViewDelegate>   delegate;
+@property (assign, nonatomic) id <UIPickerViewDelegate> delegate;
 
-@property (strong, nonatomic) NSDictionary *itemBarAttributes;
+@property (strong, nonatomic) NSDictionary *lm_itemBarAttributes;
 
 - (void)lm_addBarItem:(UIBarButtonItem *)barItem;
 
