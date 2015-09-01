@@ -21,10 +21,10 @@
     [super viewDidLoad];
     
     self.pickerView = [LMPickerView new];
-    self.pickerView.delegate = self;
-    self.pickerView.dataSource = self;
+    self.pickerView.lm_delegate = self;
+    self.pickerView.lm_dataSource = self;
     
-    self.pickerView.itemBarAttributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17], NSForegroundColorAttributeName: LMColorWithRed};
+    self.pickerView.lm_itemBarAttributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:17], NSForegroundColorAttributeName: LMColorWithRed};
     
     [self.pickerView lm_addBarItem:[[UIBarButtonItem alloc] initWithTitle:@"自定义" style:UIBarButtonItemStylePlain target:self action:@selector(customAction)]];
 }

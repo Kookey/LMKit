@@ -42,8 +42,8 @@
     if (!_pickerView) {
         
         _pickerView = [[UIPickerView alloc] init];
-        _pickerView.delegate = self.delegate;
-        _pickerView.dataSource = self.dataSource;
+        _pickerView.delegate = self.lm_delegate;
+        _pickerView.dataSource = self.lm_dataSource;
         _pickerView.backgroundColor = LMColorWithWhite;
         
         _pickerView.frame = CGRectMake(0, LMScreenHeight - 216, LMScreenWidth, 216);
@@ -106,9 +106,9 @@
 
 - (void)lm_addBarItem:(UIBarButtonItem *)barItem
 {
-    if (self.itemBarAttributes) {
+    if (self.lm_itemBarAttributes) {
         
-        [barItem setTitleTextAttributes:self.itemBarAttributes forState:UIControlStateNormal];
+        [barItem setTitleTextAttributes:self.lm_itemBarAttributes forState:UIControlStateNormal];
     }
     
     self.toolBar.items = @[self.edgeBarButtonItem, self.cancelBarButtonItem, self.spaceBarButtonItem, barItem, self.spaceBarButtonItem, self.doneBarButtonItem, self.edgeBarButtonItem];
@@ -116,10 +116,10 @@
 
 - (void)lm_showPickerViewWithCancel:(dispatch_block_t)cancelAction done:(dispatch_block_t)doneAction
 {
-    if (self.itemBarAttributes) {
+    if (self.lm_itemBarAttributes) {
         
-        [self.cancelBarButtonItem setTitleTextAttributes:self.itemBarAttributes forState:UIControlStateNormal];
-        [self.doneBarButtonItem setTitleTextAttributes:self.itemBarAttributes forState:UIControlStateNormal];
+        [self.cancelBarButtonItem setTitleTextAttributes:self.lm_itemBarAttributes forState:UIControlStateNormal];
+        [self.doneBarButtonItem setTitleTextAttributes:self.lm_itemBarAttributes forState:UIControlStateNormal];
     }
     
     self.cancelBlock = cancelAction;
