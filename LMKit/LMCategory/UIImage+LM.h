@@ -65,7 +65,7 @@ typedef void(^lm_WriteToSavedPhotosError)(NSError *error);
  *
  *  @return UIImage
  */
-+ (UIImage *)screenshot;
++ (UIImage *)lm_screenshot;
 
 /**
  *  获取launchImage

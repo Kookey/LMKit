@@ -141,7 +141,7 @@ static char writeToSavedPhotosSuccessKey, writeToSavedPhotosErrorKey;
 
 #pragma mark 截屏
 
-+ (UIImage *)screenshot
++ (UIImage *)lm_screenshot
 {
     CGSize imageSize = [[UIScreen mainScreen] bounds].size;
     
