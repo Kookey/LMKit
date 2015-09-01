@@ -125,4 +125,13 @@ static inline NSString *LMStringWithObject(id object) {
     }
 }
 
+static inline UIWindow *LMRootViewController(UIViewController *rootViewController) {
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [window setRootViewController:rootViewController];
+    [window makeKeyAndVisible];
+
+    return window;
+}
+
 #endif
