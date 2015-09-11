@@ -60,6 +60,7 @@
 		E4E0F4171B73896C006323C4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E4E0F4131B73896C006323C4 /* SVProgressHUD.bundle */; };
 		E4E0F4181B73896C006323C4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0F4151B73896C006323C4 /* SVProgressHUD.m */; };
 		E4E744581B8161490062C8D8 /* UIBarButtonItem+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E744571B8161490062C8D8 /* UIBarButtonItem+LM.m */; };
+		E4F05D051BA2D0AD008BC882 /* LMPlaceholderViewTC3.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F05D041BA2D0AD008BC882 /* LMPlaceholderViewTC3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +181,8 @@
 		E4E0F4151B73896C006323C4 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		E4E744561B8161490062C8D8 /* UIBarButtonItem+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+LM.h"; sourceTree = "<group>"; };
 		E4E744571B8161490062C8D8 /* UIBarButtonItem+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+LM.m"; sourceTree = "<group>"; };
+		E4F05D031BA2D0AD008BC882 /* LMPlaceholderViewTC3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMPlaceholderViewTC3.h; sourceTree = "<group>"; };
+		E4F05D041BA2D0AD008BC882 /* LMPlaceholderViewTC3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlaceholderViewTC3.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +360,8 @@
 		E43FA5971B68AAF3007048F7 /* LMPlaceholderViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E4F05D031BA2D0AD008BC882 /* LMPlaceholderViewTC3.h */,
+				E4F05D041BA2D0AD008BC882 /* LMPlaceholderViewTC3.m */,
 				E43FA5981B68AB3B007048F7 /* LMPlaceholderViewVC1.h */,
 				E43FA5991B68AB3B007048F7 /* LMPlaceholderViewVC1.m */,
 				E43FA59E1B68AC1F007048F7 /* LMPlaceholderViewVC2.h */,
@@ -627,6 +632,7 @@
 				E409DB151B675F1900CE3C38 /* NSBundle+LM.m in Sources */,
 				E4E744581B8161490062C8D8 /* UIBarButtonItem+LM.m in Sources */,
 				E43FA59A1B68AB3B007048F7 /* LMPlaceholderViewVC1.m in Sources */,
+				E4F05D051BA2D0AD008BC882 /* LMPlaceholderViewTC3.m in Sources */,
 				E409DB171B675F1900CE3C38 /* NSDictionary+LM.m in Sources */,
 				E43FA5A01B68AC1F007048F7 /* LMPlaceholderViewVC2.m in Sources */,
 				E409DB1B1B675F1900CE3C38 /* UIAlertView+LM.m in Sources */,

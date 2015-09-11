@@ -28,7 +28,10 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
-    [self refresh:nil];
+    [self lm_showPlaceholderInitWithBackgroundColor:[UIColor lm_colorWithRamdom] imageName:@"icon_placeholder_address" andTitle:@"点击刷新" andRefresBlock:^{
+        
+        [self refresh:nil];
+    }];
 }
 
 - (IBAction)refresh:(id)sender {

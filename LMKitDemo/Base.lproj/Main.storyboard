@@ -1010,6 +1010,23 @@
                                             <segue destination="9jR-2K-lde" kind="show" id="YR5-i1-IQA"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="bsf-Ol-QHH" style="IBUITableViewCellStyleDefault" id="JaI-DK-oDA">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JaI-DK-oDA" id="qV1-eU-lAT">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Demo3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bsf-Ol-QHH">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Vkf-8v-j89" kind="show" id="giP-b2-hbO"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1123,6 +1140,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auX-sp-wKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2426" y="951"/>
+        </scene>
+        <!--LMPlaceholderViewTC3-->
+        <scene sceneID="2ea-h5-e6V">
+            <objects>
+                <tableViewController id="Vkf-8v-j89" customClass="LMPlaceholderViewTC3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="XXZ-m7-b1w">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Vkf-8v-j89" id="bmr-bE-syJ"/>
+                            <outlet property="delegate" destination="Vkf-8v-j89" id="vIj-aF-tQj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="LMPlaceholderViewTC3" id="Xf8-GK-lmm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gGC-Ig-UMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2426" y="1712"/>
         </scene>
         <!--UINavigationItem+LM-->
         <scene sceneID="0TU-Uk-7HO">

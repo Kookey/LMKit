@@ -77,7 +77,7 @@
 - (void)lm_showViewWithImageName:(NSString *)imageName andTitle:(NSString *)title
 {
     _imageView.image = [UIImage imageNamed:imageName];
-    _imageView.frame = CGRectMake(LMScreenWidth * 0.5 - 52.5, LMScreenHeight * 0.5 - 165, 105, 105);
+    _imageView.frame = CGRectMake(0, 0, 105, 105);
     _imageView.center = self.center;
     
     _descriptionTextView.text = title;

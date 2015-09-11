@@ -70,6 +70,14 @@ static char placeholderKey, refreshKey;
         
         self.placeholder = [[LMPlaceholderView alloc] initWithFrame:frame];
         
+        if ([self respondsToSelector:@selector(setTableView:)]) {
+            
+            if ([((UITableViewController *)self).tableView respondsToSelector:@selector(setScrollEnabled:)]) {
+                
+                self.placeholder.lm_top = self.placeholder.lm_top - 30;
+            }
+        }
+        
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refreshAction)];
         [self.placeholder addGestureRecognizer:tap];
         

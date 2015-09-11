@@ -18,7 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self lm_showPlaceholderInitWithBackgroundColor:[UIColor lm_colorWithRamdom] imageName:@"icon_placeholder_address" andTitle:@"找不到您的位置" andRefresBlock:nil];
+    [self refresh];
+}
+
+- (void)refresh
+{
+    [self lm_showPlaceholderInitWithBackgroundColor:[UIColor lm_colorWithRamdom] imageName:@"icon_placeholder_address" andTitle:@"找不到您的位置" andRefresBlock:^{
+        
+        [self refresh];
+    }];
 }
 
 @end
