@@ -17,6 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    if (LMNetworkReachability) {
+        
+        LMLog(@"网络连接正常");
+        
+    } else {
+        
+        LMLog(@"请检查网络设置");
+    }
 
     [application lm_firstOpenedApp:^(BOOL isFirstOpened) {
         

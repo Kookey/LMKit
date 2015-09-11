@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define LMNetworkReachability [NSURL lm_networkReachability]
+
 @interface NSURL (LM)
 
 /**
