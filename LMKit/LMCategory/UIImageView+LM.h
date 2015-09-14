@@ -16,6 +16,13 @@
 - (void)lm_circle;
 
 /**
+ *  圆角
+ *
+ *  @param radius 半径
+ */
+- (void)lm_circleWithRadius:(CGFloat)radius;
+
+/**
  *  非圆角
  */
 - (void)lm_circleNot;

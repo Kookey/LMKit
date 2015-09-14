@@ -18,6 +18,12 @@
     self.layer.cornerRadius = self.frame.size.width * .5;
 }
 
+- (void)lm_circleWithRadius:(CGFloat)radius
+{
+    self.layer.masksToBounds = YES;
+    self.layer.cornerRadius = radius;
+}
+
 #pragma mark 非圆角
 
 - (void)lm_circleNot
