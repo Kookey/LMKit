@@ -21,8 +21,6 @@
 
 @property (strong, nonatomic) UIBarButtonItem *doneBarButtonItem;
 
-@property (strong, nonatomic) UIPickerView *pickerView;
-
 @property (strong, nonatomic) UIControl *control;
 
 @property (strong, nonatomic) UIView *backgroundView;
@@ -39,17 +37,17 @@
 
 - (UIPickerView *)pickerView {
     
-    if (!_pickerView) {
+    if (!_lm_pickerView) {
         
-        _pickerView = [[UIPickerView alloc] init];
-        _pickerView.delegate = self.lm_delegate;
-        _pickerView.dataSource = self.lm_dataSource;
-        _pickerView.backgroundColor = LMColorWithWhite;
+        _lm_pickerView = [[UIPickerView alloc] init];
+        _lm_pickerView.delegate = self.lm_delegate;
+        _lm_pickerView.dataSource = self.lm_dataSource;
+        _lm_pickerView.backgroundColor = LMColorWithWhite;
         
-        _pickerView.frame = CGRectMake(0, LMScreenHeight - 216, LMScreenWidth, 216);
+        _lm_pickerView.frame = CGRectMake(0, LMScreenHeight - 216, LMScreenWidth, 216);
     }
     
-    return _pickerView;
+    return _lm_pickerView;
 }
 
 - (UIToolbar *)toolBar {
@@ -136,7 +134,7 @@
     
     _control = [[UIControl alloc] initWithFrame:LMScreenBounds];
     _backgroundView = [[UIView alloc] initWithFrame:LMScreenBounds];
-
+    
     _control.lm_top = LMScreenHeight;
     
     [UIView animateWithDuration:.25 animations:^{
@@ -179,7 +177,7 @@
         
         if (finished) {
             
-            [_pickerView removeFromSuperview];
+            [_lm_pickerView removeFromSuperview];
             [_control removeFromSuperview];
             [_backgroundView removeFromSuperview];
         }
