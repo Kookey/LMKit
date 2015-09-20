@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define LMCurrentViewController [UIViewController lm_currentViewController]
-#define LMCurrentNavigationController [UIViewController lm_currentViewController].navigationController
-
 typedef enum : NSUInteger {
     LMTransitionTypeFade,
     LMTransitionTypePush,
@@ -110,12 +107,5 @@ typedef void (^LMStoryboardSegue) (id sender, UIStoryboardSegue *segue, id desti
  *  @param storyboardSegue 回调
  */
 - (void)lm_performSegueWithIdentifier:(NSString *)identifier sender:(id)sender storyboardSegue:(LMStoryboardSegue)storyboardSegue;
-
-/**
- *  当前ViewController
- *
- *  @return UIViewController
- */
-+ (UIViewController *)lm_currentViewController;
 
 @end

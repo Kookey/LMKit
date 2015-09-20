@@ -9,6 +9,7 @@
 #ifndef LMKitDemo_LMMacro_h
 #define LMKitDemo_LMMacro_h
 
+@import UIKit;
 
 #pragma mark - -.-
 
@@ -93,8 +94,6 @@ return instance; \
 
 #endif
 
-@import UIKit;
-
 static inline BOOL LMIsEmpty(id objcet) {
     
     return objcet == nil || [objcet isEqual:[NSNull null]] || ([objcet respondsToSelector:@selector(length)] && [(NSData *)objcet length] == 0) || ([objcet respondsToSelector:@selector(count)] && [(NSArray *)objcet count] == 0);
@@ -125,7 +124,48 @@ static inline NSString *LMStringWithObject(id object) {
     }
 }
 
-static inline UIWindow *LMRootViewController(UIViewController *rootViewController) {
+#pragma mark - current
+
+UIKIT_STATIC_INLINE UITabBarController *LMCurrentTabBarController() {
+    
+    UIViewController *topViewController = [[UIApplication sharedApplication].keyWindow rootViewController];
+    
+    if ([topViewController isKindOfClass:[UITabBarController class]]) {
+        
+        return (UITabBarController *)topViewController;
+    }
+    
+    return nil;
+}
+
+UIKIT_STATIC_INLINE UIViewController *LMCurrentViewController() {
+    
+    UIViewController *topViewController = [[UIApplication sharedApplication].keyWindow rootViewController];
+    
+    if ([topViewController isKindOfClass:[UITabBarController class]]) {
+        
+        topViewController = ((UITabBarController *)topViewController).selectedViewController;
+    }
+    
+    if ([topViewController presentedViewController]) {
+        
+        topViewController = [topViewController presentedViewController];
+    }
+    
+    if ([topViewController isKindOfClass:[UINavigationController class]] && [(UINavigationController *)topViewController topViewController]) {
+        
+        return [(UINavigationController*)topViewController topViewController];
+    }
+    
+    return topViewController;
+}
+
+UIKIT_STATIC_INLINE UINavigationController *LMCurrentNavigationController() {
+    
+    return LMCurrentViewController().navigationController;
+}
+
+UIKIT_STATIC_INLINE UIWindow *LMRootViewController(UIViewController *rootViewController) {
     
     UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [window setRootViewController:rootViewController];
