@@ -26,6 +26,8 @@
 {
     [self startWithTotalSecond:totalSecond + 1];
     
+    self.enabled = NO;
+    
     _didChange = didChange;
     _didFinished = didFinished;
 }
@@ -58,8 +60,6 @@
 
 - (void)change
 {
-    self.enabled = NO;
-    
     if (_didChange) {
         
         [self setTitle:_didChange(self, _remainSecond) forState:UIControlStateNormal];
