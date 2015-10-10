@@ -15,7 +15,7 @@
 
 @property (strong, nonatomic) LMPlaceholderView *placeholder;
 
-@property (copy, nonatomic) RefreshBlock refreshBlock;
+@property (copy, nonatomic) dispatch_block_t refreshBlock;
 
 @end
 
@@ -33,36 +33,36 @@ static char placeholderKey, refreshKey;
     return objc_getAssociatedObject(self, &placeholderKey);
 }
 
-- (void)setRefreshBlock:(RefreshBlock)refreshBlock {
+- (void)setRefreshBlock:(dispatch_block_t)refreshBlock {
     
     objc_setAssociatedObject(self, &refreshKey, refreshBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (RefreshBlock)refreshBlock {
+- (dispatch_block_t)refreshBlock {
     
     return objc_getAssociatedObject(self, &refreshKey);
 }
 
-- (void)lm_showPlaceholderInitWithBackgroundColor:(UIColor *)color imageName:(NSString *)imageName andTitle:(NSString *)title andFrame:(CGRect)frame andRefresBlock:(RefreshBlock)block
+- (void)lm_showPlaceholderInitWithBackgroundColor:(UIColor *)color imageName:(NSString *)imageName andTitle:(NSString *)title andFrame:(CGRect)frame andRefresBlock:(dispatch_block_t)block
 {
     [self lm_showPlaceholderInitWithImageName:imageName andTitle:title andFrame:frame andRefresBlock:block];
     
     self.placeholder.backgroundColor = color;
 }
 
-- (void)lm_showPlaceholderInitWithBackgroundColor:(UIColor *)color imageName:(NSString *)imageName andTitle:(NSString *)title andRefresBlock:(RefreshBlock)block
+- (void)lm_showPlaceholderInitWithBackgroundColor:(UIColor *)color imageName:(NSString *)imageName andTitle:(NSString *)title andRefresBlock:(dispatch_block_t)block
 {
     [self lm_showPlaceholderInitWithImageName:imageName andTitle:title andRefresBlock:block];
     
     self.placeholder.backgroundColor = color;
 }
 
-- (void)lm_showPlaceholderInitWithImageName:(NSString *)imageName andTitle:(NSString *)title andRefresBlock:(RefreshBlock)block
+- (void)lm_showPlaceholderInitWithImageName:(NSString *)imageName andTitle:(NSString *)title andRefresBlock:(dispatch_block_t)block
 {
     [self lm_showPlaceholderInitWithImageName:imageName andTitle:title andFrame:CGRectMake(0, 0, LMScreenWidth, LMScreenHeight) andRefresBlock:block];
 }
 
-- (void)lm_showPlaceholderInitWithImageName:(NSString *)imageName andTitle:(NSString *)title andFrame:(CGRect)frame andRefresBlock:(RefreshBlock)block
+- (void)lm_showPlaceholderInitWithImageName:(NSString *)imageName andTitle:(NSString *)title andFrame:(CGRect)frame andRefresBlock:(dispatch_block_t)block
 {
     self.refreshBlock = block;
     
