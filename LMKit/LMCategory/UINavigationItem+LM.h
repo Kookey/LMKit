@@ -10,6 +10,8 @@
 
 @interface UINavigationItem (LM)
 
+- (void)lm_blankBackBarButtonItem;
+
 #pragma mark - ActivityIndicator
 
 - (void)lm_startActivityIndicatorAtLeft;

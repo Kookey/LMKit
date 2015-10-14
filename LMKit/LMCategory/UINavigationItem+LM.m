@@ -17,6 +17,13 @@ typedef NS_ENUM(NSUInteger, LMNavBar) {
 
 @implementation UINavigationItem (LM)
 
+- (void)lm_blankBackBarButtonItem
+{
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+    temporaryBarButtonItem.title = @"";
+    self.backBarButtonItem = temporaryBarButtonItem;
+}
+
 - (void)lm_startActivityIndicatorAtLeft
 {
     [self startActivityIndicator:LMNavBarLeft];
