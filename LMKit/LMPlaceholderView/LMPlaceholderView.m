@@ -101,11 +101,7 @@
 
 - (void)lm_hide
 {
-    [UIView animateWithDuration:0.3f animations:^{
-        
-        self.alpha = 0.0f;
-        
-    } completion:nil];
+    self.alpha = 0.0f;
 }
 
 @end
