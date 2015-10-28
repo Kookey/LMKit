@@ -92,4 +92,13 @@ typedef void(^lm_WriteToSavedPhotosError)(NSError *error);
  */
 + (UIImage *)lm_imageWithBarcodeCode:(NSString *)BarcodeCode;
 
+/**
+ *  旋转
+ *
+ *  @param orientation 90,180,270
+ *
+ *  @return UIImage
+ */
+- (UIImage *)lm_rotation:(UIImageOrientation)orientation;
+
 @end
