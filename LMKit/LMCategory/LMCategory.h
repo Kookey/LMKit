@@ -31,6 +31,7 @@
 #import "UISearchBar+LM.h"
 #import "UIStoryboard+LM.h"
 #import "UITableViewCell+LM.h"
+#import "UITableView+LM.h"
 #import "UITextField+LM.h"
 #import "UITextView+LM.h"
 #import "UIView+LM.h"

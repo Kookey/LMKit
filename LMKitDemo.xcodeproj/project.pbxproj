@@ -31,12 +31,12 @@
 		E409DB231B675F1900CE3C38 /* UITextView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB0F1B675F1900CE3C38 /* UITextView+LM.m */; };
 		E409DB241B675F1900CE3C38 /* UIView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB111B675F1900CE3C38 /* UIView+LM.m */; };
 		E409DB251B675F1900CE3C38 /* UIViewController+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E409DB131B675F1900CE3C38 /* UIViewController+LM.m */; };
-		E41096AF1BAEC18900701227 /* LMCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41096AE1BAEC18900701227 /* LMCityTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E41096AF1BAEC18900701227 /* LMCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41096AE1BAEC18900701227 /* LMCityTableViewController.m */; };
 		E41280E71B80E24D007C9408 /* UIActionSheet+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E41280E61B80E24D007C9408 /* UIActionSheet+LM.m */; };
 		E428B94C1B82B8F2002C3D6D /* UISearchBar+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E428B94B1B82B8F2002C3D6D /* UISearchBar+LM.m */; };
 		E42A72611B74B1C000B05753 /* LMNavigationShouldPopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A72601B74B1C000B05753 /* LMNavigationShouldPopVC.m */; };
 		E42EF12A1B6F0EAC007B79C4 /* NSData+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E42EF1291B6F0EAC007B79C4 /* NSData+LM.m */; };
-		E42FF8D31BAEC3510049CE55 /* LMCityTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E42FF8D21BAEC3510049CE55 /* LMCityTC.m */; settings = {ASSET_TAGS = (); }; };
+		E42FF8D31BAEC3510049CE55 /* LMCityTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E42FF8D21BAEC3510049CE55 /* LMCityTC.m */; };
 		E43050631B778EC400042368 /* UINavigationItem+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E43050621B778EC400042368 /* UINavigationItem+LM.m */; };
 		E43050671B779B1500042368 /* LMNavigationItemTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E43050661B779B1500042368 /* LMNavigationItemTC.m */; };
 		E43FA5951B68A5D2007048F7 /* LMPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5921B68A5D2007048F7 /* LMPlaceholderView.m */; };
@@ -44,7 +44,8 @@
 		E43FA59A1B68AB3B007048F7 /* LMPlaceholderViewVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5991B68AB3B007048F7 /* LMPlaceholderViewVC1.m */; };
 		E43FA5A01B68AC1F007048F7 /* LMPlaceholderViewVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA59F1B68AC1F007048F7 /* LMPlaceholderViewVC2.m */; };
 		E43FA5A91B68C6E8007048F7 /* UIApplication+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FA5A81B68C6E8007048F7 /* UIApplication+LM.m */; };
-		E459990C1BAEE2FC0056025D /* City.plist in Resources */ = {isa = PBXBuildFile; fileRef = E459990B1BAEE2FC0056025D /* City.plist */; settings = {ASSET_TAGS = (); }; };
+		E4525BFC1BE85EE1008DF6BD /* UITableView+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E4525BFB1BE85EE1008DF6BD /* UITableView+LM.m */; };
+		E459990C1BAEE2FC0056025D /* City.plist in Resources */ = {isa = PBXBuildFile; fileRef = E459990B1BAEE2FC0056025D /* City.plist */; };
 		E46E4E421B7756DC006236BD /* LMButtonTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E4E411B7756DC006236BD /* LMButtonTC.m */; };
 		E46E4E451B7756F1006236BD /* UIButton+LM.m in Sources */ = {isa = PBXBuildFile; fileRef = E46E4E441B7756F1006236BD /* UIButton+LM.m */; };
 		E47298221B7482C00084C12D /* LMApplicationTC.m in Sources */ = {isa = PBXBuildFile; fileRef = E472981E1B7482C00084C12D /* LMApplicationTC.m */; };
@@ -152,6 +153,8 @@
 		E43FA59F1B68AC1F007048F7 /* LMPlaceholderViewVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMPlaceholderViewVC2.m; sourceTree = "<group>"; };
 		E43FA5A71B68C6E8007048F7 /* UIApplication+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+LM.h"; sourceTree = "<group>"; };
 		E43FA5A81B68C6E8007048F7 /* UIApplication+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+LM.m"; sourceTree = "<group>"; };
+		E4525BFA1BE85EE1008DF6BD /* UITableView+LM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+LM.h"; sourceTree = "<group>"; };
+		E4525BFB1BE85EE1008DF6BD /* UITableView+LM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+LM.m"; sourceTree = "<group>"; };
 		E4559F391B7D78E3009A12EB /* LMMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LMMacro.h; sourceTree = "<group>"; };
 		E459990B1BAEE2FC0056025D /* City.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = City.plist; sourceTree = "<group>"; };
 		E46E4E401B7756DC006236BD /* LMButtonTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMButtonTC.h; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 				E409DB131B675F1900CE3C38 /* UIViewController+LM.m */,
 				E4D172471B784EA200744B59 /* UIWebView+LM.h */,
 				E4D172481B784EA200744B59 /* UIWebView+LM.m */,
+				E4525BFA1BE85EE1008DF6BD /* UITableView+LM.h */,
+				E4525BFB1BE85EE1008DF6BD /* UITableView+LM.m */,
 			);
 			path = LMCategory;
 			sourceTree = "<group>";
@@ -665,6 +670,7 @@
 				E43FA59A1B68AB3B007048F7 /* LMPlaceholderViewVC1.m in Sources */,
 				E4F05D051BA2D0AD008BC882 /* LMPlaceholderViewTC3.m in Sources */,
 				E409DB171B675F1900CE3C38 /* NSDictionary+LM.m in Sources */,
+				E4525BFC1BE85EE1008DF6BD /* UITableView+LM.m in Sources */,
 				E43FA5A01B68AC1F007048F7 /* LMPlaceholderViewVC2.m in Sources */,
 				E409DB1B1B675F1900CE3C38 /* UIAlertView+LM.m in Sources */,
 				E4B81E011B685B1D0042CAB5 /* LMCountDownButton.m in Sources */,

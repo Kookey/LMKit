@@ -27,6 +27,8 @@
         
         self.isFirstOpenedLabel.text = isFirstStart ? @"首次打开UIApplicationTC" : @"不是首次打开UIApplicationTC";
     }];
+    
+    [self.tableView lm_reloadDataWithAnimate:LMTableViewAnimateRight];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
