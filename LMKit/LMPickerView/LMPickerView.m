@@ -153,10 +153,20 @@
     [[UIApplication sharedApplication].keyWindow addSubview:_backgroundView];
     [[UIApplication sharedApplication].keyWindow addSubview:_control];
     
-    [_control lm_addTapGesture:^(UITapGestureRecognizer *gestureRecognizer) {
+    if (LMiOS8) {
         
-        [self cancelAction];
-    }];
+        [_control lm_addTapGesture:^(UITapGestureRecognizer *gestureRecognizer) {
+            
+            [self cancelAction];
+        }];
+        
+    } else {
+        
+        [_backgroundView lm_addTapGesture:^(UITapGestureRecognizer *gestureRecognizer) {
+            
+            [self cancelAction];
+        }];
+    }
 }
 
 - (void)lm_dismiss
