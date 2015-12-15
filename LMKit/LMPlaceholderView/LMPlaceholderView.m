@@ -58,6 +58,7 @@
     }
     
     _imageView = [[UIImageView alloc] init];
+    _imageView.contentMode = UIViewContentModeCenter;
     _imageView.alpha = 0.0f;
     
     [self addSubview:_imageView];
@@ -77,7 +78,7 @@
 - (void)lm_showViewWithImageName:(NSString *)imageName andTitle:(NSString *)title
 {
     _imageView.image = [UIImage imageNamed:imageName];
-    _imageView.frame = CGRectMake(0, 0, 105, 105);
+    _imageView.frame = CGRectMake(0, 0, 100, 100);
     _imageView.center = self.center;
     
     _descriptionTextView.text = title;
