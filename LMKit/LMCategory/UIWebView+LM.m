@@ -26,7 +26,7 @@
     [self loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:filePath]]];
 }
 
-- (void)lm_clearCookies
++ (void)lm_clearCookies
 {
     NSHTTPCookieStorage *storage = NSHTTPCookieStorage.sharedHTTPCookieStorage;
     

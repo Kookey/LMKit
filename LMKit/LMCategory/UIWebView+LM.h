@@ -27,6 +27,6 @@
 /**
  *  清除缓存
  */
-- (void)lm_clearCookies;
++ (void)lm_clearCookies;
 
 @end
