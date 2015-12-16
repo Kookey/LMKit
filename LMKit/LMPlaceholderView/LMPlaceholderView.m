@@ -10,10 +10,9 @@
 #import "LMKit.h"
 
 @interface LMPlaceholderView ()
-{
-    UIImageView *_imageView;
-    UITextView *_descriptionTextView;
-}
+
+@property (strong, nonatomic) UITextView *descriptionTextView;
+
 @end
 
 @implementation LMPlaceholderView
@@ -103,6 +102,18 @@
 - (void)lm_hide
 {
     self.alpha = 0.0f;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    _descriptionTextView.frame = CGRectMake(20, _imageView.frame.size.height + _imageView.frame.origin.y + 25, self.frame.size.width - 40, 10);
+    _descriptionTextView.textColor = LMColorWithHex(0xd4d4d4);
+    CGFloat fixedWidth = _descriptionTextView.frame.size.width;
+    CGSize newSize = [_descriptionTextView sizeThatFits:CGSizeMake(fixedWidth, 20)];
+    CGRect newFrame = _descriptionTextView.frame;
+    newFrame.size = CGSizeMake(fmaxf(newSize.width, fixedWidth), newSize.height);
+    _descriptionTextView.frame = newFrame;
 }
 
 @end

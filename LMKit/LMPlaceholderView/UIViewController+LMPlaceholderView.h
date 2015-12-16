@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LMPlaceholderView.h"
 
 @interface UIViewController (LMPlaceholderView)
+
+@property (strong, nonatomic) LMPlaceholderView *lm_placeholderView;
 
 - (void)lm_showPlaceholderInitWithBackgroundColor:(UIColor *)color imageName:(NSString *)imageName andTitle:(NSString *)title andRefresBlock:(dispatch_block_t)block;
 

@@ -10,6 +10,8 @@
 
 @interface LMPlaceholderView : UIView
 
+@property (strong, nonatomic) UIImageView *imageView;
+
 - (void)lm_showViewWithImageName:(NSString *)imageName andTitle:(NSString *)title;
 
 - (void)lm_hide;

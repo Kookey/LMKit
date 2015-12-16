@@ -30,8 +30,9 @@
         self.view.backgroundColor = LMRandomColor;
         
         [[[UIAlertView alloc] initWithTitle:@"加载成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
-        
     }];
+    
+    self.lm_placeholderView.imageView.center = (CGPoint){self.view.center.x, self.view.center.y - 44};
 }
 
 @end

@@ -7,54 +7,51 @@
 //
 
 #import "UIViewController+LMPlaceholderView.h"
-#import "LMPlaceholderView.h"
 #import "LMKit.h"
 #import <objc/runtime.h>
 
 @interface UIViewController ()
 
-@property (strong, nonatomic) LMPlaceholderView *placeholder;
-
 @property (copy, nonatomic) dispatch_block_t refreshBlock;
 
 @end
 
-static char placeholderKey, refreshKey;
+static char const LMPlaceholderViewKey, LMRefreshKey;
 
 @implementation UIViewController (LMPlaceholderView)
 
-- (void)setPlaceholder:(LMPlaceholderView *)placeholder {
+- (void)setLm_placeholderView:(LMPlaceholderView *)lm_placeholderView {
     
-    objc_setAssociatedObject(self, &placeholderKey, placeholder, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &LMPlaceholderViewKey, lm_placeholderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (LMPlaceholderView *)placeholder {
+- (LMPlaceholderView *)lm_placeholderView {
     
-    return objc_getAssociatedObject(self, &placeholderKey);
+    return objc_getAssociatedObject(self, &LMPlaceholderViewKey);
 }
 
 - (void)setRefreshBlock:(dispatch_block_t)refreshBlock {
     
-    objc_setAssociatedObject(self, &refreshKey, refreshBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &LMRefreshKey, refreshBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (dispatch_block_t)refreshBlock {
     
-    return objc_getAssociatedObject(self, &refreshKey);
+    return objc_getAssociatedObject(self, &LMRefreshKey);
 }
 
 - (void)lm_showPlaceholderInitWithBackgroundColor:(UIColor *)color imageName:(NSString *)imageName andTitle:(NSString *)title andFrame:(CGRect)frame andRefresBlock:(dispatch_block_t)block
 {
     [self lm_showPlaceholderInitWithImageName:imageName andTitle:title andFrame:frame andRefresBlock:block];
     
-    self.placeholder.backgroundColor = color;
+    self.lm_placeholderView.backgroundColor = color;
 }
 
 - (void)lm_showPlaceholderInitWithBackgroundColor:(UIColor *)color imageName:(NSString *)imageName andTitle:(NSString *)title andRefresBlock:(dispatch_block_t)block
 {
     [self lm_showPlaceholderInitWithImageName:imageName andTitle:title andRefresBlock:block];
     
-    self.placeholder.backgroundColor = color;
+    self.lm_placeholderView.backgroundColor = color;
 }
 
 - (void)lm_showPlaceholderInitWithImageName:(NSString *)imageName andTitle:(NSString *)title andRefresBlock:(dispatch_block_t)block
@@ -66,27 +63,27 @@ static char placeholderKey, refreshKey;
 {
     self.refreshBlock = block;
     
-    if (!self.placeholder) {
+    if (!self.lm_placeholderView) {
         
-        self.placeholder = [[LMPlaceholderView alloc] initWithFrame:frame];
+        self.lm_placeholderView = [[LMPlaceholderView alloc] initWithFrame:frame];
         
         if ([self respondsToSelector:@selector(setTableView:)]) {
             
             if ([((UITableViewController *)self).tableView respondsToSelector:@selector(setScrollEnabled:)]) {
                 
-                self.placeholder.lm_top = self.placeholder.lm_top - 30;
+                self.lm_placeholderView.lm_top = self.lm_placeholderView.lm_top - 30;
             }
         }
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refreshAction)];
-        [self.placeholder addGestureRecognizer:tap];
+        [self.lm_placeholderView addGestureRecognizer:tap];
         
-        [self.view addSubview:self.placeholder];
+        [self.view addSubview:self.lm_placeholderView];
     }
     
     [self setScrollEnabled:NO];
     
-    [self.placeholder lm_showViewWithImageName:imageName andTitle:title];
+    [self.lm_placeholderView lm_showViewWithImageName:imageName andTitle:title];
 }
 
 - (void)refreshAction
@@ -101,7 +98,7 @@ static char placeholderKey, refreshKey;
 
 - (void)lm_hidePlaceholder
 {
-    [self.placeholder lm_hide];
+    [self.lm_placeholderView lm_hide];
     
     [self setScrollEnabled:YES];
 }
